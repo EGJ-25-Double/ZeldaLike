@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://by21bn8owx8us"]
+
+[ext_resource type="Script" uid="uid://1tqgq1uj0ppv" path="res://Inventory/InventoryItem.gd" id="1_258di"]
+[ext_resource type="Texture2D" uid="uid://dh8en8fsm32hf" path="res://icon.svg" id="2_xndb7"]
+
+[node name="InventoryItem" type="Control" node_paths=PackedStringArray("sprite", "selection")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 56.0
+offset_bottom = 56.0
+script = ExtResource("1_258di")
+sprite = NodePath("Sprite2D")
+selection = NodePath("ColorRect2")
+metadata/_custom_type_script = "uid://1tqgq1uj0ppv"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_xndb7")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(1, 0, 0, 0.490196)

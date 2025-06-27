@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemListMemo" load_steps=6 format=3 uid="uid://dbfbakid5w1xv"]
+
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Inventory/ItemMemo.gd" id="1_a3vas"]
+[ext_resource type="Texture2D" uid="uid://dh8en8fsm32hf" path="res://icon.svg" id="2_4hwca"]
+[ext_resource type="Script" uid="uid://ci33ynph65bs2" path="res://Inventory/ItemListMemo.gd" id="2_mfwre"]
+
+[sub_resource type="Resource" id="Resource_a3vas"]
+script = ExtResource("1_a3vas")
+name = "Pomme"
+sprite = ExtResource("2_4hwca")
+unlocked_at_start = true
+metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"
+
+[sub_resource type="Resource" id="Resource_mfwre"]
+script = ExtResource("1_a3vas")
+name = "Pomme pourrie"
+sprite = ExtResource("2_4hwca")
+unlocked_at_start = false
+metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"
+
+[resource]
+script = ExtResource("2_mfwre")
+items = Array[ExtResource("1_a3vas")]([SubResource("Resource_a3vas"), SubResource("Resource_mfwre")])
+metadata/_custom_type_script = "uid://ci33ynph65bs2"
