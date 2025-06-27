@@ -11,7 +11,7 @@ func _input(event):
 
 
 func _on_play_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Entities/player_hero.tscn")
+	get_tree().change_scene_to_file("res://Scenes/testmap_hero.tscn")
 
 
 func _on_help_btn_pressed() -> void:
