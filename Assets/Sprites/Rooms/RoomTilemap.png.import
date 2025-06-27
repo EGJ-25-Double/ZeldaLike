@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm3f3tr27fk2r"
-path="res://.godot/imported/RoomTilemap.png-c5bb94044f9d23a0bc5508003d53bc75.ctex"
+path="res://.godot/imported/RoomTilemap.png-494c2a6fa761d7ef64ffb49165f06bfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rooms/RoomTilemap.png"
-dest_files=["res://.godot/imported/RoomTilemap.png-c5bb94044f9d23a0bc5508003d53bc75.ctex"]
+source_file="res://Assets/Sprites/Rooms/RoomTilemap.png"
+dest_files=["res://.godot/imported/RoomTilemap.png-494c2a6fa761d7ef64ffb49165f06bfb.ctex"]
 
 [params]
 

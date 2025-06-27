@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
-[ext_resource type="Texture2D" uid="uid://bm3f3tr27fk2r" path="res://Sprites/Rooms/RoomTilemap.png" id="1_xiylw"]
+[ext_resource type="Texture2D" uid="uid://bm3f3tr27fk2r" path="res://Assets/Sprites/Rooms/RoomTilemap.png" id="1_xiylw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcsen"]
 texture = ExtResource("1_xiylw")
