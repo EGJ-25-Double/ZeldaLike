@@ -1,0 +1,8 @@
+class_name ItemMemo
+extends Resource
+
+@export var name: String
+@export var sprite: Texture2D
+@export var unlocked_at_start: bool
+
+func on_click() -> void: pass
