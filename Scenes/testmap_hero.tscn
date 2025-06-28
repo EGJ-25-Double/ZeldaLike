@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://bwwxf4albkxva"]
+[gd_scene load_steps=6 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Entities/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
 [ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="3_cfss2"]
 [ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="3_fcsen"]
+[ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="5_wb6sk"]
 
 [node name="Testmap" type="Node"]
 
@@ -31,8 +32,17 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_cfss2")
 
-[node name="InventoryList" parent="." instance=ExtResource("3_fcsen")]
-visible = false
+[node name="InventoryList" parent="Camera2D" instance=ExtResource("3_fcsen")]
+offset_left = 160.0
+offset_top = 1.0
+offset_right = 360.0
+offset_bottom = 129.0
+
+[node name="EquippedItems" parent="Camera2D" instance=ExtResource("5_wb6sk")]
+offset_left = 216.0
+offset_top = 137.0
+offset_right = 256.0
+offset_bottom = 177.0
 
 [editable path="Room2"]
 [editable path="Room3"]
