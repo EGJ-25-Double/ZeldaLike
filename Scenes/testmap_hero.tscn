@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bwwxf4albkxva"]
+[gd_scene load_steps=12 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Entities/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="3_fcsen"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="3_kvtte"]
 [ext_resource type="PackedScene" uid="uid://cksq30auhmbr" path="res://Scenes/Entities/trigger_state.tscn" id="4_76wwm"]
+[ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_5q760"]
 [ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="5_wb6sk"]
+[ext_resource type="Script" uid="uid://130xfbgs4h7h" path="res://Scenes/Interaction/state_interaction.gd" id="6_q4ktt"]
+[ext_resource type="Script" uid="uid://fj8ygb4knnl0" path="res://Scenes/Interaction/interacter.gd" id="11_lf3a7"]
 
 [node name="Testmap" type="Node"]
 
@@ -43,6 +46,16 @@ state = NodePath("../DefaultState")
 position = Vector2(-930, 834)
 state = NodePath("../VoidState")
 
+[node name="Trigger" parent="Room2" node_paths=PackedStringArray("interactions") instance=ExtResource("5_5q760")]
+position = Vector2(-3035, -161)
+direction = 2
+interactions = [NodePath("StateInteraction")]
+
+[node name="StateInteraction" type="Node" parent="Room2/Trigger" node_paths=PackedStringArray("state")]
+script = ExtResource("6_q4ktt")
+state = NodePath("../../VoidState")
+metadata/_custom_type_script = "uid://130xfbgs4h7h"
+
 [node name="Room3" parent="." instance=ExtResource("1_cfss2")]
 position = Vector2(7680, -4480)
 
@@ -73,6 +86,10 @@ offset_right = 2200.0
 offset_bottom = 1410.0
 scale = Vector2(10, 10)
 
+[node name="Interacter" type="Node" parent="."]
+script = ExtResource("11_lf3a7")
+metadata/_custom_type_script = "uid://fj8ygb4knnl0"
+
 [editable path="Room"]
 [editable path="Room/DoorWest"]
 [editable path="Room/DoorEast"]
@@ -83,3 +100,4 @@ scale = Vector2(10, 10)
 [editable path="Room2/DoorEast"]
 [editable path="Room2/DoorNorth"]
 [editable path="Room2/DoorSouth"]
+[editable path="Room2/Trigger"]

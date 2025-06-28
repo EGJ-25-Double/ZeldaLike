@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bsstdem8dkca2" path="res://Scenes/Interaction/trigger.gd" id="1_muk7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cf0ln"]
+size = Vector2(326, 338)
 
 [node name="Trigger" type="Area2D"]
 script = ExtResource("1_muk7e")
