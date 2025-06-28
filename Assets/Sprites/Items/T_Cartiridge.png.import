@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlvlg2nrygd24"
-path="res://.godot/imported/56646_c171_220210_pd-removebg-preview.png-edeb146087ea4dcd12af716c07489f63.ctex"
+uid="uid://guqskiamqb8d"
+path="res://.godot/imported/T_Cartiridge.png-c7cee413c7bf01b6b4fd5238ac8449fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/56646_c171_220210_pd-removebg-preview.png"
-dest_files=["res://.godot/imported/56646_c171_220210_pd-removebg-preview.png-edeb146087ea4dcd12af716c07489f63.ctex"]
+source_file="res://Assets/Sprites/Items/T_Cartiridge.png"
+dest_files=["res://.godot/imported/T_Cartiridge.png-c7cee413c7bf01b6b4fd5238ac8449fb.ctex"]
 
 [params]
 

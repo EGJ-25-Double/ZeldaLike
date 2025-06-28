@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://by21bn8owx8us"]
 
 [ext_resource type="Script" uid="uid://1tqgq1uj0ppv" path="res://Scenes/Inventory/inventory_item.gd" id="1_258di"]
-[ext_resource type="Texture2D" uid="uid://dh8en8fsm32hf" path="res://icon.svg" id="2_xndb7"]
+[ext_resource type="Texture2D" uid="uid://rvx5my8vwaoe" path="res://Assets/Sprites/Items/T_Compass.png" id="2_15ekt"]
 
 [node name="InventoryItem" type="Control" node_paths=PackedStringArray("sprite", "selection")]
 custom_minimum_size = Vector2(64, 64)
@@ -30,5 +30,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("2_xndb7")
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("2_15ekt")

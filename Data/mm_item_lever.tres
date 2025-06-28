@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemMemo" load_steps=3 format=3 uid="uid://bgdb84stswvjw"]
 
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="1_2ungn"]
-[ext_resource type="Texture2D" uid="uid://baq8d4xu4pdka" path="res://Assets/Sprites/Items/levier-armement-ambidextre-raptor-pour-ar15-radian.png" id="2_2ungn"]
+[ext_resource type="Texture2D" uid="uid://baq8d4xu4pdka" path="res://Assets/Sprites/Items/T_Lever.png" id="2_2ungn"]
 
 [resource]
 script = ExtResource("1_2ungn")

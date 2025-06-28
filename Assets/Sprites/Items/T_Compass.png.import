@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baq8d4xu4pdka"
-path="res://.godot/imported/levier-armement-ambidextre-raptor-pour-ar15-radian.png-eaa56ca8fa2c9f48086eba5def925351.ctex"
+uid="uid://rvx5my8vwaoe"
+path="res://.godot/imported/T_Compass.png-e34cc457c2de02374de81bdc20de336d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/levier-armement-ambidextre-raptor-pour-ar15-radian.png"
-dest_files=["res://.godot/imported/levier-armement-ambidextre-raptor-pour-ar15-radian.png-eaa56ca8fa2c9f48086eba5def925351.ctex"]
+source_file="res://Assets/Sprites/Items/T_Compass.png"
+dest_files=["res://.godot/imported/T_Compass.png-e34cc457c2de02374de81bdc20de336d.ctex"]
 
 [params]
 
