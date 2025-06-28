@@ -12,7 +12,8 @@ func _physics_process(delta: float) -> void:
 		direction = Vector2.ZERO
 	else:
 		direction = Input.get_vector("left", "right", "up", "down")
-		PlayerUtils.player_dir = direction
+		if direction != Vector2.ZERO:
+			PlayerUtils.player_dir = direction
 	
 	if direction:
 		velocity = direction * SPEED * delta

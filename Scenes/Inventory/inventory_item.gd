@@ -41,8 +41,8 @@ var action: Action:
 					Action.None:
 						InventoryUtils.item_b = item
 					Action.A:
-						InventoryUtils.item_a = null
 						InventoryUtils.item_b = item
+						InventoryUtils.item_a = null
 					Action.B:
 						InventoryUtils.item_b = null
 
