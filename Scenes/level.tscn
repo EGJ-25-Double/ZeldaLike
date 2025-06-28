@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci7eaqv22eyv2"]
+
+[ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
+[ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
+[ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
+[ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="7_c7le1"]
+[ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="8_2klc5"]
+[ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="9_nngtn"]
+
+[node name="Testmap" type="Node"]
+
+[node name="Room_B" parent="." instance=ExtResource("1_0f350")]
+position = Vector2(0, -4480)
+
+[node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
+position = Vector2(11, -30)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -1)
+zoom = Vector2(0.17, 0.17)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("6_crh0w")
+
+[node name="InventoryList" parent="Camera2D" instance=ExtResource("7_c7le1")]
+offset_left = 1600.0
+offset_top = 10.0
+offset_right = 1800.0
+offset_bottom = 138.0
+scale = Vector2(10, 10)
+
+[node name="EquippedItems" parent="Camera2D" instance=ExtResource("8_2klc5")]
+offset_left = 2160.0
+offset_top = 1370.0
+offset_right = 2200.0
+offset_bottom = 1410.0
+scale = Vector2(10, 10)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_nngtn")
+autoplay = true
+bus = &"Music"

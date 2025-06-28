@@ -17,9 +17,9 @@ metadata/_custom_type_script = "uid://c2xykpa5qkejy"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 40.0
+offset_left = 35.0
 offset_top = 40.0
-offset_right = 72.0
+offset_right = 80.0
 offset_bottom = 72.0
 color = Color(0, 0, 0, 1)
 
