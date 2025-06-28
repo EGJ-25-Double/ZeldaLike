@@ -51,8 +51,8 @@ static func subscribe_to_item_b_equipped(callable: Callable) -> void:
 static func unsubscribe_from_item_b_equipped(callable: Callable) -> void:
 	_unsubscribe_from(callable, _on_item_b_equipped)
 
-static func subscribe_to_item_used(callable: Callable) -> void:
-	_subscribe_to(callable, _on_item_used, null)
+static func subscribe_to_item_used(callable: Callable, instalCall: bool = true) -> void:
+	_subscribe_to(callable, _on_item_used, null, instalCall)
 
 static func unsubscribe_from_item_used(callable: Callable) -> void:
 	_unsubscribe_from(callable, _on_item_used)
@@ -67,10 +67,11 @@ static func _on_value_set(value, callables: Array[Callable]) -> void:
 	for callable in callables:
 		callable.call(value)
 
-static func _subscribe_to(callable: Callable, callables: Array[Callable], value) -> void:
+static func _subscribe_to(callable: Callable, callables: Array[Callable], value, instaCall: bool = true) -> void:
 	if callables.has(callable): return
 	callables.append(callable)
-	callable.call(value)
+	if (instaCall):
+		callable.call(value)
 
 static func _unsubscribe_from(callable: Callable, callables: Array[Callable]) -> void:
 	if !callables.has(callable): return

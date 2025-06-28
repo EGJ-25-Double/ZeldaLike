@@ -22,9 +22,9 @@ no_item = SubResource("Resource_wv8gf")
 metadata/_custom_type_script = "uid://cx4j08bsrnwr1"
 
 [node name="Item A" parent="." instance=ExtResource("3_wv8gf")]
-text = "A"
+text = "Enter"
 
 [node name="Item B" parent="." instance=ExtResource("3_wv8gf")]
 offset_left = 80.0
 offset_right = 144.0
-text = "B"
+text = "Shift"

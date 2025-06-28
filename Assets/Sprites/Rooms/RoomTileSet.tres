@@ -1,6 +1,18 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b3tjhq42xbko4"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b3tjhq42xbko4"]
 
 [ext_resource type="Texture2D" uid="uid://bm3f3tr27fk2r" path="res://Assets/Sprites/Rooms/RoomTilemap.png" id="1_srkrr"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_srkrr"]
+tile_data = PackedInt32Array(0, 131072, 1610612737, 65536, 196608, 1, 1, 0, 4, 65537, 0, 4, 2, 0, 4, 65538, 0, 4, 3, 131072, 1342177281, 65539, 196608, 1342177281)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_njhyu"]
+tile_data = PackedInt32Array(0, 196608, 1342177281, 65536, 0, 4, 131072, 0, 4, 196608, 196608, 805306369, 1, 131072, 1, 65537, 0, 4, 131073, 0, 4, 196609, 131072, 805306369)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_jmfjv"]
+tile_data = PackedInt32Array(0, 262144, 3, 65536, 0, 4, 131072, 65536, 4, 196608, 131072, 1, 1, 196608, 1, 65537, 65536, 4, 131073, 0, 4, 196609, 196608, 1610612737)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_im8bh"]
+tile_data = PackedInt32Array(0, 196608, 1610612737, 65536, 131072, 1610612737, 1, 0, 4, 65537, 0, 4, 2, 0, 4, 65538, 0, 4, 3, 196608, 805306369, 65539, 131072, 1342177281)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcsen"]
 texture = ExtResource("1_srkrr")
@@ -196,3 +208,7 @@ texture_region_size = Vector2i(160, 160)
 tile_size = Vector2i(160, 160)
 physics_layer_0/collision_layer = 6
 sources/0 = SubResource("TileSetAtlasSource_fcsen")
+pattern_0 = SubResource("TileMapPattern_srkrr")
+pattern_1 = SubResource("TileMapPattern_njhyu")
+pattern_2 = SubResource("TileMapPattern_jmfjv")
+pattern_3 = SubResource("TileMapPattern_im8bh")

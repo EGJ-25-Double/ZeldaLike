@@ -14,7 +14,7 @@ func _on_body_entered(body) -> void:
 	if trigger_on_walk:
 		start_all_interactions(null)
 	elif body is PlayerHero:
-		InventoryUtils.subscribe_to_item_used(_on_item_used)
+		InventoryUtils.subscribe_to_item_used(_on_item_used, block_no_item)
 
 func _on_body_exited(body) -> void:
 	if !trigger_on_walk && body is PlayerHero:

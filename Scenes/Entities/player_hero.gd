@@ -22,11 +22,11 @@ func _physics_process(delta: float) -> void:
 	if velocity != Vector2.ZERO:
 		cache_player_dir()
 		animated_sprite_2d.play_movement_animation()
+		move_and_slide()
 	else:
-		animated_sprite_2d.play_idle_animation()
-	
-	move_and_slide()
-	
+		animated_sprite_2d.play_static_animation(animated_sprite_2d.DIR_TO_IDLE)
+
+
 func cache_player_dir() -> void:
 	if velocity.y > 0:
 		PlayerUtils.player_dir = Direction.Down
