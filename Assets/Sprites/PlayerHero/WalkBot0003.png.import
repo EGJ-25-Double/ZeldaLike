@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rnbr14e5v1su"
-path="res://.godot/imported/walk.png-aeec5dc6d1944fbb86785b5f2f4e75c8.ctex"
+uid="uid://ckllhdemwntlv"
+path="res://.godot/imported/WalkBot0003.png-96ccedec14e132403126d1d5a42c3423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/PlayerHero/walk.png"
-dest_files=["res://.godot/imported/walk.png-aeec5dc6d1944fbb86785b5f2f4e75c8.ctex"]
+source_file="res://Assets/Sprites/PlayerHero/WalkBot0003.png"
+dest_files=["res://.godot/imported/WalkBot0003.png-96ccedec14e132403126d1d5a42c3423.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=512
 detect_3d/compress_to=1

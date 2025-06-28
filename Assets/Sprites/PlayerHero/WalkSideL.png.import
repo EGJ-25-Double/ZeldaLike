@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqrxn3ftljpd8"
-path="res://.godot/imported/Idle.png-83303f62ea4f9fb716376e4cfa5380d8.ctex"
+uid="uid://copyk4ofobpwl"
+path="res://.godot/imported/WalkSideL.png-47e365e1aaa1d7ff799bf537b10f82a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/PlayerHero/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-83303f62ea4f9fb716376e4cfa5380d8.ctex"]
+source_file="res://Assets/Sprites/PlayerHero/WalkSideL.png"
+dest_files=["res://.godot/imported/WalkSideL.png-47e365e1aaa1d7ff799bf537b10f82a4.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=512
 detect_3d/compress_to=1
