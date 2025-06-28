@@ -75,9 +75,7 @@ func _update_selection_on_two_lines() -> void:
 	selected += h + v
 
 func _update_selection_on_one_line() -> void:
-	var left = -1 if Input.is_action_just_pressed("left") else 0
-	var right = 1 if Input.is_action_just_pressed("right") else 0
-	selected += left + right
+	selected += Input.get_axis("left", "right")
 
 func _select_item() -> void:
 	var selected_item = items[selected]
