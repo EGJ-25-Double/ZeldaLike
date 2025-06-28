@@ -139,9 +139,20 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_7f67a")
-text = "Made with <3 by Aquamenti8, Hugo, Julien, Louise, Mathieu, Shasha, Thomas
+text = "Made with <3 by
 
-Credits to Kenney"
+Hugo Lefebvre \"Lumirevery\" - Game Designer
+Julien Di Natale \"Avoltance\" - Game Designer & Developer
+Louise \"ashisia\" - Developer
+Miggeroo - Art
+Piroporopi - Art
+Shashamisen - Sound Design & Music
+Thomas Rogulski \"Totoro\" - Game Designer & Developer
+
+
+Credits to
+
+Kenney - Font assets"
 
 [node name="CreditsBackBtn" type="Button" parent="CreditsUI"]
 layout_mode = 1

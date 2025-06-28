@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://lcbiyxs4wmy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfss2"]
+size = Vector2(20, 74)
+
+[node name="Door" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -5)
+shape = SubResource("RectangleShape2D_cfss2")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-13, 0)
