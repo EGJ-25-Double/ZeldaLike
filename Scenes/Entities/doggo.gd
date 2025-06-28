@@ -4,7 +4,7 @@ class_name Doggo extends CharacterBody2D
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
 
 
-var speed: int = 50
+var speed: int = 300
 var roam_time: float = 2.0
 var idle_time: float = 1.5
 var sleep_time: float = 3.0
@@ -18,7 +18,7 @@ func _physics_process(delta) -> void:
 	match state:
 		"roam":
 			velocity = direction * speed
-			animated_sprite_2d.play_movement_animation(velocity)
+			animated_sprite_2d.play_walk_animation(velocity)
 			move_and_slide()
 
 			timer -= delta
@@ -28,7 +28,7 @@ func _physics_process(delta) -> void:
 		"idle":
 			velocity = Vector2.ZERO
 			if (!isAsleep):
-				animated_sprite_2d.play_static_animation(animated_sprite_2d.MOVEMENT_TO_IDLE)
+				animated_sprite_2d.play_static_animation(animated_sprite_2d.WALK_TO_IDLE)
 			else:
 				animated_sprite_2d.play_static_animation(animated_sprite_2d.SLEEP_TO_IDLE)
 				isAsleep = false
