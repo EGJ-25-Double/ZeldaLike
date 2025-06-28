@@ -25,9 +25,8 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		animated_sprite_2d.play_static_animation(animated_sprite_2d.DIR_TO_IDLE)
-	
 
-	
+
 func cache_player_dir() -> void:
 	if velocity.y > 0:
 		PlayerUtils.player_dir = Direction.Down

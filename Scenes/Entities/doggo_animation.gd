@@ -25,12 +25,14 @@ const SLEEP_TO_IDLE: Dictionary = {
 }
 
 
-func play_walk_animation(velocity: Vector2):
-	if velocity.y > 0:
-		play("walk_down")
-	elif velocity.y < 0:
-		play("walk_up")
-	elif velocity.x > 0:
-		play("walk_right")
-	elif velocity.x < 0:
-		play("walk_left")
+func play_roam_animation(direction: Vector2):
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0:
+			play("walk_right")
+		else:
+			play("walk_left")
+	else:
+		if direction.y > 0:
+			play("walk_down")
+		else:
+			play("walk_up")
