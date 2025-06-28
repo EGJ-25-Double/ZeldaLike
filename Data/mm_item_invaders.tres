@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemMemo" load_steps=3 format=3 uid="uid://cnw0g8i3rnhcx"]
+
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/ItemMemo.gd" id="1_l0q14"]
+[ext_resource type="Texture2D" uid="uid://guqskiamqb8d" path="res://Assets/Sprites/Items/1200px-Gba-cartridge.png" id="2_l0q14"]
+
+[resource]
+script = ExtResource("1_l0q14")
+name = "Space Invaders"
+sprite = ExtResource("2_l0q14")
+unlocked_at_start = true
+metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"

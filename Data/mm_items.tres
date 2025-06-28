@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemListMemo" load_steps=9 format=3 uid="uid://dbfbakid5w1xv"]
+
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/ItemMemo.gd" id="1_njp5q"]
+[ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="2_qlgdj"]
+[ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="3_3a68i"]
+[ext_resource type="Resource" uid="uid://vcih31l4p7a6" path="res://Data/mm_item_heart.tres" id="4_8xw2v"]
+[ext_resource type="Resource" uid="uid://cnw0g8i3rnhcx" path="res://Data/mm_item_invaders.tres" id="5_0jgn1"]
+[ext_resource type="Resource" uid="uid://bgdb84stswvjw" path="res://Data/mm_item_lever.tres" id="6_3pkla"]
+[ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="7_821vg"]
+[ext_resource type="Script" uid="uid://ci33ynph65bs2" path="res://Scenes/Inventory/ItemListMemo.gd" id="8_74pif"]
+
+[resource]
+script = ExtResource("8_74pif")
+items = Array[ExtResource("1_njp5q")]([ExtResource("2_qlgdj"), ExtResource("3_3a68i"), ExtResource("4_8xw2v"), ExtResource("5_0jgn1"), ExtResource("6_3pkla"), ExtResource("7_821vg")])
+metadata/_custom_type_script = "uid://ci33ynph65bs2"
