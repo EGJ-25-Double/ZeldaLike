@@ -1,24 +1,6 @@
 class_name Trigger
 extends Area2D
 
-enum Direction
-{
-	None = 0,
-	Left = 1 << 0,
-	Up = 1 << 1,
-	LeftUp = Left | Up,
-	Right = 1 << 2,
-	RightUp = Right | Up,
-	Horizontal = Right | Left,
-	UpHorizontal = Horizontal | Up,
-	Down = 1 << 3,
-	RightDown = Right | Down,
-	LeftDown = Left | Down,
-	HorizontalDown = Horizontal | Down,
-	Vertical = Up | Down,
-	All = Horizontal | Vertical
-}
-
 @export var trigger_on_walk: bool
 @export var block_no_item: bool = true
 @export_flags("All:15", "Left:1", "Up:2", "Right:4", "Down:8") var direction: int
@@ -40,27 +22,17 @@ func _on_body_exited(body) -> void:
 
 func _on_item_used(item: ItemMemo) -> void:
 	if item == null && block_no_item: return
-	print("trigger triggered")
-	var dir: Direction = direction as Direction
-	print(_get_player_direction())
-	print(dir)
-	print(dir == _get_player_direction())
-	if dir != Direction.None && dir != _get_player_direction(): return
-	print("trigger triggered with good direction")
+	if !verify_dir(): return
 	start_all_interactions(item)
 
 func start_all_interactions(item: ItemMemo) -> void:
 	for interaction in interactions:
 		interaction.interact(item)
 
-func _get_player_direction() -> Direction:
-	match PlayerUtils.player_dir:
-		Vector2.LEFT: return Direction.Left
-		Vector2.RIGHT: return Direction.Right
-		Vector2.UP: return Direction.Up
-		Vector2.DOWN: return Direction.Down
-		Vector2.ONE: return Direction.RightUp
-		Vector2(-1, -1): return Direction.LeftDown
-		Vector2(-1, 1): return Direction.LeftUp
-		Vector2(1, -1): return Direction.RightDown
-	return Direction.None
+func _get_player_direction() -> int:
+	return PlayerUtils.player_dir
+
+func verify_dir() -> bool:
+	var player_dir = _get_player_direction()
+	var valid = (direction & player_dir) == player_dir;
+	return valid

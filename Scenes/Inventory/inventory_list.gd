@@ -76,8 +76,6 @@ func _select_item() -> void:
 	var selected_item = items[selected]
 	if !selected_item.unlocked: return
 	if Input.is_action_just_pressed("action_a"):
-		print(selected_item.unlocked)
 		selected_item.action = InventoryItem.Action.A
 	elif Input.is_action_just_pressed("action_b"):
-		print(selected_item.unlocked)
 		selected_item.action = InventoryItem.Action.B
