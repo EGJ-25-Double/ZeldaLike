@@ -1,4 +1,4 @@
-extends Node
+extends Interaction
 
 class_name State
 
@@ -9,10 +9,13 @@ var mapLinked: TileMapLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Events.room_state_changed.connect(func(eventCat, eventState):
+	Events.room_state_changed.connect(func(eventCat, stateName):
 		if (eventCat == category && mapLinked != null):
-			mapLinked.enabled = eventState == self
+			mapLinked.enabled = stateName == name
 	)
 
 func activate() -> void:
-	Events.room_state_changed.emit(category, self)
+	Events.room_state_changed.emit(category, name)
+
+func _internal_interact() -> void:
+	activate()
