@@ -4,7 +4,7 @@ class_name PlayerHero
 
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
 
-const SPEED = 5000.0
+const SPEED = 80000.0
 
 func _physics_process(delta: float) -> void:
 	var direction

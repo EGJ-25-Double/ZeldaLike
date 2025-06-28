@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://biai3yc235x6m"]
 
-[ext_resource type="Script" uid="uid://xvn47lshjlo3" path="res://Scenes/room.gd" id="1_lcmye"]
+[ext_resource type="Script" uid="uid://xvn47lshjlo3" path="res://Scenes/Entities/room.gd" id="1_lcmye"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_ecnvq"]
 [ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_rdcm0"]
 
@@ -29,13 +29,15 @@ tile_map_data = PackedByteArray("AAD2//7/AAAKAAYAAAA=")
 tile_set = ExtResource("2_ecnvq")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
+scale = Vector2(10, 10)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 shape = SubResource("RectangleShape2D_cf0ln")
 
 [node name="DoorWest" parent="." instance=ExtResource("3_rdcm0")]
-position = Vector2(-368, 35)
+position = Vector2(-3680, 350)
+scale = Vector2(10, 10)
 
 [node name="SpawnPoint" parent="DoorWest" index="0"]
 position = Vector2(-70, 0)
@@ -44,7 +46,8 @@ position = Vector2(-70, 0)
 shape = SubResource("RectangleShape2D_lcmye")
 
 [node name="DoorEast" parent="." instance=ExtResource("3_rdcm0")]
-position = Vector2(368, 35)
+position = Vector2(3680, 350)
+scale = Vector2(10, 10)
 
 [node name="SpawnPoint" parent="DoorEast" index="0"]
 position = Vector2(70, 0)
@@ -53,7 +56,8 @@ position = Vector2(70, 0)
 shape = SubResource("RectangleShape2D_lcmye")
 
 [node name="DoorNorth" parent="." instance=ExtResource("3_rdcm0")]
-position = Vector2(0, -209)
+position = Vector2(0, -2090)
+scale = Vector2(10, 10)
 
 [node name="SpawnPoint" parent="DoorNorth" index="0"]
 position = Vector2(0, -70)
@@ -62,7 +66,8 @@ position = Vector2(0, -70)
 shape = SubResource("RectangleShape2D_ecnvq")
 
 [node name="DoorSouth" parent="." instance=ExtResource("3_rdcm0")]
-position = Vector2(0, 209)
+position = Vector2(0, 2090)
+scale = Vector2(10, 10)
 
 [node name="SpawnPoint" parent="DoorSouth" index="0"]
 position = Vector2(0, 70)
