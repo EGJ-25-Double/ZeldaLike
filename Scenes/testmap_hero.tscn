@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bwwxf4albkxva"]
+[gd_scene load_steps=13 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Entities/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="5_wb6sk"]
 [ext_resource type="Script" uid="uid://130xfbgs4h7h" path="res://Scenes/Interaction/state_interaction.gd" id="6_q4ktt"]
 [ext_resource type="Script" uid="uid://fj8ygb4knnl0" path="res://Scenes/Interaction/interacter.gd" id="11_lf3a7"]
+[ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="12_6bex7"]
 
 [node name="Testmap" type="Node"]
 
@@ -89,6 +90,11 @@ scale = Vector2(10, 10)
 [node name="Interacter" type="Node" parent="."]
 script = ExtResource("11_lf3a7")
 metadata/_custom_type_script = "uid://fj8ygb4knnl0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_6bex7")
+autoplay = true
+bus = &"Music"
 
 [editable path="Room"]
 [editable path="Room/DoorWest"]
