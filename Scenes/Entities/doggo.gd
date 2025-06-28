@@ -20,6 +20,7 @@ func _physics_process(delta) -> void:
 			velocity = direction * speed
 			animated_sprite_2d.play_movement_animation(velocity)
 			move_and_slide()
+
 			timer -= delta
 			if timer <= 0:
 				state = "idle"
@@ -31,6 +32,7 @@ func _physics_process(delta) -> void:
 			else:
 				animated_sprite_2d.play_static_animation(animated_sprite_2d.SLEEP_TO_IDLE)
 				isAsleep = false
+
 			timer -= delta
 			if timer <= 0:
 				if (randi() % 100 < 30):
@@ -44,6 +46,7 @@ func _physics_process(delta) -> void:
 			isAsleep = true
 			timer -= delta
 			animated_sprite_2d.play_static_animation(animated_sprite_2d.IDLE_TO_SLEEP)
+			
 			if timer <= 0:
 				state = "idle"
 				timer = idle_time
