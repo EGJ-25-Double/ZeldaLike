@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://lcbiyxs4wmy8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfss2"]
-size = Vector2(20, 74)
+[ext_resource type="Script" uid="uid://dbq4jn5xd70yr" path="res://Scenes/Entities/door.gd" id="1_nuxhq"]
 
 [node name="Door" type="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -5)
-shape = SubResource("RectangleShape2D_cfss2")
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_nuxhq")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(-13, 0)
+position = Vector2(32, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
