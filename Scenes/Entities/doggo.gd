@@ -7,10 +7,11 @@ class_name Doggo extends CharacterBody2D
 var speed: int = 50
 var roam_time: float = 2.0
 var idle_time: float = 1.5
-var direction = Vector2.ZERO
-var timer = 0.0
-var state = "idle"
-var isExcited := false
+var sleep_time: float = 3.0
+var direction: Vector2 = Vector2.ZERO
+var timer: float = 0.0
+var state: String = "idle"
+var isAsleep: bool = false
 
 
 func _physics_process(delta) -> void:
@@ -25,12 +26,27 @@ func _physics_process(delta) -> void:
 				timer = idle_time
 		"idle":
 			velocity = Vector2.ZERO
-			animated_sprite_2d.play_idle_animation()
+			if (!isAsleep):
+				animated_sprite_2d.play_static_animation(animated_sprite_2d.MOVEMENT_TO_IDLE)
+			else:
+				animated_sprite_2d.play_static_animation(animated_sprite_2d.SLEEP_TO_IDLE)
+				isAsleep = false
 			timer -= delta
 			if timer <= 0:
+				if (randi() % 100 < 30):
+					state = "sleep"
+					timer = sleep_time
+					return
 				choose_new_direction()
 				state = "roam"
 				timer = roam_time
+		"sleep":
+			isAsleep = true
+			timer -= delta
+			animated_sprite_2d.play_static_animation(animated_sprite_2d.IDLE_TO_SLEEP)
+			if timer <= 0:
+				state = "idle"
+				timer = idle_time
 
 
 func choose_new_direction():
