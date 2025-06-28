@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccaqio7671i4p"]
 
-[ext_resource type="Script" uid="uid://c2xykpa5qkejy" path="res://Scenes/Inventory/EquippedItem.gd" id="1_ikpva"]
+[ext_resource type="Script" uid="uid://c2xykpa5qkejy" path="res://Scenes/Inventory/equipped_item.gd" id="1_ikpva"]
 [ext_resource type="PackedScene" uid="uid://by21bn8owx8us" path="res://Scenes/Inventory/inventory_item.tscn" id="1_u5c7y"]
 
 [node name="EquippedItem" type="Control" node_paths=PackedStringArray("ref", "label")]

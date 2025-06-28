@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemMemo" load_steps=3 format=3 uid="uid://bk5rv11wrpr4u"]
 
-[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/ItemMemo.gd" id="1_h4qe2"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="1_h4qe2"]
 [ext_resource type="Texture2D" uid="uid://dqd3a2hj00pxv" path="res://Assets/Sprites/Items/PDV-Gatopineau-Part.png" id="2_gtjtt"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemMemo" load_steps=3 format=3 uid="uid://b47irjqkfnhbt"]
 
-[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/ItemMemo.gd" id="1_0fpa5"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="1_0fpa5"]
 [ext_resource type="Texture2D" uid="uid://dsdqhav1umksy" path="res://Assets/Sprites/Items/latest.png" id="2_7hpmp"]
 
 [resource]
