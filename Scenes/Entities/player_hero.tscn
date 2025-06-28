@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdv672q6tewhj"]
+
+[ext_resource type="SpriteFrames" uid="uid://cvme8tnrlisf0" path="res://Assets/SpriteFrames/player_hero.tres" id="1_by5fq"]
+[ext_resource type="Script" uid="uid://bceyuy3vk3q7x" path="res://Scenes/Entities/player_hero.gd" id="1_q4s8y"]
+[ext_resource type="Script" uid="uid://da51f2r611bha" path="res://Scenes/Entities/player_animation.gd" id="3_580jn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4s8y"]
+radius = 14.0
+height = 44.0
+
+[node name="PlayerHero" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_q4s8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_by5fq")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.405895
+script = ExtResource("3_580jn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_q4s8y")
