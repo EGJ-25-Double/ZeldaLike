@@ -20,6 +20,7 @@ enum Direction
 }
 
 @export var trigger_on_walk: bool
+@export var block_no_item: bool = true
 @export_flags("All:15", "Left:1", "Up:2", "Right:4", "Down:8") var direction: int
 @export var interactions: Array[Interaction]
 
@@ -29,7 +30,7 @@ func _ready() -> void:
 
 func _on_body_entered(body) -> void:
 	if trigger_on_walk:
-		start_all_interactions()
+		start_all_interactions(null)
 	elif body is PlayerHero:
 		InventoryUtils.subscribe_to_item_used(_on_item_used)
 
@@ -38,7 +39,7 @@ func _on_body_exited(body) -> void:
 		InventoryUtils.unsubscribe_from_item_used(_on_item_used)
 
 func _on_item_used(item: ItemMemo) -> void:
-	if item == null: return
+	if item == null && block_no_item: return
 	print("trigger triggered")
 	var dir: Direction = direction as Direction
 	print(_get_player_direction())
@@ -46,11 +47,11 @@ func _on_item_used(item: ItemMemo) -> void:
 	print(dir == _get_player_direction())
 	if dir != Direction.None && dir != _get_player_direction(): return
 	print("trigger triggered with good direction")
-	start_all_interactions()
+	start_all_interactions(item)
 
-func start_all_interactions() -> void:
+func start_all_interactions(item: ItemMemo) -> void:
 	for interaction in interactions:
-		interaction.interact(null)
+		interaction.interact(item)
 
 func _get_player_direction() -> Direction:
 	match PlayerUtils.player_dir:
