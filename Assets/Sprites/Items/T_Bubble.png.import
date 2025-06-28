@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqd3a2hj00pxv"
-path="res://.godot/imported/PDV-Gatopineau-Part.png-530e707ebd44cf3df38a54838951a7d5.ctex"
+uid="uid://dlvlg2nrygd24"
+path="res://.godot/imported/T_Bubble.png-6f8e90a9c2a9762557a4e24c4ae16aee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/PDV-Gatopineau-Part.png"
-dest_files=["res://.godot/imported/PDV-Gatopineau-Part.png-530e707ebd44cf3df38a54838951a7d5.ctex"]
+source_file="res://Assets/Sprites/Items/T_Bubble.png"
+dest_files=["res://.godot/imported/T_Bubble.png-6f8e90a9c2a9762557a4e24c4ae16aee.ctex"]
 
 [params]
 

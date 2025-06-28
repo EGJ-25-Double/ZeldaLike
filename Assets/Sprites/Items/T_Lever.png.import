@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rvx5my8vwaoe"
-path="res://.godot/imported/pngtree-a-circular-compass-with-gold-accents-blue-detailing-and-metallic-loop-png-image_16063155.png-d9c579b104a7f2a8fa7aa1cdf83b664d.ctex"
+uid="uid://baq8d4xu4pdka"
+path="res://.godot/imported/T_Lever.png-ae80e08f1e0540c457ff53fd58ede5bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/pngtree-a-circular-compass-with-gold-accents-blue-detailing-and-metallic-loop-png-image_16063155.png"
-dest_files=["res://.godot/imported/pngtree-a-circular-compass-with-gold-accents-blue-detailing-and-metallic-loop-png-image_16063155.png-d9c579b104a7f2a8fa7aa1cdf83b664d.ctex"]
+source_file="res://Assets/Sprites/Items/T_Lever.png"
+dest_files=["res://.godot/imported/T_Lever.png-ae80e08f1e0540c457ff53fd58ede5bc.ctex"]
 
 [params]
 

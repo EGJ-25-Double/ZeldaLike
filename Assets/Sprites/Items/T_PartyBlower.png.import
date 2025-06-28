@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://guqskiamqb8d"
-path="res://.godot/imported/1200px-Gba-cartridge.png-2e73e478b98edf09cae28937ce743e7f.ctex"
+uid="uid://dsdqhav1umksy"
+path="res://.godot/imported/T_PartyBlower.png-2abe67a7223d3171106524b881e87ead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/1200px-Gba-cartridge.png"
-dest_files=["res://.godot/imported/1200px-Gba-cartridge.png-2e73e478b98edf09cae28937ce743e7f.ctex"]
+source_file="res://Assets/Sprites/Items/T_PartyBlower.png"
+dest_files=["res://.godot/imported/T_PartyBlower.png-2abe67a7223d3171106524b881e87ead.ctex"]
 
 [params]
 

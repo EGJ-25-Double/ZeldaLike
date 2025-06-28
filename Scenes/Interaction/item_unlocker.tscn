@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8ms2ha0yf75n"]
+
+[ext_resource type="Script" uid="uid://bpifq3031wnpk" path="res://Scenes/Interaction/item_unlocker.gd" id="1_00nmu"]
+[ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="2_7uwk5"]
+[ext_resource type="Texture2D" uid="uid://rvx5my8vwaoe" path="res://Assets/Sprites/Items/T_Compass.png" id="3_u45b4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stmfg"]
+radius = 192.66
+
+[node name="ItemUnlocker" type="Node2D" node_paths=PackedStringArray("area", "sprite")]
+script = ExtResource("1_00nmu")
+unlocked_item = ExtResource("2_7uwk5")
+area = NodePath("Area2D")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://bpifq3031wnpk"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_stmfg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_u45b4")

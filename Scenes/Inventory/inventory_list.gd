@@ -7,6 +7,7 @@ extends Control
 @export var on_two_lines: bool
 
 var items: Array[InventoryItem]
+var items_by_memo: Dictionary[ItemMemo, InventoryItem]
 var selected: int:
 	set(value):
 		if value == selected: return
@@ -19,6 +20,7 @@ var selected: int:
 func _ready() -> void:
 	_init_items()
 	InventoryUtils.subscribe_to_inventory_opened(_on_inventory_opened)
+	InventoryUtils.subscribe_to_item_unlocked(_on_item_unlocked)
 	visible = false
 
 func _exit_tree() -> void:
@@ -36,6 +38,7 @@ func _init_items() -> void:
 		new_item.item = item
 		container.add_child(new_item)
 		items.append(new_item)
+		items_by_memo[item] = new_item
 	items[selected].selected = true
 	var count: int = items.size()
 	container.columns = count / 2 if on_two_lines else count
@@ -43,6 +46,10 @@ func _init_items() -> void:
 func _on_inventory_opened(is_open: bool) -> void:
 	visible = is_open
 	selected = 0
+
+func _on_item_unlocked(item: ItemMemo) -> void:
+	if item == null: return
+	items_by_memo[item].unlocked = true
 
 func _open() -> void:
 	if Input.is_action_just_pressed("inventory"):
