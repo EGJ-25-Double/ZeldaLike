@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqkmbet5kph2s"]
+[gd_scene load_steps=8 format=3 uid="uid://bqkmbet5kph2s"]
 
 [ext_resource type="Script" uid="uid://dr4sog01mj4aa" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_qq57v"]
 [ext_resource type="FontFile" uid="uid://4nieqk7v3br8" path="res://Assets/Fonts/Kenney Rocket.ttf" id="2_y4ryc"]
 [ext_resource type="Theme" uid="uid://coiuj78tsqptn" path="res://Assets/Themes/label.tres" id="3_7f67a"]
+[ext_resource type="AudioStream" uid="uid://1iyjrgu8jacl" path="res://Assets/Sound/Music/EGJ25_Musique_Menu_V1.mp3" id="4_gphap"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lkur8"]
 
@@ -168,6 +169,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_7f67a")
 text = "Back"
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gphap")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/HelpBtn" to="." method="_on_help_btn_pressed"]
