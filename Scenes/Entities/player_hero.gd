@@ -7,8 +7,12 @@ class_name PlayerHero
 const SPEED = 5000.0
 
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector("left", "right", "up", "down")
-
+	var direction
+	if InventoryUtils.is_inventory_open:
+		direction = Vector2.ZERO
+	else:
+		direction = Input.get_vector("left", "right", "up", "down")
+	
 	if direction:
 		velocity = direction * SPEED * delta
 	else:

@@ -17,6 +17,8 @@ var selected: int:
 
 func _ready() -> void:
 	_init_items()
+	InventoryUtils.subscribe_to_inventory_opened(_on_inventory_opened)
+	visible = false
 
 func _process(_delta: float) -> void:
 	_open()
@@ -29,11 +31,12 @@ func _init_items() -> void:
 		var new_item: InventoryItem = item_ref.instantiate()
 		new_item.item = item
 		container.add_child(new_item)
+		items.append(new_item)
 	items[selected].selected = true
 
 func _on_inventory_opened(is_open: bool) -> void:
 	visible = is_open
-	selected = false
+	selected = 0
 
 func _open() -> void:
 	if Input.is_action_just_pressed("inventory"):
@@ -46,5 +49,9 @@ func _update_selection() -> void:
 	selected += left + right
 
 func _select_item() -> void:
+	var selected_item = items[selected]
+	if !selected_item.unlocked: pass
 	if Input.is_action_just_pressed("action_a"):
-		
+		selected_item.action = InventoryItem.Action.A
+	elif Input.is_action_just_pressed("action_b"):
+		selected_item.action = InventoryItem.Action.B
