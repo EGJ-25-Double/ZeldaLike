@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3w8e1mt3vysb"]
 
-[ext_resource type="Script" uid="uid://cx4j08bsrnwr1" path="res://Scenes/Inventory/EquippedItems.gd" id="1_n0nc8"]
-[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/ItemMemo.gd" id="2_i8y8d"]
+[ext_resource type="Script" uid="uid://cx4j08bsrnwr1" path="res://Scenes/Inventory/equipped_items.gd" id="1_n0nc8"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="2_i8y8d"]
 [ext_resource type="PackedScene" uid="uid://ccaqio7671i4p" path="res://Scenes/Inventory/equipped_item.tscn" id="3_wv8gf"]
 
 [sub_resource type="Resource" id="Resource_wv8gf"]

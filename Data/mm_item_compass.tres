@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemMemo" load_steps=3 format=3 uid="uid://bwlh1iaq8phhn"]
 
-[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/ItemMemo.gd" id="1_bnqie"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="1_bnqie"]
 [ext_resource type="Texture2D" uid="uid://rvx5my8vwaoe" path="res://Assets/Sprites/Items/pngtree-a-circular-compass-with-gold-accents-blue-detailing-and-metallic-loop-png-image_16063155.png" id="2_bnqie"]
 
 [resource]
