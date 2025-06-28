@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bwwxf4albkxva"]
+[gd_scene load_steps=6 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
 [ext_resource type="Texture2D" uid="uid://bm3f3tr27fk2r" path="res://Assets/Sprites/Rooms/RoomTilemap.png" id="1_xiylw"]
+[ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="3_fcsen"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcsen"]
 texture = ExtResource("1_xiylw")
@@ -154,3 +155,5 @@ tile_set = SubResource("TileSet_cfss2")
 position = Vector2(11, -30)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InventoryList" parent="." instance=ExtResource("3_fcsen")]
