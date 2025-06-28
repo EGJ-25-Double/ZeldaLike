@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://biai3yc235x6m"]
 
-[ext_resource type="Script" uid="uid://xvn47lshjlo3" path="res://Scenes/Rooms/room.gd" id="1_lcmye"]
+[ext_resource type="Script" uid="uid://xvn47lshjlo3" path="res://Scenes/Entities/room.gd" id="1_dyxu8"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_ecnvq"]
 [ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_rdcm0"]
 
@@ -14,7 +14,7 @@ size = Vector2(20, 72)
 size = Vector2(74, 20)
 
 [node name="Room" type="Node2D"]
-script = ExtResource("1_lcmye")
+script = ExtResource("1_dyxu8")
 
 [node name="TileLayers" type="Node2D" parent="."]
 
