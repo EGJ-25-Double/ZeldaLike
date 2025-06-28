@@ -180,6 +180,10 @@ bus = &"Music"
 stream = ExtResource("5_yobja")
 bus = &"SFX"
 
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+
+[node name="StartGame" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/HelpBtn" to="." method="_on_help_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsBtn" to="." method="_on_credits_btn_pressed"]
