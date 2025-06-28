@@ -100,3 +100,5 @@ bus = &"Music"
 [editable path="Room2/DoorSouth"]
 [editable path="Room2/Trigger"]
 [editable path="Room2/Trigger2"]
+
+[node name="Doggo" parent="." instance=ExtResource("4_cfss2")]
