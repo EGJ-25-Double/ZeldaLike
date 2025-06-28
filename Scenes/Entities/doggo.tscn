@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm1a4l7hqc5nc"]
 
 [ext_resource type="Script" uid="uid://dbchbuhwnaowo" path="res://Scenes/Entities/doggo.gd" id="1_q7e8s"]
-[ext_resource type="SpriteFrames" uid="uid://qi1ukb5lmial" path="res://Assets/SpriteFrames/doggo.tres" id="2_u0n6e"]
+[ext_resource type="SpriteFrames" uid="uid://qi1ukb5lmial" path="res://Assets/Sprites/PlayerHero/doggo.tres" id="2_u0n6e"]
 [ext_resource type="Script" uid="uid://dg6iwbp1lyiiw" path="res://Scenes/Entities/doggo_animation.gd" id="3_m3hmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3hmc"]
