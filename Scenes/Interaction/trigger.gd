@@ -36,8 +36,13 @@ func _on_body_exited(body) -> void:
 
 func _on_item_used(item: ItemMemo) -> void:
 	if item == null: return
+	print("trigger triggered")
 	var dir: Direction = direction as Direction
+	print(_get_player_direction())
+	print(dir)
+	print(dir == _get_player_direction())
 	if dir != Direction.None && dir != _get_player_direction(): return
+	print("trigger triggered with good direction")
 	for interaction in interactions:
 		interaction.interact(item)
 
@@ -47,4 +52,8 @@ func _get_player_direction() -> Direction:
 		Vector2.RIGHT: return Direction.Right
 		Vector2.UP: return Direction.Up
 		Vector2.DOWN: return Direction.Down
+		Vector2.ONE: return Direction.RightUp
+		Vector2(-1, -1): return Direction.LeftDown
+		Vector2(-1, 1): return Direction.LeftUp
+		Vector2(1, -1): return Direction.RightDown
 	return Direction.None

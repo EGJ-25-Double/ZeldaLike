@@ -20,11 +20,17 @@ static var _on_inventory_opened: Array[Callable]
 static var _on_item_a_equipped: Array[Callable]
 static var _on_item_b_equipped: Array[Callable]
 static var _on_item_used: Array[Callable]
+static var _on_item_unlocked: Array[Callable]
+
+static func unlock_item(item: ItemMemo) -> void:
+	_on_value_set(item, _on_item_unlocked)
 
 static func use_item_a() -> void:
+	print("use item: " + (item_a.name if item_a else "none"))
 	_on_value_set(item_a, _on_item_used)
-	
+
 static func use_item_b() -> void:
+	print("use item: " + (item_b.name if item_b else "none"))
 	_on_value_set(item_b, _on_item_used)
 
 static func subscribe_to_inventory_opened(callable: Callable) -> void:
@@ -50,6 +56,12 @@ static func subscribe_to_item_used(callable: Callable) -> void:
 
 static func unsubscribe_from_item_used(callable: Callable) -> void:
 	_unsubscribe_from(callable, _on_item_used)
+
+static func subscribe_to_item_unlocked(callable: Callable) -> void:
+	_subscribe_to(callable, _on_item_unlocked, null)
+
+static func unsubscribe_from_item_unlocked(callable: Callable) -> void:
+	_unsubscribe_from(callable, _on_item_unlocked)
 
 static func _on_value_set(value, callables: Array[Callable]) -> void:
 	for callable in callables:
