@@ -19,6 +19,8 @@ enum Direction
 	All = Horizontal | Vertical
 }
 
+@export var trigger_on_walk: bool
+@export var block_no_item: bool = true
 @export_flags("All:15", "Left:1", "Up:2", "Right:4", "Down:8") var direction: int
 @export var interactions: Array[Interaction]
 
@@ -27,16 +29,21 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body) -> void:
-	if body is PlayerHero:
+	if trigger_on_walk:
+		start_all_interactions(null)
+	elif body is PlayerHero:
 		InventoryUtils.subscribe_to_item_used(_on_item_used)
 
 func _on_body_exited(body) -> void:
-	if body is PlayerHero:
+	if !trigger_on_walk && body is PlayerHero:
 		InventoryUtils.unsubscribe_from_item_used(_on_item_used)
 
 func _on_item_used(item: ItemMemo) -> void:
-	if item == null: return
+	if item == null && block_no_item: return
 	if !verify_dir(): return
+	start_all_interactions(item)
+
+func start_all_interactions(item: ItemMemo) -> void:
 	for interaction in interactions:
 		interaction.interact(item)
 
