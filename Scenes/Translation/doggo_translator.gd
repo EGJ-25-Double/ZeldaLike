@@ -48,6 +48,8 @@ func _on_item_used(value: ItemMemo) -> void:
 func _set_translation() -> String:
 	if translation_by_room.has(room):
 		var translation: DoggoTranslation = translation_by_room[room]
+		if translation.category == "":
+			return translation.translation
 		if states.has(translation.category):
 			if states[translation.category] == translation.state:
 				return translation.translation
