@@ -29,7 +29,7 @@ position = Vector2(10560, -8960)
 [node name="Room_E" parent="." instance=ExtResource("5_qxfql")]
 position = Vector2(2880, -8960)
 
-[node name="Room" parent="." instance=ExtResource("6_ha31o")]
+[node name="Room_I" parent="." instance=ExtResource("6_ha31o")]
 position = Vector2(-21122, -9924)
 
 [node name="Doggo" parent="." instance=ExtResource("3_754fn")]
