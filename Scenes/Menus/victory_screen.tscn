@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dylogee0jf8j"]
+
+[ext_resource type="Script" uid="uid://ce1i1txq5k38l" path="res://Scenes/Menus/victory_screen.gd" id="1_sbvcn"]
+[ext_resource type="Texture2D" uid="uid://bepdrvqxvdm5e" path="res://Assets/Sprites/Decoration/image.png" id="2_7phl1"]
+[ext_resource type="Texture2D" uid="uid://d2qfuratp38su" path="res://Assets/Sprites/PlayerHero/Sprites/IdleFront/missU_anim_0025.png" id="3_yj0rk"]
+[ext_resource type="Theme" uid="uid://coiuj78tsqptn" path="res://Assets/Themes/label.tres" id="4_iqb6t"]
+[ext_resource type="Theme" uid="uid://ca0p1v2e7g316" path="res://Assets/Themes/button.tres" id="5_f5rku"]
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sbvcn")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7phl1")
+
+[node name="MissU" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 408.0
+offset_right = 899.0
+offset_bottom = 728.0
+scale = Vector2(1.03947, 1.05387)
+texture = ExtResource("3_yj0rk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 9.00003
+offset_right = 964.0
+offset_bottom = 32.0
+scale = Vector2(1.2335, 3.83115)
+theme = ExtResource("4_iqb6t")
+theme_override_colors/font_color = Color(0.993345, 0.316863, 0.713445, 1)
+text = "Yaaay Miss Understanding went back to planet earth ! Well Done !!!!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 196.0
+offset_right = 705.0
+offset_bottom = 227.0
+theme = ExtResource("5_f5rku")
+text = "Back to main menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
