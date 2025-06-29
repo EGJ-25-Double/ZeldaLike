@@ -11,7 +11,7 @@ enum Type { Green, Blue, Red, Cyan, Yellow, Magenta }
 	set(value):
 		type = value
 		if !Engine.is_editor_hint(): return
-		sprite.texture = data.traps[value].sprite
+		sprite.texture = data.traps[type].sprite
 
 
 @export_category("Refs")

@@ -5,7 +5,6 @@ class_name Doggo extends CharacterBody2D
 @export var item_loved: ItemMemo
 @export var item_to_fetch: ItemMemo
 @export var position_to_fetch: Marker2D
-@onready var player_hero: PlayerHero = get_tree().root.get_node("Testmap/PlayerHero")
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
 
 

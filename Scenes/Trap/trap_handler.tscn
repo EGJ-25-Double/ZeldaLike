@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcob1x3wgxcco"]
+
+[ext_resource type="Script" uid="uid://ce6ckt1m54aeg" path="res://Scenes/Trap/trap_handler.gd" id="1_4xaqg"]
+
+[node name="TrapHandler" type="Node2D" node_paths=PackedStringArray("spawn")]
+script = ExtResource("1_4xaqg")
+spawn = NodePath("Spawn Point")
+metadata/_custom_type_script = "uid://ce6ckt1m54aeg"
+
+[node name="Spawn Point" type="Node2D" parent="."]
+position = Vector2(1048, 3448)

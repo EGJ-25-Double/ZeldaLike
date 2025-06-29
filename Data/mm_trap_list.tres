@@ -1,39 +1,51 @@
-[gd_resource type="Resource" script_class="TrapListMemo" load_steps=13 format=3 uid="uid://cium7plavyqg3"]
+[gd_resource type="Resource" script_class="TrapListMemo" load_steps=19 format=3 uid="uid://cium7plavyqg3"]
 
 [ext_resource type="Script" uid="uid://c2rh4oq4mb4bb" path="res://Scenes/Trap/trap_list_memo.gd" id="1_uggvm"]
 [ext_resource type="Script" uid="uid://cxtnnrij85i8r" path="res://Scenes/Trap/trap_memo.gd" id="2_l1esh"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="3_h4v4j"]
 [ext_resource type="Resource" uid="uid://cnw0g8i3rnhcx" path="res://Data/mm_item_invaders.tres" id="4_0a5dr"]
 [ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="5_0a5dr"]
+[ext_resource type="Texture2D" uid="uid://dwng205hy3ppm" path="res://Assets/Sprites/Rooms/Traps/green_tile.png" id="5_ftcme"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="6_lg8y0"]
+[ext_resource type="Texture2D" uid="uid://csvkyoywt5c43" path="res://Assets/Sprites/Rooms/Traps/blue_tile.png" id="7_rguc5"]
+[ext_resource type="Texture2D" uid="uid://f73ht371yhjv" path="res://Assets/Sprites/Rooms/Traps/red_tile.png" id="9_1teo7"]
+[ext_resource type="Texture2D" uid="uid://4074hyumcdwh" path="res://Assets/Sprites/Rooms/Traps/cyan_tile.png" id="10_5eyrn"]
+[ext_resource type="Texture2D" uid="uid://c1jtac5cbcqcc" path="res://Assets/Sprites/Rooms/Traps/jaune_tile.png" id="11_1tmth"]
+[ext_resource type="Texture2D" uid="uid://br3lntukhmeh1" path="res://Assets/Sprites/Rooms/Traps/magenta_tile.png" id="12_k8pnq"]
 
 [sub_resource type="Resource" id="Resource_lg8y0"]
 script = ExtResource("2_l1esh")
+sprite = ExtResource("5_ftcme")
 items = Array[ExtResource("3_h4v4j")]([ExtResource("4_0a5dr")])
 metadata/_custom_type_script = "uid://cxtnnrij85i8r"
 
 [sub_resource type="Resource" id="Resource_2ahcq"]
 script = ExtResource("2_l1esh")
+sprite = ExtResource("7_rguc5")
 items = Array[ExtResource("3_h4v4j")]([ExtResource("5_0a5dr")])
 metadata/_custom_type_script = "uid://cxtnnrij85i8r"
 
 [sub_resource type="Resource" id="Resource_o2hea"]
 script = ExtResource("2_l1esh")
+sprite = ExtResource("9_1teo7")
 items = Array[ExtResource("3_h4v4j")]([ExtResource("6_lg8y0")])
 metadata/_custom_type_script = "uid://cxtnnrij85i8r"
 
 [sub_resource type="Resource" id="Resource_tw1ny"]
 script = ExtResource("2_l1esh")
+sprite = ExtResource("10_5eyrn")
 items = Array[ExtResource("3_h4v4j")]([ExtResource("6_lg8y0"), ExtResource("4_0a5dr")])
 metadata/_custom_type_script = "uid://cxtnnrij85i8r"
 
 [sub_resource type="Resource" id="Resource_myos0"]
 script = ExtResource("2_l1esh")
+sprite = ExtResource("11_1tmth")
 items = Array[ExtResource("3_h4v4j")]([ExtResource("4_0a5dr"), ExtResource("5_0a5dr")])
 metadata/_custom_type_script = "uid://cxtnnrij85i8r"
 
 [sub_resource type="Resource" id="Resource_s6ta8"]
 script = ExtResource("2_l1esh")
+sprite = ExtResource("12_k8pnq")
 items = Array[ExtResource("3_h4v4j")]([ExtResource("6_lg8y0"), ExtResource("5_0a5dr")])
 metadata/_custom_type_script = "uid://cxtnnrij85i8r"
 
