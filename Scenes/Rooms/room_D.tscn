@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://dlmjxyw43g2a1"]
+[gd_scene load_steps=8 format=4 uid="uid://dlmjxyw43g2a1"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_edd3e"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_7vuos"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_dwogv"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_dwogv"]
+[ext_resource type="PackedScene" uid="uid://de5yd0030g5m6" path="res://Scenes/Decoration/mickey_hint.tscn" id="4_d7yli"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="4_es5bx"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="5_xckcq"]
 
@@ -29,7 +30,11 @@ position = Vector2(-646, 2090)
 [node name="ItemUnlocker" parent="." index="6" instance=ExtResource("2_dwogv")]
 position = Vector2(0, -312)
 
-[node name="Trigger" parent="." index="7" node_paths=PackedStringArray("interactions") instance=ExtResource("4_es5bx")]
+[node name="MickeyHint" parent="." index="7" instance=ExtResource("4_d7yli")]
+position = Vector2(2417, 39)
+scale = Vector2(5.54341, 5.54341)
+
+[node name="Trigger" parent="." index="8" node_paths=PackedStringArray("interactions") instance=ExtResource("4_es5bx")]
 position = Vector2(-4, 398)
 trigger_on_walk = true
 block_no_item = false
@@ -39,12 +44,12 @@ interactions = [NodePath("../CreepyState")]
 [node name="CollisionShape2D" parent="Trigger" index="0"]
 shape = SubResource("RectangleShape2D_xckcq")
 
-[node name="VoidDefaultState" type="Node" parent="." index="8"]
+[node name="VoidDefaultState" type="Node" parent="." index="9"]
 script = ExtResource("5_xckcq")
 category = "D_Void"
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
-[node name="CreepyState" type="Node" parent="." index="9" node_paths=PackedStringArray("mapLinked")]
+[node name="CreepyState" type="Node" parent="." index="10" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_xckcq")
 category = "D_Void"
 mapLinked = NodePath("../TileLayers/EventTileLayer")

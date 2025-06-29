@@ -81,7 +81,7 @@ position = Vector2(-16088, -48)
 position = Vector2(-14808, -12000)
 
 [node name="PlayerHero" parent="." instance=ExtResource("1_ghxtc")]
-position = Vector2(-15064, -10848)
+position = Vector2(-7992, 312)
 collision_mask = 14
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://lgksyifx3ymi"]
+[gd_scene load_steps=3 format=4 uid="uid://lgksyifx3ymi"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_1w51d"]
+[ext_resource type="PackedScene" uid="uid://cedp56bhoa2xd" path="res://Scenes/Decoration/alien_label.tscn" id="2_emcao"]
 
 [node name="Room_I" instance=ExtResource("1_1w51d")]
 
@@ -9,6 +10,14 @@ tile_map_data = PackedByteArray("AAD+//3/AAAAAAQAAAD+//7/AAAAAAQAAAD+////AAAAAAQ
 
 [node name="ObstaclesTileLayer" parent="TileLayers" index="1"]
 tile_map_data = PackedByteArray("AAAHAP//AAAHAAoAADAGAP//AAAJAAoAADAGAAAAAAAHAAoAAFAGAAEAAAAHAAoAAFAGAAIAAAAIAAoAAFAFAAIAAAAGAAoAADAEAAIAAAAGAAoAADADAAIAAAAGAAoAADACAAIAAAAGAAoAADABAAIAAAAGAAoAADAAAAIAAAAHAAoAADD//wIAAAAGAAoAADD+/wIAAAAGAAoAADD9/wIAAAAGAAoAADD8/wIAAAAGAAoAADD7/wIAAAAGAAoAADD6/wIAAAAGAAoAADD5/wIAAAAGAAoAADD4/wIAAAAIAAoAADD4/wEAAAAJAAoAAGD3/wEAAAAHAAoAADD2/wEAAAAHAAoAADAGAP7/AAAHAAoAAAD2/wAAAAAHAAoAAAD3/wAAAAAHAAoAAAD4/wAAAAAHAAoAAAD5/wAAAAAHAAoAAAD6/wAAAAAHAAoAAAD7/wAAAAAHAAoAAAD8/wAAAAAHAAoAAAD9/wAAAAAHAAoAAAD+/wAAAAAHAAoAAAD//wAAAAAHAAoAAAAAAAAAAAAGAAoAAAABAAAAAAAHAAoAAAACAAAAAAAHAAoAAAADAAAAAAAHAAoAAAAEAAAAAAAJAAoAAAAFAAAAAAAKAAoAAAAFAP7/AAAIAAoAAGAFAP//AAAJAAoAAAD5/wEAAAAKAAoAAAD6/wEAAAAKAAoAAAD7/wEAAAAKAAoAAAD8/wEAAAAKAAoAAAD9/wEAAAAKAAoAAAD+/wEAAAAKAAoAAAD//wEAAAAKAAoAAAAAAAEAAAAKAAoAAAABAAEAAAAKAAoAAAACAAEAAAAKAAoAAAADAAEAAAAKAAoAAAAEAAEAAAAKAAoAAAAFAAEAAAALAAoAAAAIAP7/AAAJAAoAADAJAP7/AAAHAAoAADAIAP3/AAAHAAoAAAAJAP3/AAAGAAoAAAAHAP7/AAAJAAoAAAAHAP3/AAAIAAoAAGAIAP//AAAIAAoAAFAEAP//AAAIAAoAAGA=")
+
+[node name="RichTextLabel" parent="TileLayers" index="2" instance=ExtResource("2_emcao")]
+custom_minimum_size = Vector2(2000, 500)
+offset_left = -2984.0
+offset_top = -1800.0
+offset_right = 2016.0
+offset_bottom = -300.0
+text = "Il était une fois, un valeureux et formidable héros tout de vert vêtu. On raconte qu’il grimpait d’une main experte tous types de rideaux, même les étoffes les plus fines pour atteindre ses fins. Ceci lui valut ce surnom dont il est le seul souverain : le héros de la déco"
 
 [node name="DoorEast" parent="." index="3"]
 position = Vector2(3680, 3.00006)
