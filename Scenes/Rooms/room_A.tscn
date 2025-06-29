@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bushlvy2gc8go"]
+[gd_scene load_steps=10 format=4 uid="uid://bushlvy2gc8go"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_u5py1"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_4310n"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_0d7l7"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_yfihf"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_vbh2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbh2w"]
+size = Vector2(630, 256.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek16v"]
+size = Vector2(630, 256.5)
 
 [node name="Room_A" instance=ExtResource("1_u5py1")]
 
@@ -34,18 +40,35 @@ direction = 2
 interactions = [NodePath("../OpenState")]
 
 [node name="CollisionShape2D" parent="Trigger" index="0"]
-position = Vector2(7, -38.5)
+position = Vector2(7, -79.25)
+shape = SubResource("RectangleShape2D_vbh2w")
 
-[node name="DefaultState" type="Node" parent="." index="8" node_paths=PackedStringArray("mapLinked")]
+[node name="Trigger2" parent="." index="8" node_paths=PackedStringArray("interactions") instance=ExtResource("5_0d7l7")]
+position = Vector2(-3225, -821)
+trigger_on_walk = true
+block_no_item = false
+direction = 15
+interactions = [NodePath("../OpenState/OpenState")]
+
+[node name="CollisionShape2D" parent="Trigger2" index="0"]
+position = Vector2(7, -79.25)
+shape = SubResource("RectangleShape2D_ek16v")
+
+[node name="DefaultState" type="Node" parent="." index="9" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("6_yfihf")
 category = "A_SpawnDoor"
 mapLinked = NodePath("../TileLayers/EventDoorLeftLayer")
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
-[node name="OpenState" type="Node" parent="." index="9"]
+[node name="OpenState" type="Node" parent="." index="10"]
 script = ExtResource("6_yfihf")
 category = "A_SpawnDoor"
 needed_item = Array[ExtResource("7_vbh2w")]([ExtResource("3_4310n")])
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="OpenState" type="Node" parent="OpenState" index="0"]
+script = ExtResource("6_yfihf")
+category = "A_SpawnDoor"
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
 [editable path="DoorWest"]
@@ -53,3 +76,4 @@ metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 [editable path="DoorNorth"]
 [editable path="DoorSouth"]
 [editable path="Trigger"]
+[editable path="Trigger2"]

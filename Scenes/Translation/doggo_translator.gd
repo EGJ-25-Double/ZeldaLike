@@ -32,7 +32,7 @@ func _on_room_entered(value: Room) -> void:
 	visible = false
 
 func _on_state_changed(category: String, state: String) -> void:
-	visible = states.has(category) && states[category] == state
+	visible = false if visible == false else states.has(category) && states[category] == state
 	states[category] = state
 	print(category + ": " + state)
 
