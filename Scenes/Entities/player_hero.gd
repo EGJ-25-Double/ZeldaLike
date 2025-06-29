@@ -12,6 +12,8 @@ static var instance: PlayerHero
 var            _shadow_mat  : ShaderMaterial
 var            _tween       : Tween
 
+var interact_timer: float = 0
+
 func _ready() -> void:
 	instance = self
 	
@@ -22,6 +24,9 @@ func _ready() -> void:
 	_tween = create_tween()
 	_shadow_mat.set_shader_parameter("is_ok", true)  
 
+func _process(delta: float) -> void:
+	if interact_timer > 0:
+		interact_timer = interact_timer - delta
 
 func _physics_process(delta: float) -> void:
 	var direction
@@ -38,11 +43,15 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity != Vector2.ZERO:
 		cache_player_dir()
-		animated_sprite_2d.play_movement_animation(PlayerUtils.player_dir)
+		if interact_timer <= .08:
+			animated_sprite_2d.play_movement_animation(PlayerUtils.player_dir)
 		move_and_slide()
-	else:
+	elif interact_timer <= 0:
 		animated_sprite_2d.play_idle_animation(PlayerUtils.player_dir)
 
+func start_interact_anim() -> void:
+	interact_timer = .3
+	animated_sprite_2d.play_interact_animation(PlayerUtils.player_dir)
 
 func cache_player_dir() -> void:
 	if velocity.y > 0:

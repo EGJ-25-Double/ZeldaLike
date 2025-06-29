@@ -26,9 +26,8 @@ z_index = 1
 position = Vector2(-1, -100)
 scale = Vector2(1.86196, 1.86196)
 sprite_frames = ExtResource("1_by5fq")
-animation = &"walk_up"
+animation = &"use_up"
 autoplay = "idle_down"
-frame_progress = 0.448334
 script = ExtResource("3_580jn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
