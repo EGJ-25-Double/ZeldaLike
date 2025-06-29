@@ -19,7 +19,7 @@ func _ready() -> void:
 				var tween = mapLinked.create_tween()
 				tween.tween_property(mapLinked, "modulate", Color.TRANSPARENT, .5)
 				tween.tween_callback(func():
-					mapLinked.enabled = active
+					mapLinked.enabled = false
 				)
 				return
 				
