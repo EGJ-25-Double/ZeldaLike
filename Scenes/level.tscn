@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
-[ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
 [ext_resource type="PackedScene" uid="uid://ceoo0fkmcw5m8" path="res://Scenes/Rooms/room_C.tscn" id="3_bvt00"]
 [ext_resource type="PackedScene" uid="uid://dlmjxyw43g2a1" path="res://Scenes/Rooms/room_D.tscn" id="4_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]

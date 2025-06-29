@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr203cualfmga"]
+
+[ext_resource type="Texture2D" uid="uid://gf8a1u2e6yee" path="res://Assets/Sprites/Decoration/darth_poster.png" id="1_poqr8"]
+
+[node name="DarthPoster" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_poqr8")

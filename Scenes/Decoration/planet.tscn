@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c42gp8lxtybha"]
+
+[ext_resource type="Texture2D" uid="uid://kad0wwayfbiq" path="res://Assets/Sprites/Decoration/Planet_0001s_0000_Calque-10.png" id="1_nikbb"]
+[ext_resource type="Texture2D" uid="uid://dm6yplpu1ng60" path="res://Assets/Sprites/Decoration/Planet_0002s_0003_mars.png" id="2_p5rk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwpuu"]
+size = Vector2(25.129, 47.7599)
+
+[node name="Planet" type="Sprite2D"]
+scale = Vector2(6.80488, 6.80488)
+texture = ExtResource("1_nikbb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -36.0001)
+scale = Vector2(2.55556, 2.55556)
+texture = ExtResource("2_p5rk4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.146955, -4.8495)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cwpuu")
