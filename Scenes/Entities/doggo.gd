@@ -35,7 +35,7 @@ func _ready() -> void:
 func _physics_process(delta) -> void:
 	var player_hero = PlayerHero.instance
 	var distance_to_player = self.position.distance_to(player_hero.position)
-	if distance_to_player <= follow_range &&  hasFetch:
+	if distance_to_player <= follow_range &&  hasFetch && state != "wait":
 		state = "follow"
 	match state:
 		"roam":
@@ -77,7 +77,11 @@ func _physics_process(delta) -> void:
 				cache_facing_dir(direction)
 				velocity = direction * (speed + 100)
 				animated_sprite_2d.play_movement_animation(facing_direction)
-				move_and_slide()	
+				move_and_slide()
+				if abs(player_hero.position.x - self.position.x) < 10.0 && abs(player_hero.position.y - self.position.y) < 10.0:
+					velocity = Vector2.ZERO
+					state = "wait"
+					timer = idle_time
 		"fetch":
 			collision_shape.disabled = true
 			var fetch_pos = position_to_fetch.global_position
@@ -92,6 +96,11 @@ func _physics_process(delta) -> void:
 				hasFetch = true
 				state = "idle"
 				collision_shape.disabled = false
+		"wait":
+			timer -= delta
+			animated_sprite_2d.play_idle_animation(facing_direction)
+			if timer <= 0:
+				state = "follow"
 
 func choose_new_direction():
 	var dirs = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
