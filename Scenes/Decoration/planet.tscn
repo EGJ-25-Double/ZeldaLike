@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://kad0wwayfbiq" path="res://Assets/Sprites/Decoration/Planet_0001s_0000_Calque-10.png" id="1_nikbb"]
 [ext_resource type="Texture2D" uid="uid://dm6yplpu1ng60" path="res://Assets/Sprites/Decoration/Planet_0002s_0003_mars.png" id="2_p5rk4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwpuu"]
-size = Vector2(25.129, 47.7599)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nikbb"]
+radius = 10.5806
+height = 47.3191
 
 [node name="Planet" type="Sprite2D"]
 scale = Vector2(6.80488, 6.80488)
@@ -21,4 +22,4 @@ collision_layer = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.146955, -4.8495)
-shape = SubResource("RectangleShape2D_cwpuu")
+shape = SubResource("CapsuleShape2D_nikbb")

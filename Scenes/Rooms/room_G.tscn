@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b6eeodi4eel07"]
+[gd_scene load_steps=22 format=4 uid="uid://b6eeodi4eel07"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_w6irh"]
 [ext_resource type="PackedScene" uid="uid://c42gp8lxtybha" path="res://Scenes/Decoration/planet.tscn" id="2_a1qt1"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://e670h61cd5bn" path="res://Assets/Sprites/Decoration/Planet_0002s_0001_venus.png" id="9_bbak2"]
 [ext_resource type="Texture2D" uid="uid://d4i55a150f0lp" path="res://Assets/Sprites/Decoration/Planet_0002s_0006_jupiter.png" id="10_r8a2d"]
 [ext_resource type="Texture2D" uid="uid://bmeebk000pk0o" path="res://Assets/Sprites/Decoration/Planet_0002s_0007_saturn.png" id="11_ccmor"]
+[ext_resource type="Resource" uid="uid://cinfwrg71uxlg" path="res://Data/mm_item_fake.tres" id="15_iyhll"]
 [ext_resource type="Resource" uid="uid://vcih31l4p7a6" path="res://Data/mm_item_bubble.tres" id="18_ymgir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8kv1"]
@@ -114,11 +115,16 @@ script = ExtResource("4_86ru1")
 interactions = [NodePath("../State_Enabled"), NodePath("../State_Disabled")]
 needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("6_ocvgg")])
 
-[node name="ActivateWritings" type="Node" parent="." index="9"]
+[node name="InteractionFake" type="Node" parent="." index="9" node_paths=PackedStringArray("interactions")]
+script = ExtResource("4_86ru1")
+interactions = [NodePath("../State_Enabled"), NodePath("../State_Disabled")]
+needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("15_iyhll")])
+
+[node name="ActivateWritings" type="Node" parent="." index="10"]
 script = ExtResource("7_86ru1")
 metadata/_custom_type_script = "uid://u3j14xny57dr"
 
-[node name="TriggerWritings" parent="." index="10" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+[node name="TriggerWritings" parent="." index="11" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
 position = Vector2(-553, -59)
 scale = Vector2(46.3064, 46.3064)
 direction = 15
@@ -129,7 +135,7 @@ position = Vector2(0.22043, -14.4446)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_e8kv1")
 
-[node name="TriggerRotate" parent="." index="11" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+[node name="TriggerRotate" parent="." index="12" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
 position = Vector2(475.5, -1112)
 scale = Vector2(6.80488, 6.80488)
 direction = 15
@@ -139,17 +145,87 @@ interactions = [NodePath("../InteractionQueue")]
 position = Vector2(0.220431, -4.77602)
 shape = SubResource("CircleShape2D_5o2vh")
 
-[node name="State_Disabled" type="Node" parent="." index="12" node_paths=PackedStringArray("mapLinked")]
+[node name="TriggerRotate2" parent="." index="13" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(-484, -1119)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate2" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="TriggerRotate3" parent="." index="14" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(-1302, -504)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate3" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="TriggerRotate4" parent="." index="15" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(-1295, 445)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate4" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="TriggerRotate5" parent="." index="16" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(-501, 1246)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate5" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="TriggerRotate6" parent="." index="17" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(490, 1243)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate6" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="TriggerRotate7" parent="." index="18" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(1270, 439)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate7" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="TriggerRotate8" parent="." index="19" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+position = Vector2(1256, -521)
+scale = Vector2(6.80488, 6.80488)
+direction = 15
+interactions = [NodePath("../InteractionFake")]
+
+[node name="CollisionShape2D" parent="TriggerRotate8" index="0"]
+position = Vector2(0.220431, -4.77602)
+shape = SubResource("CircleShape2D_5o2vh")
+
+[node name="State_Disabled" type="Node" parent="." index="20" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_wtfp4")
 category = "Rotate_Room"
 mapLinked = NodePath("../TileLayers/EventTileLayer1")
 
-[node name="State_Enabled" type="Node" parent="." index="13" node_paths=PackedStringArray("mapLinked")]
+[node name="State_Enabled" type="Node" parent="." index="21" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_wtfp4")
 category = "Rotate_Room"
 mapLinked = NodePath("../TileLayers/EventTileLayer2")
 
-[node name="InteractionEnabler" type="Node" parent="." index="14" node_paths=PackedStringArray("object")]
+[node name="InteractionEnabler" type="Node" parent="." index="22" node_paths=PackedStringArray("object")]
 script = ExtResource("7_86ru1")
 object = NodePath("../Node2D")
 enable = true
@@ -170,3 +246,10 @@ metadata/_custom_type_script = "uid://u3j14xny57dr"
 [editable path="Planets/Saturne"]
 [editable path="TriggerWritings"]
 [editable path="TriggerRotate"]
+[editable path="TriggerRotate2"]
+[editable path="TriggerRotate3"]
+[editable path="TriggerRotate4"]
+[editable path="TriggerRotate5"]
+[editable path="TriggerRotate6"]
+[editable path="TriggerRotate7"]
+[editable path="TriggerRotate8"]
