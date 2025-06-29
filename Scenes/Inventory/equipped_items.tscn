@@ -8,6 +8,7 @@
 script = ExtResource("2_i8y8d")
 name = ""
 unlocked_at_start = false
+letter = ""
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"
 
 [node name="EquippedItems" type="Control" node_paths=PackedStringArray("item_a", "item_b")]

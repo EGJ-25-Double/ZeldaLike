@@ -8,4 +8,5 @@ script = ExtResource("1_0fpa5")
 name = "Item 2"
 sprite = ExtResource("2_7hpmp")
 unlocked_at_start = false
+letter = "D"
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"
