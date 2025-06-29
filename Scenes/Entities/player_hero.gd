@@ -14,6 +14,7 @@ var            _tween       : Tween
 
 func _ready() -> void:
 	instance = self
+	
 	_shadow_mat = _shadow_sprite.material as ShaderMaterial
 	if _shadow_mat == null:
 		push_error("FeedbackShadow/Sprite2D must carry a ShaderMaterial!")
@@ -69,21 +70,20 @@ func show_interaction_feedback(success: bool) -> void:
 	_tween = create_tween()
 	# scale up for pulse
 	_tween.tween_property(_shadow_sprite, "scale",
-			Vector2(1.10, 1.10),
-			feedback_pulse_time * 0.5).set_trans(Tween.TRANS_SINE)
-	# scale down for pulse
-	_tween.then().tween_property(_shadow_sprite, "scale",
-			Vector2(0.90, 0.90),
-			feedback_pulse_time * 0.5).set_trans(Tween.TRANS_SINE)
+	Vector2(1.10, 1.10), feedback_pulse_time * 0.5).set_trans(Tween.TRANS_SINE)
+
+	_tween.tween_property(_shadow_sprite, "scale",
+	Vector2(0.90, 0.90), feedback_pulse_time * 0.5).set_trans(Tween.TRANS_SINE)
 	#fade out
-	_tween.then().tween_property(_shadow_sprite, "modulate:a", 0.0, 0.1)
+	_tween.tween_property(_shadow_sprite, "modulate:a", 0.0, 0.1)
 	# hide
-	_tween.then().callback(func(): _shadow_sprite.hide())
+	_tween.tween_callback(func():
+		_shadow_sprite.hide()
+	)
 
+static func _on_interaction_success() -> void:
+	instance.show_interaction_feedback(true)
 
-func _on_interaction_success() -> void:
-	show_interaction_feedback(true)
-
-func _on_interaction_fail() -> void:
-	show_interaction_feedback(false)
+static func _on_interaction_fail() -> void:
+	instance.show_interaction_feedback(false)
 	
