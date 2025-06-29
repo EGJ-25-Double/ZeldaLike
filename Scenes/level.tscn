@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=30 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
@@ -16,8 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://nvmtnqkhmgc0" path="res://Scenes/Rooms/room_H.tscn" id="8_c7le1"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="9_nngtn"]
 [ext_resource type="PackedScene" uid="uid://cbtu164odh7kl" path="res://Scenes/Rooms/room_J.tscn" id="10_nngtn"]
+[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="11_53r2q"]
 [ext_resource type="PackedScene" uid="uid://6p0jpkavb6uo" path="res://Scenes/Rooms/room_K.tscn" id="11_vofx3"]
 [ext_resource type="Texture2D" uid="uid://ct8i5xgion5vf" path="res://Assets/Sprites/Decoration/SpotlightBot.png" id="12_0cmrb"]
+[ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="12_luodc"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="12_pnhnk"]
 [ext_resource type="Texture2D" uid="uid://cfqkswilifbnx" path="res://Assets/Sprites/Decoration/SpotlightTop.png" id="14_00k4y"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="15_2klc5"]
@@ -63,6 +65,10 @@ position = Vector2(-19200, -8960)
 [node name="Room_J" parent="." instance=ExtResource("10_nngtn")]
 position = Vector2(-11520, -13440)
 
+[node name="ItemUnlocker" parent="Room_J" instance=ExtResource("11_53r2q")]
+position = Vector2(1450, 1128)
+unlocked_item = ExtResource("12_luodc")
+
 [node name="Room_K" parent="." instance=ExtResource("11_vofx3")]
 position = Vector2(-8960, -17920)
 
@@ -106,6 +112,9 @@ position = Vector2(-1779, -3136)
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
 position = Vector2(-2564, 1076)
+
+[node name="ItemUnlocker2" parent="." instance=ExtResource("11_53r2q")]
+position = Vector2(2935, -4136)
 
 [node name="SpotlightTop" type="Sprite2D" parent="."]
 position = Vector2(-169, -127)

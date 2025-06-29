@@ -35,10 +35,7 @@ position = Vector2(-2563, -2090)
 position = Vector2(-2988, -1330)
 unlocked_item = ExtResource("3_4310n")
 
-[node name="ItemUnlocker2" parent="." index="7" instance=ExtResource("2_4700l")]
-position = Vector2(-998, -207)
-
-[node name="Trigger" parent="." index="8" node_paths=PackedStringArray("interactions") instance=ExtResource("5_0d7l7")]
+[node name="Trigger" parent="." index="7" node_paths=PackedStringArray("interactions") instance=ExtResource("5_0d7l7")]
 position = Vector2(-2562, -1533)
 direction = 2
 interactions = [NodePath("../OpenState")]
@@ -46,19 +43,19 @@ interactions = [NodePath("../OpenState")]
 [node name="CollisionShape2D" parent="Trigger" index="0"]
 shape = SubResource("RectangleShape2D_vbh2w")
 
-[node name="DefaultState" type="Node" parent="." index="9" node_paths=PackedStringArray("mapLinked")]
+[node name="DefaultState" type="Node" parent="." index="8" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("6_yfihf")
 category = "A_SpawnDoor"
 mapLinked = NodePath("../TileLayers/EventDoorLeftLayer")
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
-[node name="OpenState" type="Node" parent="." index="10"]
+[node name="OpenState" type="Node" parent="." index="9"]
 script = ExtResource("6_yfihf")
 category = "A_SpawnDoor"
 needed_item = Array[ExtResource("7_vbh2w")]([ExtResource("3_4310n")])
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
-[node name="DoorNorthEast" parent="." index="11" instance=ExtResource("8_ek16v")]
+[node name="DoorNorthEast" parent="." index="10" instance=ExtResource("8_ek16v")]
 position = Vector2(1591, -2090)
 scale = Vector2(10, 10)
 
