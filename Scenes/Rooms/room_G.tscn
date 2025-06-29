@@ -1,15 +1,22 @@
-[gd_scene load_steps=13 format=4 uid="uid://b6eeodi4eel07"]
+[gd_scene load_steps=20 format=4 uid="uid://b6eeodi4eel07"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_w6irh"]
 [ext_resource type="PackedScene" uid="uid://c42gp8lxtybha" path="res://Scenes/Decoration/planet.tscn" id="2_a1qt1"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_cwpuu"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="3_eduek"]
 [ext_resource type="Script" uid="uid://6syjsf2hy8tq" path="res://Scenes/Interaction/interaction_queue.gd" id="4_86ru1"]
+[ext_resource type="Texture2D" uid="uid://ca22t54mm8gki" path="res://Assets/Sprites/Decoration/Planet_0002s_0002_terre.png" id="5_7bwyy"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="5_e8kv1"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="5_wtfp4"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="6_ocvgg"]
+[ext_resource type="Texture2D" uid="uid://b63hn4rsxfgvy" path="res://Assets/Sprites/Decoration/Planet_0002s_0004_neptune.png" id="6_ymgir"]
 [ext_resource type="Script" uid="uid://u3j14xny57dr" path="res://Scenes/Interaction/interaction_enabler.gd" id="7_86ru1"]
+[ext_resource type="Texture2D" uid="uid://dlx38w3smc7p" path="res://Assets/Sprites/Decoration/Planet_0002s_0005_uranus.png" id="7_iyhll"]
+[ext_resource type="Texture2D" uid="uid://ckl5w34pc5v2i" path="res://Assets/Sprites/Decoration/Planet_0002s_0000_mercure.png" id="8_77t2q"]
+[ext_resource type="Texture2D" uid="uid://e670h61cd5bn" path="res://Assets/Sprites/Decoration/Planet_0002s_0001_venus.png" id="9_bbak2"]
 [ext_resource type="FontFile" uid="uid://xfkg5c600cmw" path="res://Assets/Fonts/LuciusCipher.ttf" id="10_e8kv1"]
+[ext_resource type="Texture2D" uid="uid://d4i55a150f0lp" path="res://Assets/Sprites/Decoration/Planet_0002s_0006_jupiter.png" id="10_r8a2d"]
+[ext_resource type="Texture2D" uid="uid://bmeebk000pk0o" path="res://Assets/Sprites/Decoration/Planet_0002s_0007_saturn.png" id="11_ccmor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8kv1"]
 
@@ -41,7 +48,17 @@ position = Vector2(-2400, 9.53674e-07)
 [node name="DoorEast" parent="." index="3"]
 position = Vector2(2392, 1.81899e-12)
 
-[node name="Planets" type="Node2D" parent="." index="6"]
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="6"]
+custom_minimum_size = Vector2(600, 300)
+offset_left = -1120.0
+offset_top = -936.0
+offset_right = 380.0
+offset_bottom = -436.0
+theme_override_fonts/normal_font = ExtResource("10_e8kv1")
+bbcode_enabled = true
+text = "[font_size=150][color=#ff87ffff]En avant Mars !"
+
+[node name="Planets" type="Node2D" parent="." index="7"]
 
 [node name="Mars" parent="Planets" index="0" instance=ExtResource("2_a1qt1")]
 position = Vector2(475.5, -1124.5)
@@ -49,35 +66,66 @@ position = Vector2(475.5, -1124.5)
 [node name="Terre" parent="Planets" index="1" instance=ExtResource("2_a1qt1")]
 position = Vector2(-488, -1124)
 
+[node name="Sprite2D" parent="Planets/Terre" index="0"]
+position = Vector2(-4.76837e-07, -42.9104)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("5_7bwyy")
+
 [node name="Neptune" parent="Planets" index="2" instance=ExtResource("2_a1qt1")]
 position = Vector2(-488, 1259.5)
+
+[node name="Sprite2D" parent="Planets/Neptune" index="0"]
+position = Vector2(-4.76837e-07, -42.8369)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("6_ymgir")
 
 [node name="Uranus" parent="Planets" index="3" instance=ExtResource("2_a1qt1")]
 position = Vector2(477, 1259.5)
 
+[node name="Sprite2D" parent="Planets/Uranus" index="0"]
+position = Vector2(-4.76837e-07, -47.5394)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_iyhll")
+
 [node name="Mercure" parent="Planets" index="4" instance=ExtResource("2_a1qt1")]
 position = Vector2(-1288, 464)
+
+[node name="Sprite2D" parent="Planets/Mercure" index="0"]
+texture = ExtResource("8_77t2q")
 
 [node name="Venus" parent="Planets" index="5" instance=ExtResource("2_a1qt1")]
 position = Vector2(-1288, -497)
 
+[node name="Sprite2D" parent="Planets/Venus" index="0"]
+position = Vector2(-4.76837e-07, -44.5269)
+texture = ExtResource("9_bbak2")
+
 [node name="Jupiter" parent="Planets" index="6" instance=ExtResource("2_a1qt1")]
 position = Vector2(1264, -497)
+
+[node name="Sprite2D" parent="Planets/Jupiter" index="0"]
+position = Vector2(-4.76837e-07, -43.3512)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("10_r8a2d")
 
 [node name="Saturne" parent="Planets" index="7" instance=ExtResource("2_a1qt1")]
 position = Vector2(1265, 464)
 
-[node name="InteractionQueue" type="Node" parent="." index="7" node_paths=PackedStringArray("interactions")]
+[node name="Sprite2D" parent="Planets/Saturne" index="0"]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("11_ccmor")
+
+[node name="InteractionQueue" type="Node" parent="." index="8" node_paths=PackedStringArray("interactions")]
 script = ExtResource("4_86ru1")
 interactions = [NodePath("../State_Enabled"), NodePath("../State_Disabled")]
 needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("6_ocvgg")])
 metadata/_custom_type_script = "uid://6syjsf2hy8tq"
 
-[node name="ActivateWritings" type="Node" parent="." index="8"]
+[node name="ActivateWritings" type="Node" parent="." index="9"]
 script = ExtResource("7_86ru1")
 metadata/_custom_type_script = "uid://u3j14xny57dr"
 
-[node name="TriggerWritings" parent="." index="9" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+[node name="TriggerWritings" parent="." index="10" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
 position = Vector2(3711.22, -8679.03)
 scale = Vector2(46.3064, 46.3064)
 direction = 15
@@ -88,7 +136,7 @@ position = Vector2(0.220431, -4.77602)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_e8kv1")
 
-[node name="TriggerRotate" parent="." index="10" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+[node name="TriggerRotate" parent="." index="11" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
 position = Vector2(475.5, -1112)
 scale = Vector2(6.80488, 6.80488)
 direction = 15
@@ -98,29 +146,26 @@ interactions = [NodePath("../InteractionQueue")]
 position = Vector2(0.220431, -4.77602)
 shape = SubResource("CircleShape2D_5o2vh")
 
-[node name="State_Disabled" type="Node" parent="." index="11" node_paths=PackedStringArray("mapLinked")]
+[node name="State_Disabled" type="Node" parent="." index="12" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_wtfp4")
 category = "Rotate_Room"
 mapLinked = NodePath("../TileLayers/EventTileLayer1")
 
-[node name="State_Enabled" type="Node" parent="." index="12" node_paths=PackedStringArray("mapLinked")]
+[node name="State_Enabled" type="Node" parent="." index="13" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_wtfp4")
 category = "Rotate_Room"
 mapLinked = NodePath("../TileLayers/EventTileLayer2")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." index="13"]
-custom_minimum_size = Vector2(600, 300)
-offset_left = -1120.0
-offset_top = -936.0
-offset_right = 380.0
-offset_bottom = -436.0
-theme_override_fonts/normal_font = ExtResource("10_e8kv1")
-bbcode_enabled = true
-text = "[font_size=150][color=#ff87ffff]En avant Mars !"
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]
 [editable path="DoorSouth"]
+[editable path="Planets/Terre"]
+[editable path="Planets/Neptune"]
+[editable path="Planets/Uranus"]
+[editable path="Planets/Mercure"]
+[editable path="Planets/Venus"]
+[editable path="Planets/Jupiter"]
+[editable path="Planets/Saturne"]
 [editable path="TriggerWritings"]
 [editable path="TriggerRotate"]
