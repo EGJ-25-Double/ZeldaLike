@@ -1,13 +1,25 @@
-[gd_scene load_steps=7 format=4 uid="uid://b0qh3kgdrrh46"]
+[gd_scene load_steps=15 format=4 uid="uid://b0qh3kgdrrh46"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_ibfcu"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_32gfp"]
 [ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_32gfp"]
 [ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_hrfea"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="4_5pv62"]
+[ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_5pv62"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_b6xkd"]
+[ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="7_l1nhg"]
+[ext_resource type="Resource" uid="uid://bgdb84stswvjw" path="res://Data/mm_item_lever.tres" id="8_gk7rm"]
+[ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="10_gk7rm"]
+[ext_resource type="Resource" uid="uid://vcih31l4p7a6" path="res://Data/mm_item_bubble.tres" id="11_i2n13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecnvq"]
 size = Vector2(74, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww374"]
+size = Vector2(326, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk7rm"]
+size = Vector2(668, 286)
 
 [node name="Room_B" instance=ExtResource("1_ibfcu")]
 
@@ -37,6 +49,9 @@ tile_set = ExtResource("2_32gfp")
 [node name="DoorWest" parent="." index="2"]
 position = Vector2(-3680, -4)
 
+[node name="SpawnPoint" parent="DoorWest" index="0"]
+position = Vector2(-225, 0)
+
 [node name="DoorNorth" parent="." index="4"]
 position = Vector2(0.00012207, -2090)
 
@@ -60,8 +75,71 @@ shape = SubResource("RectangleShape2D_ecnvq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorSouthE/StaticBody2D" index="0"]
 shape = SubResource("RectangleShape2D_ecnvq")
 
+[node name="LeftDoor_Default_State" type="Node" parent="." index="8" node_paths=PackedStringArray("mapLinked")]
+script = ExtResource("6_5pv62")
+category = "B_LeftDoor"
+mapLinked = NodePath("../TileLayers/EventDoorWLayer")
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="LeftDoor_Void_State" type="Node" parent="." index="9"]
+script = ExtResource("6_5pv62")
+category = "B_LeftDoor"
+needed_item = Array[ExtResource("7_b6xkd")]([ExtResource("8_gk7rm")])
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="LeftDoor_Trigger" parent="." index="10" node_paths=PackedStringArray("interactions") instance=ExtResource("7_l1nhg")]
+position = Vector2(-3179, 10)
+direction = 1
+interactions = [NodePath("../LeftDoor_Void_State")]
+
+[node name="CollisionShape2D" parent="LeftDoor_Trigger" index="0"]
+shape = SubResource("RectangleShape2D_ww374")
+
+[node name="UpDoor_Default_State" type="Node" parent="." index="11" node_paths=PackedStringArray("mapLinked")]
+script = ExtResource("6_5pv62")
+category = "B_NorthDoor"
+mapLinked = NodePath("../TileLayers/EventDoorNLayer")
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="UpDoor_Void_State" type="Node" parent="." index="12"]
+script = ExtResource("6_5pv62")
+category = "B_NorthDoor"
+needed_item = Array[ExtResource("7_b6xkd")]([ExtResource("10_gk7rm")])
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="UpDoor_Trigger" parent="." index="13" node_paths=PackedStringArray("interactions") instance=ExtResource("7_l1nhg")]
+position = Vector2(-6, -1555)
+direction = 2
+interactions = [NodePath("../UpDoor_Void_State")]
+
+[node name="CollisionShape2D" parent="UpDoor_Trigger" index="0"]
+shape = SubResource("RectangleShape2D_gk7rm")
+
+[node name="DownDoor_Default_State" type="Node" parent="." index="14" node_paths=PackedStringArray("mapLinked")]
+script = ExtResource("6_5pv62")
+category = "B_SouthDoor"
+mapLinked = NodePath("../TileLayers/EventDoorSELayer")
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="DownDoor_Void_State" type="Node" parent="." index="15"]
+script = ExtResource("6_5pv62")
+category = "B_SouthDoor"
+needed_item = Array[ExtResource("7_b6xkd")]([ExtResource("11_i2n13")])
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="DownDoor_Trigger" parent="." index="16" node_paths=PackedStringArray("interactions") instance=ExtResource("7_l1nhg")]
+position = Vector2(1607, 1542)
+direction = 8
+interactions = [NodePath("../DownDoor_Void_State")]
+
+[node name="CollisionShape2D" parent="DownDoor_Trigger" index="0"]
+shape = SubResource("RectangleShape2D_gk7rm")
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]
 [editable path="DoorSouth"]
 [editable path="DoorSouthE"]
+[editable path="LeftDoor_Trigger"]
+[editable path="UpDoor_Trigger"]
+[editable path="DownDoor_Trigger"]
