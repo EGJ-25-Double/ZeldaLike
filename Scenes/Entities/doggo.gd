@@ -3,8 +3,10 @@ class_name Doggo extends CharacterBody2D
 
 @export var follow_range: int = 500
 @export var item_loved: ItemMemo
-@onready var player_hero: PlayerHero = get_tree().root.get_node("Level/PlayerHero")
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
+
+
+static var instance: Doggo
 
 
 var speed: int = 300
@@ -18,7 +20,12 @@ var state: String = "idle"
 var isAsleep: bool = false
 
 
+func _ready() -> void:
+	instance = self
+
+
 func _physics_process(delta) -> void:
+	var player_hero = PlayerHero.instance
 	var distance_to_player = self.position.distance_to(player_hero.position)
 	if distance_to_player <= follow_range && player_has_required_item():
 		state = "following"
@@ -71,6 +78,7 @@ func choose_new_direction():
 
 
 func follow_player():
+	var player_hero = PlayerHero.instance
 	if (player_hero):
 		direction = (player_hero.position - self.position).normalized()
 		cache_facing_dir(direction)

@@ -5,6 +5,12 @@ class_name PlayerHero
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
 
 const SPEED = 80000.0
+static var instance: PlayerHero
+
+
+func _ready() -> void:
+	instance = self
+
 
 func _physics_process(delta: float) -> void:
 	var direction
