@@ -27,7 +27,7 @@
 [ext_resource type="Script" uid="uid://dqcnrb82kxag7" path="res://Scenes/Endgame/spotlight_caller.gd" id="25_6y3s5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf56v"]
-size = Vector2(3622, 338)
+size = Vector2(2342, 338)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24uko"]
 radius = 157.258
