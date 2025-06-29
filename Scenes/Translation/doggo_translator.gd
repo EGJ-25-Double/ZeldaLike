@@ -4,7 +4,7 @@ extends Control
 @export var translations: DoggoTranslationList
 @export var item: ItemMemo
 @export var label: Label
-#ajouter ref au doggo
+@export var doggo: Doggo
 
 var room: String
 var states: Dictionary[String, String]
@@ -38,7 +38,7 @@ func _on_state_changed(category: String, state: String) -> void:
 
 func _on_item_used(value: ItemMemo) -> void:
 	if value != item: return
-	#check state du doggo == following
+	if doggo.state != "following": return
 	label.text = _set_translation()
 	visible = true
 	var tween = get_tree().create_tween()
