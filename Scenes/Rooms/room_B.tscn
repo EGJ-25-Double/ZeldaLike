@@ -49,6 +49,9 @@ tile_set = ExtResource("2_32gfp")
 [node name="DoorWest" parent="." index="2"]
 position = Vector2(-3680, -4)
 
+[node name="SpawnPoint" parent="DoorWest" index="0"]
+position = Vector2(-225, 0)
+
 [node name="DoorNorth" parent="." index="4"]
 position = Vector2(0.00012207, -2090)
 
