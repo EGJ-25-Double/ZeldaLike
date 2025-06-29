@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bushlvy2gc8go"]
+[gd_scene load_steps=11 format=4 uid="uid://c6qfuo6o0y6vv"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_u5py1"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_4310n"]
@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_0d7l7"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_yfihf"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_vbh2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcmye"]
+size = Vector2(20, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecnvq"]
+size = Vector2(74, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbh2w"]
+size = Vector2(646, 267.5)
 
 [node name="Room_A" instance=ExtResource("1_u5py1")]
 
@@ -21,8 +30,20 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD3//r/AAACAAIAACD4//r/AAACAAIAADD5//r/AAACAAEAAAD2//r/AAACAAEAAAA=")
 tile_set = ExtResource("2_4310n")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWest/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_lcmye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorEast/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_lcmye")
+
 [node name="DoorNorth" parent="." index="4"]
 position = Vector2(-2563, -2090)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorNorth/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ecnvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorSouth/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ecnvq")
 
 [node name="ItemUnlocker" parent="." index="6" instance=ExtResource("2_4700l")]
 position = Vector2(-2988, -1330)
@@ -34,7 +55,8 @@ direction = 2
 interactions = [NodePath("../OpenState")]
 
 [node name="CollisionShape2D" parent="Trigger" index="0"]
-position = Vector2(7, -38.5)
+position = Vector2(7, -73.75)
+shape = SubResource("RectangleShape2D_vbh2w")
 
 [node name="DefaultState" type="Node" parent="." index="8" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("6_yfihf")

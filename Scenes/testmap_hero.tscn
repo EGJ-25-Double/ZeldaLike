@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bwwxf4albkxva"]
+[gd_scene load_steps=12 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="4_cfss2"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_5q760"]
 [ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="5_wb6sk"]
+[ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="11_lf3a7"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="12_6bex7"]
 
 [node name="Testmap" type="Node"]
@@ -20,6 +21,9 @@ monitoring = false
 
 [node name="DoorSouth" parent="Room" index="5"]
 monitoring = false
+
+[node name="DoggoFetchPoint" type="Marker2D" parent="Room"]
+position = Vector2(3140, -843)
 
 [node name="Room2" parent="." instance=ExtResource("1_cfss2")]
 position = Vector2(7680, 0)
@@ -89,7 +93,9 @@ stream = ExtResource("12_6bex7")
 autoplay = true
 bus = &"Music"
 
-[node name="Doggo" parent="." instance=ExtResource("4_cfss2")]
+[node name="Doggo" parent="." node_paths=PackedStringArray("position_to_fetch") instance=ExtResource("4_cfss2")]
+item_to_fetch = ExtResource("11_lf3a7")
+position_to_fetch = NodePath("../Room/DoggoFetchPoint")
 
 [editable path="Room"]
 [editable path="Room/DoorWest"]
