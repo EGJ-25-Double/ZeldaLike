@@ -42,7 +42,6 @@ scale = Vector2(10, 10)
 position = Vector2(-70, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWest/StaticBody2D" index="0"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lcmye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWest"]
@@ -56,7 +55,6 @@ scale = Vector2(10, 10)
 position = Vector2(70, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorEast/StaticBody2D" index="0"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lcmye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorEast"]
@@ -73,7 +71,6 @@ position = Vector2(0, -70)
 shape = SubResource("RectangleShape2D_ecnvq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorNorth"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ecnvq")
 
 [node name="DoorSouth" parent="." instance=ExtResource("3_rdcm0")]
@@ -84,7 +81,6 @@ scale = Vector2(10, 10)
 position = Vector2(0, 70)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorSouth/StaticBody2D" index="0"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ecnvq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorSouth"]
