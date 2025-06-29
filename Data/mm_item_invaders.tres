@@ -8,4 +8,5 @@ script = ExtResource("1_l0q14")
 name = "Space Invaders"
 sprite = ExtResource("2_l0q14")
 unlocked_at_start = true
+letter = "O"
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"

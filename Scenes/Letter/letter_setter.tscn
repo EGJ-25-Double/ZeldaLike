@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg7qodest7jkn"]
+
+[ext_resource type="Script" uid="uid://c7g11drl5tfms" path="res://Scenes/Letter/letter_setter.gd" id="1_ixfhh"]
+[ext_resource type="Resource" uid="uid://dbfbakid5w1xv" path="res://Data/mm_items.tres" id="2_7usb0"]
+[ext_resource type="Texture2D" uid="uid://ctvn8qqj46ind" path="res://Assets/Sprites/LetterSetter/T_ScreenOff.png" id="3_dq5as"]
+[ext_resource type="Texture2D" uid="uid://ovmdhp1aljo5" path="res://Assets/Sprites/LetterSetter/T_ScreenOn.png" id="4_hpgax"]
+[ext_resource type="Texture2D" uid="uid://epiou8pmy44k" path="res://Assets/Sprites/LetterSetter/T_TriggerOff.png" id="5_4krem"]
+[ext_resource type="Texture2D" uid="uid://bincfxwfcwgig" path="res://Assets/Sprites/LetterSetter/T_TriggerOn.png" id="6_6ob44"]
+[ext_resource type="FontFile" uid="uid://dfi37tb8lky5n" path="res://Assets/Fonts/StandardGalacticAlphabet-Regular.ttf" id="7_tx07x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24uko"]
+size = Vector2(256, 224)
+
+[sub_resource type="LabelSettings" id="LabelSettings_24uko"]
+font = ExtResource("7_tx07x")
+font_size = 220
+font_color = Color(0.854902, 0, 0.121569, 1)
+
+[node name="LetterSetter" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_ixfhh")
+items = ExtResource("2_7usb0")
+screen_off = ExtResource("3_dq5as")
+screen_on = ExtResource("4_hpgax")
+lable_off = Color(0.434605, 0, 0.0390548, 0.72549)
+lable_on = Color(0.854902, 0, 0, 0.72549)
+trigger_off = ExtResource("5_4krem")
+trigger_on = ExtResource("6_6ob44")
+metadata/_custom_type_script = "uid://c7g11drl5tfms"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_24uko")
+
+[node name="Sprite Screen" type="Sprite2D" parent="."]
+position = Vector2(-912, -1768)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_dq5as")
+
+[node name="Label" type="Label" parent="Sprite Screen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_24uko")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite Trigger" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("5_4krem")

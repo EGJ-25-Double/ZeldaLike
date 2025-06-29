@@ -9,13 +9,15 @@ extends Area2D
 @export_category("Screen")
 @export var screen_off: Texture2D
 @export var screen_on: Texture2D
+@export var lable_off: Color
+@export var lable_on: Color
 
 @export_category("Trigger")
 @export var trigger_off: Texture2D
 @export var trigger_on: Texture2D
 
 
-@onready var label: Label = $"Label"
+@onready var label: Label = $"Sprite Screen/Label"
 @onready var sprite_screen: Sprite2D = $"Sprite Screen"
 @onready var sprite_trigger: Sprite2D = $"Sprite Trigger"
 
@@ -24,6 +26,7 @@ var is_triggered: bool:
 	set(value):
 		is_triggered = value
 		_set_sprites(value)
+
 
 var is_correct: bool:
 	set(value):
@@ -46,11 +49,11 @@ func _exit_tree() -> void:
 	InventoryUtils.unsubscribe_from_item_used(_on_item_used)
 
 
-func _on_body_entered() -> void:
+func _on_body_entered(_body) -> void:
 	is_triggered = true
 
 
-func _on_body_exited() -> void:
+func _on_body_exited(_body) -> void:
 	is_triggered = false
 
 
@@ -58,9 +61,11 @@ func _set_sprites(value: bool) -> void:
 	if value:
 		sprite_screen.texture = screen_on
 		sprite_trigger.texture = trigger_on
+		label.label_settings.font_color = lable_on
 	else:
 		sprite_screen.texture = screen_off
 		sprite_trigger.texture = trigger_off
+		label.label_settings.font_color = lable_off
 
 
 func _on_item_used(value: ItemMemo) -> void:
