@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba6omtxmktcix"]
+
+[ext_resource type="Texture2D" uid="uid://bglioj0ax6dtg" path="res://Assets/Sprites/Decoration/troubleQRcode.png" id="1_vl3pq"]
+
+[node name="QrCode" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vl3pq")
