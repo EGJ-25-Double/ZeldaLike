@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b6eeodi4eel07"]
+[gd_scene load_steps=20 format=4 uid="uid://b6eeodi4eel07"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_w6irh"]
 [ext_resource type="PackedScene" uid="uid://c42gp8lxtybha" path="res://Scenes/Decoration/planet.tscn" id="2_a1qt1"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="5_wtfp4"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="6_ocvgg"]
 [ext_resource type="Texture2D" uid="uid://b63hn4rsxfgvy" path="res://Assets/Sprites/Decoration/Planet_0002s_0004_neptune.png" id="6_ymgir"]
-[ext_resource type="Script" uid="uid://u3j14xny57dr" path="res://Scenes/Interaction/interaction_enabler.gd" id="7_86ru1"]
 [ext_resource type="Texture2D" uid="uid://dlx38w3smc7p" path="res://Assets/Sprites/Decoration/Planet_0002s_0005_uranus.png" id="7_iyhll"]
 [ext_resource type="Texture2D" uid="uid://ckl5w34pc5v2i" path="res://Assets/Sprites/Decoration/Planet_0002s_0000_mercure.png" id="8_77t2q"]
 [ext_resource type="Texture2D" uid="uid://e670h61cd5bn" path="res://Assets/Sprites/Decoration/Planet_0002s_0001_venus.png" id="9_bbak2"]
@@ -41,18 +40,22 @@ tile_map_data = PackedByteArray("AAD5/wAAAAAAAAQAAAD5////AAAAAAQAAAD4////AAAAAAQ
 enabled = false
 tile_set = ExtResource("2_cwpuu")
 
+[node name="Node2D" type="Node2D" parent="TileLayers" index="4"]
+
+[node name="RichTextLabel" parent="TileLayers/Node2D" index="0" instance=ExtResource("3_7bwyy")]
+
+[node name="EventTileLayer3" type="TileMapLayer" parent="TileLayers" index="5"]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAP7/AAAAAAQAAAD///7/AAAAAAQAAAD+//7/AAAAAAQAAAD9//7/AAAAAAQAAAD8//7/AAAAAAQAAAD8//3/AAAAAAQAAAD9//3/AAAAAAQAAAD+//3/AAAAAAQAAAD///3/AAAAAAQAAAAAAP3/AAAAAAQAAAA=")
+tile_set = ExtResource("2_cwpuu")
+
 [node name="DoorWest" parent="." index="2"]
 position = Vector2(-3680, 3.05176e-05)
 
 [node name="DoorEast" parent="." index="3"]
 position = Vector2(3680, 3.05176e-05)
 
-[node name="Node2D" type="Node2D" parent="." index="6"]
-modulate = Color(1, 1, 1, 0)
-
-[node name="RichTextLabel" parent="Node2D" index="0" instance=ExtResource("3_7bwyy")]
-
-[node name="Planets" type="Node2D" parent="." index="7"]
+[node name="Planets" type="Node2D" parent="." index="6"]
 
 [node name="Mars" parent="Planets" index="0" instance=ExtResource("2_a1qt1")]
 position = Vector2(475.5, -1124.5)
@@ -109,27 +112,23 @@ position = Vector2(1265, 464)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("11_ccmor")
 
-[node name="InteractionQueue" type="Node" parent="." index="8" node_paths=PackedStringArray("interactions")]
+[node name="InteractionQueue" type="Node" parent="." index="7" node_paths=PackedStringArray("interactions")]
 script = ExtResource("4_86ru1")
 interactions = [NodePath("../State_Enabled"), NodePath("../State_Disabled")]
 needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("6_ocvgg")])
 
-[node name="ActivateWritings" type="Node" parent="." index="9"]
-script = ExtResource("7_86ru1")
-metadata/_custom_type_script = "uid://u3j14xny57dr"
-
-[node name="TriggerWritings" parent="." index="10" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+[node name="TriggerWritings" parent="." index="8" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
 position = Vector2(-553, -59)
 scale = Vector2(46.3064, 46.3064)
 direction = 15
-interactions = [NodePath("../InteractionEnabler")]
+interactions = [NodePath("../State_Uncover")]
 
 [node name="CollisionShape2D" parent="TriggerWritings" index="0"]
 position = Vector2(0.22043, -14.4446)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_e8kv1")
 
-[node name="TriggerRotate" parent="." index="11" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
+[node name="TriggerRotate" parent="." index="9" node_paths=PackedStringArray("interactions") instance=ExtResource("3_eduek")]
 position = Vector2(475.5, -1112)
 scale = Vector2(6.80488, 6.80488)
 direction = 15
@@ -139,23 +138,30 @@ interactions = [NodePath("../InteractionQueue")]
 position = Vector2(0.220431, -4.77602)
 shape = SubResource("CircleShape2D_5o2vh")
 
-[node name="State_Disabled" type="Node" parent="." index="12" node_paths=PackedStringArray("mapLinked")]
+[node name="State_Disabled" type="Node" parent="." index="10" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_wtfp4")
 category = "Rotate_Room"
 mapLinked = NodePath("../TileLayers/EventTileLayer1")
 
-[node name="State_Enabled" type="Node" parent="." index="13" node_paths=PackedStringArray("mapLinked")]
+[node name="State_Enabled" type="Node" parent="." index="11" node_paths=PackedStringArray("mapLinked")]
 script = ExtResource("5_wtfp4")
 category = "Rotate_Room"
 mapLinked = NodePath("../TileLayers/EventTileLayer2")
 
-[node name="InteractionEnabler" type="Node" parent="." index="14" node_paths=PackedStringArray("object")]
-script = ExtResource("7_86ru1")
-object = NodePath("../Node2D")
-enable = true
+[node name="State_Cover" type="Node" parent="." index="12" node_paths=PackedStringArray("mapLinked")]
+script = ExtResource("5_wtfp4")
+category = "Text_Cover"
+mapLinked = NodePath("../TileLayers/EventTileLayer3")
+fade = true
 needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("18_ymgir")])
-once = true
-metadata/_custom_type_script = "uid://u3j14xny57dr"
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="State_Uncover" type="Node" parent="." index="13"]
+script = ExtResource("5_wtfp4")
+category = "Text_Cover"
+fade = true
+needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("18_ymgir")])
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]

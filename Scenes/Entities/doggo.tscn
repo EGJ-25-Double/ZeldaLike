@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dbchbuhwnaowo" path="res://Scenes/Entities/doggo.gd" id="1_q7e8s"]
 [ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="2_h0lky"]
-[ext_resource type="Script" uid="uid://dbchbuhwnaowo" path="res://Scenes/Entities/doggo.gd" id="1_q7e8s"]
 [ext_resource type="SpriteFrames" uid="uid://qi1ukb5lmial" path="res://Assets/Sprites/PlaceholderDoggo/doggo.tres" id="2_u0n6e"]
-[ext_resource type="Script" uid="uid://dg6iwbp1lyiiw" path="res://Scenes/Entities/doggo_animation.gd" id="3_m3hmc"]
+[ext_resource type="Script" path="res://Scenes/Entities/doggo_animation.gd" id="3_m3hmc"]
 [ext_resource type="PackedScene" uid="uid://dx7orfa1m800c" path="res://Scenes/Translation/doggo_translator.tscn" id="4_h0lky"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m3hmc"]
