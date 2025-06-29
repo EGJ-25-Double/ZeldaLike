@@ -7,5 +7,6 @@
 script = ExtResource("1_bnqie")
 name = "Compass"
 sprite = ExtResource("2_bnqie")
-unlocked_at_start = false
+unlocked_at_start = true
+letter = ""
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"

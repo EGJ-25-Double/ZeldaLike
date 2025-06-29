@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://6p0jpkavb6uo"]
+[gd_scene load_steps=8 format=4 uid="uid://6p0jpkavb6uo"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_v1plw"]
 [ext_resource type="PackedScene" uid="uid://bcob1x3wgxcco" path="res://Scenes/Trap/trap_handler.tscn" id="2_oosf1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_kwt8g"]
 [ext_resource type="PackedScene" uid="uid://cybbburxfpqly" path="res://Scenes/Trap/trap_tile.tscn" id="3_lc4mr"]
 [ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="4_tuan3"]
+[ext_resource type="PackedScene" uid="uid://cyyolh7rntpxh" path="res://Scenes/Decoration/PNJ.tscn" id="7_lc4mr"]
 
 [node name="Room_K" instance=ExtResource("1_v1plw")]
 
@@ -396,8 +397,20 @@ position = Vector2(-2561, 2090)
 position = Vector2(544, 376)
 unlocked_item = ExtResource("4_tuan3")
 
+[node name="Pnj" parent="." index="7" instance=ExtResource("7_lc4mr")]
+position = Vector2(-2920, -208)
+scale = Vector2(-0.39, 0.39)
+
+[node name="State" parent="Pnj" index="2" node_paths=PackedStringArray("mapLinked")]
+category = "Puzzle2"
+mapLinked = NodePath("../../TileLayers/ObstaclesTileLayer2")
+
+[node name="State2" parent="Pnj" index="3"]
+category = "Puzzle2"
+
 [editable path="TileLayers/TrapHandler"]
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]
 [editable path="DoorSouth"]
+[editable path="Pnj"]

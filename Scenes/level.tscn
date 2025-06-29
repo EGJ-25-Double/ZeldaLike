@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dlmjxyw43g2a1" path="res://Scenes/Rooms/room_D.tscn" id="4_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://dnvoypnv7xmo" path="res://Scenes/Rooms/room_E.tscn" id="5_qxfql"]
-[ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
+[ext_resource type="Script" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
 [ext_resource type="PackedScene" uid="uid://lgksyifx3ymi" path="res://Scenes/Rooms/room_I.tscn" id="6_ha31o"]
 [ext_resource type="PackedScene" uid="uid://h2fxsi8whilu" path="res://Scenes/Rooms/room_F.tscn" id="6_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://c6qfuo6o0y6vv" path="res://Scenes/Rooms/room_A.tscn" id="7_8c0lf"]

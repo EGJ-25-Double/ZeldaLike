@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyyolh7rntpxh"]
+
+[ext_resource type="Texture2D" uid="uid://cqrfqeiptp2ec" path="res://Assets/Sprites/PNJ/AlienRef.png" id="1_66xgo"]
+[ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="2_llq0t"]
+[ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="3_5hd7a"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="4_nm3jh"]
+[ext_resource type="Resource" uid="uid://cnw0g8i3rnhcx" path="res://Data/mm_item_invaders.tres" id="5_q0f37"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hd7a"]
+size = Vector2(1080, 952)
+
+[node name="Pnj" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_66xgo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-4, 196)
+shape = SubResource("RectangleShape2D_5hd7a")
+
+[node name="Trigger" parent="." node_paths=PackedStringArray("interactions") instance=ExtResource("2_llq0t")]
+position = Vector2(0, 504)
+scale = Vector2(3.48498, 4.60313)
+direction = 2
+interactions = [NodePath("../State2")]
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("3_5hd7a")
+category = ""
+fade = true
+needed_item = Array[ExtResource("4_nm3jh")]([ExtResource("5_q0f37")])
+once = true
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="State2" type="Node" parent="."]
+script = ExtResource("3_5hd7a")
+category = ""
+fade = true
+needed_item = Array[ExtResource("4_nm3jh")]([ExtResource("5_q0f37")])
+once = true
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
