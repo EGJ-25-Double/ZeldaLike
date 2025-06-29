@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://b0qh3kgdrrh46"]
+[gd_scene load_steps=21 format=4 uid="uid://b0qh3kgdrrh46"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_ibfcu"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_32gfp"]
-[ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_32gfp"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_hrfea"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/door.tscn" id="3_32gfp"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_hrfea"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="4_5pv62"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_5pv62"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_b6xkd"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://baddqnff2wryw" path="res://Assets/Sprites/Decoration/pink_arrow.png" id="13_6ba42"]
 [ext_resource type="Texture2D" uid="uid://cfrflmoinjs8q" path="res://Assets/Sprites/Decoration/pink_gear.png" id="14_bkrkk"]
 [ext_resource type="FontFile" uid="uid://cr0kib1b8rapc" path="res://Assets/Fonts/Kenney Blocks.ttf" id="15_raoln"]
+[ext_resource type="PackedScene" uid="uid://ba6omtxmktcix" path="res://Scenes/Decoration/QRCode.tscn" id="16_6ba42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf3g8"]
 size = Vector2(670, 341.4)
@@ -229,6 +230,10 @@ offset_right = 2304.76
 offset_bottom = 438.0
 theme_override_fonts/normal_font = ExtResource("15_raoln")
 text = "3"
+
+[node name="QrCode" parent="." index="23" instance=ExtResource("16_6ba42")]
+position = Vector2(-801, 1120)
+scale = Vector2(0.832541, 0.832541)
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]

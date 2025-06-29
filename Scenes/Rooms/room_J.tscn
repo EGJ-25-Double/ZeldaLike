@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://cbtu164odh7kl"]
+[gd_scene load_steps=7 format=4 uid="uid://cbtu164odh7kl"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_sskip"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_n2obv"]
 [ext_resource type="PackedScene" uid="uid://bcob1x3wgxcco" path="res://Scenes/Trap/trap_handler.tscn" id="2_ndi7o"]
 [ext_resource type="PackedScene" uid="uid://cybbburxfpqly" path="res://Scenes/Trap/trap_tile.tscn" id="3_cn1wb"]
 [ext_resource type="PackedScene" uid="uid://cyyolh7rntpxh" path="res://Scenes/Decoration/PNJ.tscn" id="5_cn1wb"]
+[ext_resource type="PackedScene" uid="uid://ba6omtxmktcix" path="res://Scenes/Decoration/QRCode.tscn" id="6_61usn"]
 
 [node name="Room_J" instance=ExtResource("1_sskip")]
 
@@ -209,6 +210,10 @@ mapLinked = NodePath("../../TileLayers/ObstaclesTileLayer2")
 
 [node name="State2" parent="Pnj" index="3"]
 category = "Puzzle1"
+
+[node name="QrCode" parent="." index="8" instance=ExtResource("6_61usn")]
+position = Vector2(1437, -1120)
+scale = Vector2(0.832541, 0.832541)
 
 [editable path="TileLayers/TrapHandler"]
 [editable path="DoorWest"]
