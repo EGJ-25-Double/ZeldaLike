@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=30 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
@@ -16,8 +16,23 @@
 [ext_resource type="PackedScene" uid="uid://nvmtnqkhmgc0" path="res://Scenes/Rooms/room_H.tscn" id="8_c7le1"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="9_nngtn"]
 [ext_resource type="PackedScene" uid="uid://cbtu164odh7kl" path="res://Scenes/Rooms/room_J.tscn" id="10_nngtn"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="11_53r2q"]
 [ext_resource type="PackedScene" uid="uid://6p0jpkavb6uo" path="res://Scenes/Rooms/room_K.tscn" id="11_vofx3"]
+[ext_resource type="Texture2D" uid="uid://ct8i5xgion5vf" path="res://Assets/Sprites/Decoration/SpotlightBot.png" id="12_0cmrb"]
+[ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="12_luodc"]
+[ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="12_pnhnk"]
+[ext_resource type="Texture2D" uid="uid://cfqkswilifbnx" path="res://Assets/Sprites/Decoration/SpotlightTop.png" id="14_00k4y"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="15_2klc5"]
+[ext_resource type="Script" uid="uid://4j7iqwd6dew0" path="res://Scenes/Endgame/spotlight_manager.gd" id="19_3a44l"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="22_gf56v"]
+[ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="23_6y3s5"]
+[ext_resource type="Script" uid="uid://dqcnrb82kxag7" path="res://Scenes/Endgame/spotlight_caller.gd" id="25_6y3s5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf56v"]
+size = Vector2(2342, 338)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_24uko"]
+radius = 157.258
 
 [node name="Level" type="Node"]
 
@@ -50,14 +65,58 @@ position = Vector2(-19200, -8960)
 [node name="Room_J" parent="." instance=ExtResource("10_nngtn")]
 position = Vector2(-11520, -13440)
 
+[node name="ItemUnlocker" parent="Room_J" instance=ExtResource("11_53r2q")]
+position = Vector2(1450, 1128)
+unlocked_item = ExtResource("12_luodc")
+
 [node name="Room_K" parent="." instance=ExtResource("11_vofx3")]
 position = Vector2(-8960, -17920)
+
+[node name="SpotlightBot" type="Sprite2D" parent="."]
+position = Vector2(-169, 5)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("12_0cmrb")
+
+[node name="SpotlightManager" type="Node" parent="." node_paths=PackedStringArray("bot_sprite", "top_sprite", "collision_transform")]
+script = ExtResource("19_3a44l")
+bot_sprite = NodePath("../SpotlightBot")
+top_sprite = NodePath("../SpotlightTop")
+collision_transform = NodePath("../EndSpotlightTrigger/CollisionShape2D")
+needed_item = Array[ExtResource("22_gf56v")]([ExtResource("23_6y3s5")])
+
+[node name="StartSpotlightTrigger" parent="." node_paths=PackedStringArray("interactions") instance=ExtResource("12_pnhnk")]
+position = Vector2(-273, 702)
+trigger_on_walk = true
+block_no_item = false
+direction = 15
+interactions = [NodePath("SpotlightStarter")]
+
+[node name="CollisionShape2D" parent="StartSpotlightTrigger" index="0"]
+shape = SubResource("RectangleShape2D_gf56v")
+
+[node name="SpotlightStarter" type="Node" parent="StartSpotlightTrigger" node_paths=PackedStringArray("manager")]
+script = ExtResource("25_6y3s5")
+manager = NodePath("../../SpotlightManager")
+once = true
+
+[node name="EndSpotlightTrigger" parent="." node_paths=PackedStringArray("interactions") instance=ExtResource("12_pnhnk")]
+position = Vector2(-169, 6)
+direction = 15
+interactions = [NodePath("../SpotlightManager")]
+
+[node name="CollisionShape2D" parent="EndSpotlightTrigger" index="0"]
+shape = SubResource("CircleShape2D_24uko")
 
 [node name="Doggo" parent="." instance=ExtResource("3_754fn")]
 position = Vector2(-1779, -3136)
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
 position = Vector2(-2564, 1076)
+
+[node name="SpotlightTop" type="Sprite2D" parent="."]
+position = Vector2(-169, -127)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("14_00k4y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
@@ -86,3 +145,6 @@ scale = Vector2(10, 10)
 stream = ExtResource("9_nngtn")
 autoplay = true
 bus = &"Music"
+
+[editable path="StartSpotlightTrigger"]
+[editable path="EndSpotlightTrigger"]

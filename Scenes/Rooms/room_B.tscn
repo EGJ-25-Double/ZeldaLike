@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://b0qh3kgdrrh46"]
+[gd_scene load_steps=20 format=4 uid="uid://b0qh3kgdrrh46"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_ibfcu"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_32gfp"]
 [ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_32gfp"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_hrfea"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_hrfea"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="4_5pv62"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_5pv62"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_b6xkd"]
@@ -11,6 +11,13 @@
 [ext_resource type="Resource" uid="uid://bgdb84stswvjw" path="res://Data/mm_item_lever.tres" id="8_gk7rm"]
 [ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="10_gk7rm"]
 [ext_resource type="Resource" uid="uid://vcih31l4p7a6" path="res://Data/mm_item_bubble.tres" id="11_i2n13"]
+[ext_resource type="PackedScene" uid="uid://cedp56bhoa2xd" path="res://Scenes/Decoration/alien_label.tscn" id="12_rf3g8"]
+[ext_resource type="Texture2D" uid="uid://baddqnff2wryw" path="res://Assets/Sprites/Decoration/pink_arrow.png" id="13_6ba42"]
+[ext_resource type="Texture2D" uid="uid://cfrflmoinjs8q" path="res://Assets/Sprites/Decoration/pink_gear.png" id="14_bkrkk"]
+[ext_resource type="FontFile" uid="uid://cr0kib1b8rapc" path="res://Assets/Fonts/Kenney Blocks.ttf" id="15_raoln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf3g8"]
+size = Vector2(670, 341.4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecnvq"]
 size = Vector2(74, 20)
@@ -46,11 +53,15 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD+//r/AAACAAEAAAD///r/AAACAAIAAAAAAPr/AAACAAIAABABAPr/AAACAAEAAAA=")
 tile_set = ExtResource("2_32gfp")
 
+[node name="CollisionShape2D" parent="PlayerDetector" index="0"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rf3g8")
+
 [node name="DoorWest" parent="." index="2"]
-position = Vector2(-3680, -4)
+position = Vector2(-3720, -4)
 
 [node name="SpawnPoint" parent="DoorWest" index="0"]
-position = Vector2(-225, 0)
+position = Vector2(-210, 0)
 
 [node name="DoorNorth" parent="." index="4"]
 position = Vector2(0.00012207, -2090)
@@ -135,6 +146,88 @@ interactions = [NodePath("../DownDoor_Void_State")]
 [node name="CollisionShape2D" parent="DownDoor_Trigger" index="0"]
 shape = SubResource("RectangleShape2D_gk7rm")
 
+[node name="RightDoor_Default_State" type="Node" parent="." index="17" node_paths=PackedStringArray("mapLinked")]
+script = ExtResource("6_5pv62")
+category = "B_RightDoor"
+mapLinked = NodePath("../TileLayers/EventDoorELayer")
+fade = true
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="RightDoor_Void_State" type="Node" parent="." index="18"]
+script = ExtResource("6_5pv62")
+category = "B_RightDoor"
+metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="RightDoor_Trigger" parent="." index="19" node_paths=PackedStringArray("interactions") instance=ExtResource("7_l1nhg")]
+position = Vector2(1396, 805)
+scale = Vector2(2, 2)
+collision_mask = 9
+trigger_on_walk = true
+block_no_item = false
+direction = 15
+interactions = [NodePath("../RightDoor_Void_State")]
+
+[node name="CollisionShape2D" parent="RightDoor_Trigger" index="0"]
+shape = SubResource("RectangleShape2D_ww374")
+
+[node name="Node2D" type="Node2D" parent="." index="20"]
+position = Vector2(-2336, -1508)
+
+[node name="RichTextLabel" parent="Node2D" index="0" instance=ExtResource("12_rf3g8")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1500.0
+offset_bottom = 500.0
+text = "qwerty"
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" index="1"]
+position = Vector2(801, 73)
+scale = Vector2(5.2976, 5.2976)
+texture = ExtResource("13_6ba42")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D" index="2"]
+position = Vector2(-147, 73)
+rotation = -0.376757
+scale = Vector2(3.9921, 3.9921)
+texture = ExtResource("14_bkrkk")
+
+[node name="RichTextLabel2" parent="Node2D" index="3" instance=ExtResource("12_rf3g8")]
+offset_left = 936.0
+offset_top = -62.0
+offset_right = 2436.0
+offset_bottom = 438.0
+theme_override_fonts/normal_font = ExtResource("15_raoln")
+text = "1"
+
+[node name="Node2D2" type="Node2D" parent="." index="21"]
+position = Vector2(1873, -1508)
+
+[node name="RichTextLabel" parent="Node2D2" index="0" instance=ExtResource("12_rf3g8")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1500.0
+offset_bottom = 500.0
+text = "poiku"
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2" index="1"]
+position = Vector2(669.762, 73)
+scale = Vector2(5.2976, 5.2976)
+texture = ExtResource("13_6ba42")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D2" index="2"]
+position = Vector2(-147, 73)
+rotation = -0.376757
+scale = Vector2(3.9921, 3.9921)
+texture = ExtResource("14_bkrkk")
+
+[node name="RichTextLabel2" parent="Node2D2" index="3" instance=ExtResource("12_rf3g8")]
+offset_left = 804.762
+offset_top = -62.0
+offset_right = 2304.76
+offset_bottom = 438.0
+theme_override_fonts/normal_font = ExtResource("15_raoln")
+text = "3"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]
@@ -143,3 +236,4 @@ shape = SubResource("RectangleShape2D_gk7rm")
 [editable path="LeftDoor_Trigger"]
 [editable path="UpDoor_Trigger"]
 [editable path="DownDoor_Trigger"]
+[editable path="RightDoor_Trigger"]

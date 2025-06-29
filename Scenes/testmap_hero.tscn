@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bwwxf4albkxva"]
+[gd_scene load_steps=16 format=4 uid="uid://bwwxf4albkxva"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_5q760"]
 [ext_resource type="PackedScene" uid="uid://b6eeodi4eel07" path="res://Scenes/Rooms/room_G.tscn" id="5_lf3a7"]
 [ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="5_wb6sk"]
+[ext_resource type="PackedScene" uid="uid://nvmtnqkhmgc0" path="res://Scenes/Rooms/room_H.tscn" id="7_stmfg"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="11_lf3a7"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="11_y0035"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="12_6bex7"]
@@ -72,8 +73,11 @@ position = Vector2(-7851, 103)
 [node name="Room6" parent="." instance=ExtResource("13_hc80u")]
 position = Vector2(-10688, -5800)
 
+[node name="Room_H" parent="." instance=ExtResource("7_stmfg")]
+position = Vector2(-16088, -48)
+
 [node name="PlayerHero" parent="." instance=ExtResource("1_ghxtc")]
-position = Vector2(-13376, -5392)
+position = Vector2(-18920, -40)
 collision_mask = 14
 
 [node name="Camera2D" type="Camera2D" parent="."]

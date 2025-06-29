@@ -7,7 +7,7 @@ class_name PlayerHero
 
 @export var feedback_pulse_time   := 0.15  # seconds for the little scale pulse 
 
-const SPEED = 80000.0
+const SPEED = 70000.0
 static var instance: PlayerHero
 var            _shadow_mat  : ShaderMaterial
 var            _tween       : Tween

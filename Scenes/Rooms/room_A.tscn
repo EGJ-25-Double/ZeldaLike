@@ -1,15 +1,19 @@
-[gd_scene load_steps=9 format=4 uid="uid://c6qfuo6o0y6vv"]
+[gd_scene load_steps=11 format=4 uid="uid://c6qfuo6o0y6vv"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_u5py1"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_4310n"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_4700l"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_4700l"]
 [ext_resource type="Resource" uid="uid://bgdb84stswvjw" path="res://Data/mm_item_lever.tres" id="3_4310n"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_0d7l7"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_yfihf"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_vbh2w"]
+[ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="8_ek16v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbh2w"]
 size = Vector2(646, 267.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecnvq"]
+size = Vector2(74, 20)
 
 [node name="Room_A" instance=ExtResource("1_u5py1")]
 
@@ -51,8 +55,22 @@ category = "A_SpawnDoor"
 needed_item = Array[ExtResource("7_vbh2w")]([ExtResource("3_4310n")])
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
+[node name="DoorNorthEast" parent="." index="10" instance=ExtResource("8_ek16v")]
+position = Vector2(1591, -2090)
+scale = Vector2(10, 10)
+
+[node name="SpawnPoint" parent="DoorNorthEast" index="0"]
+position = Vector2(0, -70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorNorthEast/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ecnvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorNorthEast" index="2"]
+shape = SubResource("RectangleShape2D_ecnvq")
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]
 [editable path="DoorSouth"]
 [editable path="Trigger"]
+[editable path="DoorNorthEast"]
