@@ -22,6 +22,7 @@ func _ready() -> void:
 	InventoryUtils.subscribe_to_inventory_opened(_on_inventory_opened)
 	InventoryUtils.subscribe_to_item_unlocked(_on_item_unlocked)
 	visible = false
+	update_item_count()
 
 func _exit_tree() -> void:
 	InventoryUtils.unsubscribe_from_inventory_opened(_on_inventory_opened)
@@ -50,11 +51,20 @@ func _on_inventory_opened(is_open: bool) -> void:
 func _on_item_unlocked(item: ItemMemo) -> void:
 	if item == null: return
 	var temp = items_by_memo[item]
+	update_item_count()
 	temp.unlocked = true
 	if InventoryUtils.item_a == null:
 		temp.action = InventoryItem.Action.A
 	elif InventoryUtils.item_b == null:
 		temp.action = InventoryItem.Action.B
+
+func update_item_count() -> void:
+	var count: int = 0
+	for item in items:
+		if item.unlocked:
+			count = count + 1
+	
+	InventoryUtils.item_count = count
 
 func _open() -> void:
 	if Input.is_action_just_pressed("inventory"):

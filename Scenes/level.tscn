@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=19 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
@@ -6,15 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://dlmjxyw43g2a1" path="res://Scenes/Rooms/room_D.tscn" id="4_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://dnvoypnv7xmo" path="res://Scenes/Rooms/room_E.tscn" id="5_qxfql"]
-[ext_resource type="Script" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
+[ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
 [ext_resource type="PackedScene" uid="uid://lgksyifx3ymi" path="res://Scenes/Rooms/room_I.tscn" id="6_ha31o"]
 [ext_resource type="PackedScene" uid="uid://h2fxsi8whilu" path="res://Scenes/Rooms/room_F.tscn" id="6_pa6b8"]
-[ext_resource type="PackedScene" uid="uid://bushlvy2gc8go" path="res://Scenes/Rooms/room_A.tscn" id="7_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://c6qfuo6o0y6vv" path="res://Scenes/Rooms/room_A.tscn" id="7_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="7_c7le1"]
 [ext_resource type="PackedScene" uid="uid://b6eeodi4eel07" path="res://Scenes/Rooms/room_G.tscn" id="7_crh0w"]
 [ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="8_2klc5"]
 [ext_resource type="PackedScene" uid="uid://nvmtnqkhmgc0" path="res://Scenes/Rooms/room_H.tscn" id="8_c7le1"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="9_nngtn"]
+[ext_resource type="PackedScene" uid="uid://cbtu164odh7kl" path="res://Scenes/Rooms/room_J.tscn" id="10_nngtn"]
+[ext_resource type="PackedScene" uid="uid://6p0jpkavb6uo" path="res://Scenes/Rooms/room_K.tscn" id="11_vofx3"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="15_2klc5"]
 
 [node name="Level" type="Node"]
@@ -44,6 +46,12 @@ position = Vector2(-3840, -8960)
 
 [node name="Room_I" parent="." instance=ExtResource("6_ha31o")]
 position = Vector2(-19200, -8960)
+
+[node name="Room_J" parent="." instance=ExtResource("10_nngtn")]
+position = Vector2(-11520, -13440)
+
+[node name="Room_K" parent="." instance=ExtResource("11_vofx3")]
+position = Vector2(-8960, -17920)
 
 [node name="Doggo" parent="." instance=ExtResource("3_754fn")]
 position = Vector2(-1779, -3136)

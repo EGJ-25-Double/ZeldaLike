@@ -28,3 +28,22 @@ text = "Enter"
 offset_left = 80.0
 offset_right = 144.0
 text = "Shift"
+
+[node name="Space Hint" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 40.0
+offset_right = -9.0
+offset_bottom = 72.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Space Hint"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Space"
+horizontal_alignment = 1
+vertical_alignment = 1

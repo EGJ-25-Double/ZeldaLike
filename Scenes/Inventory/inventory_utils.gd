@@ -15,6 +15,8 @@ static var item_b: ItemMemo:
 	set(value):
 		item_b = value
 		_on_value_set(value, _on_item_b_equipped)
+		
+static var item_count: int
 
 static var _on_inventory_opened: Array[Callable]
 static var _on_item_a_equipped: Array[Callable]
