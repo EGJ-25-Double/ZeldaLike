@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
-[ext_resource type="PackedScene" uid="uid://ceoo0fkmcw5m8" path="res://Scenes/Rooms/room_C.tscn" id="3_bvt00"]
-[ext_resource type="PackedScene" uid="uid://dlmjxyw43g2a1" path="res://Scenes/Rooms/room_D.tscn" id="4_oqgf2"]
+[ext_resource type="PackedScene" path="res://Scenes/Rooms/room_C.tscn" id="3_bvt00"]
+[ext_resource type="PackedScene" path="res://Scenes/Rooms/room_D.tscn" id="4_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://dnvoypnv7xmo" path="res://Scenes/Rooms/room_E.tscn" id="5_qxfql"]
 [ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
@@ -72,6 +72,7 @@ unlocked_item = ExtResource("12_luodc")
 [node name="Room_K" parent="." instance=ExtResource("11_vofx3")]
 position = Vector2(-8960, -17920)
 
+[node name="Doggo" parent="." node_paths=PackedStringArray("position_to_fetch") instance=ExtResource("3_754fn")]
 [node name="SpotlightBot" type="Sprite2D" parent="."]
 position = Vector2(-169, 5)
 scale = Vector2(1.2, 1.2)
@@ -109,6 +110,10 @@ shape = SubResource("CircleShape2D_24uko")
 
 [node name="Doggo" parent="." instance=ExtResource("3_754fn")]
 position = Vector2(-1779, -3136)
+scale = Vector2(1, 1)
+item_to_fetch = ExtResource("13_00k4y")
+room_to_fetch = "Room_B"
+position_to_fetch = NodePath("../Room_B/HiddenDoggoDoor/HiddenDoorMarker")
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
 position = Vector2(-2564, 1076)
@@ -148,3 +153,13 @@ bus = &"Music"
 
 [editable path="StartSpotlightTrigger"]
 [editable path="EndSpotlightTrigger"]
+
+[editable path="Room_B"]
+[editable path="Room_B/DoorWest"]
+[editable path="Room_B/DoorEast"]
+[editable path="Room_B/DoorNorth"]
+[editable path="Room_B/DoorSouth"]
+[editable path="Room_B/DoorSouthE"]
+[editable path="Room_B/LeftDoor_Trigger"]
+[editable path="Room_B/UpDoor_Trigger"]
+[editable path="Room_B/DownDoor_Trigger"]

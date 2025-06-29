@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TrapListMemo" load_steps=19 format=3 uid="uid://cium7plavyqg3"]
+[gd_resource type="Resource" script_class="TrapListMemo" load_steps=19 format=3 uid="uid://bjhkn0xkf0tpl"]
 
 [ext_resource type="Script" uid="uid://c2rh4oq4mb4bb" path="res://Scenes/Trap/trap_list_memo.gd" id="1_uggvm"]
 [ext_resource type="Script" uid="uid://cxtnnrij85i8r" path="res://Scenes/Trap/trap_memo.gd" id="2_l1esh"]
