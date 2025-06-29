@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=11 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
+[ext_resource type="PackedScene" uid="uid://ceoo0fkmcw5m8" path="res://Scenes/Rooms/room_C.tscn" id="3_bvt00"]
+[ext_resource type="PackedScene" uid="uid://dlmjxyw43g2a1" path="res://Scenes/Rooms/room_D.tscn" id="4_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
 [ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
 [ext_resource type="PackedScene" uid="uid://bushlvy2gc8go" path="res://Scenes/Rooms/room_A.tscn" id="7_8c0lf"]
@@ -15,6 +17,12 @@
 
 [node name="Room_B" parent="." instance=ExtResource("1_0f350")]
 position = Vector2(0, -4480)
+
+[node name="Room_C" parent="." instance=ExtResource("3_bvt00")]
+position = Vector2(7680, -4480)
+
+[node name="Room_D" parent="." instance=ExtResource("4_oqgf2")]
+position = Vector2(7680, -8960)
 
 [node name="Doggo" parent="." instance=ExtResource("3_754fn")]
 position = Vector2(-1779, -3136)
