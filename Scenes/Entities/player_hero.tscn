@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bceyuy3vk3q7x" path="res://Scenes/Entities/player_hero.gd" id="1_q4s8y"]
 [ext_resource type="Script" uid="uid://da51f2r611bha" path="res://Scenes/Entities/player_animation.gd" id="3_580jn"]
 [ext_resource type="Script" uid="uid://fj8ygb4knnl0" path="res://Scenes/Interaction/interacter.gd" id="4_mq0ad"]
-[ext_resource type="Shader" uid="uid://dposawcaxb6it" path="res://Scenes/Entities/player_hero.gdshader" id="5_l2mcj"]
+[ext_resource type="Shader" path="res://Scenes/Entities/player_hero.gdshader" id="5_l2mcj"]
 [ext_resource type="Texture2D" uid="uid://b2ejijulv6sf0" path="res://Assets/Sprites/PlayerHero/cellsquare.png" id="6_564el"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4s8y"]
