@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://b0qh3kgdrrh46"]
+[gd_scene load_steps=7 format=4 uid="uid://b0qh3kgdrrh46"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_ibfcu"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_32gfp"]
 [ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_32gfp"]
+[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_hrfea"]
+[ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="4_5pv62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecnvq"]
 size = Vector2(74, 20)
@@ -14,13 +16,27 @@ tile_map_data = PackedByteArray("AAD+//3/AAAAAAQAAAD+//7/AAAAAAQAAAD+////AAAAAAQ
 
 [node name="EventDoorSELayer" type="TileMapLayer" parent="TileLayers" index="2"]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAFAAUAAAACAAIAAAADAAUAAAACAAEAADAGAAUAAAACAAEAADAEAAUAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAFAAUAAAACAAIAABADAAUAAAACAAEAADAGAAUAAAACAAEAADAEAAUAAAACAAIAAAA=")
 tile_set = ExtResource("2_32gfp")
 
 [node name="EventDoorELayer" type="TileMapLayer" parent="TileLayers" index="3"]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAKAP//AAACAAEAAFAKAAAAAAACAAEAAFAKAAEAAAACAAEAAFAKAAIAAAACAAEAAFALAAIAAAAAAAAAAGALAAEAAAAAAAAAADALAAAAAAAAAAAAAAALAP//AAAAAAAAAGA=")
 tile_set = ExtResource("2_32gfp")
+
+[node name="EventDoorWLayer" type="TileMapLayer" parent="TileLayers" index="4"]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD1////AAACAAIAAED1/wAAAAACAAIAAGD1//7/AAACAAEAAGD1/wEAAAACAAEAAGA=")
+tile_set = ExtResource("2_32gfp")
+
+[node name="EventDoorNLayer" type="TileMapLayer" parent="TileLayers" index="5"]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAFAPr/AAACAAIAAAAGAPr/AAACAAIAABAHAPr/AAACAAEAAAAEAPr/AAACAAEAAAA=")
+tile_set = ExtResource("2_32gfp")
+
+[node name="ItemUnlocker" parent="TileLayers" index="6" instance=ExtResource("3_hrfea")]
+position = Vector2(847, -465)
+unlocked_item = ExtResource("4_5pv62")
 
 [node name="DoorWest" parent="." index="2"]
 position = Vector2(-3680, -4)

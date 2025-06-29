@@ -1,19 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=8 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
 [ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
+[ext_resource type="PackedScene" uid="uid://bushlvy2gc8go" path="res://Scenes/Rooms/room_A.tscn" id="7_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="7_c7le1"]
 [ext_resource type="PackedScene" uid="uid://b3w8e1mt3vysb" path="res://Scenes/Inventory/equipped_items.tscn" id="8_2klc5"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="9_nngtn"]
 
-[node name="Testmap" type="Node"]
+[node name="Level" type="Node"]
+
+[node name="Room_A" parent="." instance=ExtResource("7_8c0lf")]
 
 [node name="Room_B" parent="." instance=ExtResource("1_0f350")]
 position = Vector2(0, -4480)
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
-position = Vector2(11, -30)
+position = Vector2(-2564, 1076)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)
