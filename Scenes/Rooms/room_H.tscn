@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://d2kkfwa82ytdx"]
+[gd_scene load_steps=4 format=4 uid="uid://nvmtnqkhmgc0"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_r76v3"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_kfbkq"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_kfbkq"]
 [ext_resource type="Resource" uid="uid://cnw0g8i3rnhcx" path="res://Data/mm_item_invaders.tres" id="3_x1hi5"]
 
 [node name="Room_H" instance=ExtResource("1_r76v3")]

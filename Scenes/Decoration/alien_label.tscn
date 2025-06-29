@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cedp56bhoa2xd"]
+
+[ext_resource type="FontFile" uid="uid://dfi37tb8lky5n" path="res://Assets/Fonts/StandardGalacticAlphabet-Regular.ttf" id="1_jvblr"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+custom_minimum_size = Vector2(600, 300)
+offset_left = -1088.0
+offset_top = -936.0
+offset_right = 412.0
+offset_bottom = -436.0
+theme_override_colors/default_color = Color(1, 0.529412, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_jvblr")
+theme_override_font_sizes/normal_font_size = 160
+bbcode_enabled = true
+text = "En avant Mars"
