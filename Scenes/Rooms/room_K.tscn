@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://6p0jpkavb6uo"]
+[gd_scene load_steps=9 format=4 uid="uid://6p0jpkavb6uo"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_v1plw"]
 [ext_resource type="PackedScene" uid="uid://bcob1x3wgxcco" path="res://Scenes/Trap/trap_handler.tscn" id="2_oosf1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cybbburxfpqly" path="res://Scenes/Trap/trap_tile.tscn" id="3_lc4mr"]
 [ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="4_tuan3"]
 [ext_resource type="PackedScene" uid="uid://cyyolh7rntpxh" path="res://Scenes/Decoration/PNJ.tscn" id="7_lc4mr"]
+[ext_resource type="PackedScene" uid="uid://e6k82vqkn6ni" path="res://Scenes/Decoration/clue_4.tscn" id="8_y5hyx"]
 
 [node name="Room_K" instance=ExtResource("1_v1plw")]
 
@@ -407,6 +408,9 @@ mapLinked = NodePath("../../TileLayers/ObstaclesTileLayer2")
 
 [node name="State2" parent="Pnj" index="3"]
 category = "Puzzle2"
+
+[node name="Clue4" parent="." index="9" instance=ExtResource("8_y5hyx")]
+position = Vector2(-1000, -800)
 
 [editable path="TileLayers/TrapHandler"]
 [editable path="DoorWest"]
