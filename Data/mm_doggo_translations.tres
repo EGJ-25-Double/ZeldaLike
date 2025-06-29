@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_pujyr"]
 script = ExtResource("2_pujyr")
-room = "room_B"
+room = "Room_B"
 category = ""
 state = ""
 translation = "On dirait des configurations d'options !"
@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://6i68yklem3yv"
 
 [sub_resource type="Resource" id="Resource_km5md"]
 script = ExtResource("2_pujyr")
-room = "room_C"
+room = "Room_C"
 category = ""
 state = ""
 translation = "On dirait des configurations d'options !"
@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://6i68yklem3yv"
 
 [sub_resource type="Resource" id="Resource_d8eih"]
 script = ExtResource("2_pujyr")
-room = "room_G"
+room = "Room_G"
 category = "Text_Cover"
 state = "State_Uncover"
 translation = "En avant Mars !"
@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://6i68yklem3yv"
 
 [sub_resource type="Resource" id="Resource_biueu"]
 script = ExtResource("2_pujyr")
-room = "room_I"
+room = "Room_I"
 category = ""
 state = ""
 translation = "Il était une fois, un valeureux et formidable héros tout de vert vêtu. On raconte qu’il grimpait d’une main experte tous types de rideaux, même les étoffes les plus fines pour atteindre ses fins. Ceci lui valut ce surnom dont il est le seul souverain : le héros de la déco !"
