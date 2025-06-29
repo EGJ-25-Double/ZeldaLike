@@ -5,6 +5,6 @@ extends Interaction
 
 var i: int
 
-func _on_internal_interact() -> void:
+func _internal_interact() -> void:
 	interactions[i]._internal_interact()
 	i = (i + 1) % interactions.size()
