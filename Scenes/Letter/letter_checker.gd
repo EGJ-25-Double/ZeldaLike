@@ -5,6 +5,9 @@ extends Control
 @export var letters: Array[LetterSetter]
 
 
+@onready var win_area: Area2D = $"Win Area"
+
+
 var done: bool
 
 
@@ -12,6 +15,12 @@ func _ready() -> void:
 	visible = false
 	for letter in letters:
 		letter.correct_set.connect(_on_correct_set)
+	win_area.body_entered.connect(_on_win_area_entered)
+
+
+func _on_win_area_entered(body) -> void:
+	if !done: return
+	#TODO: WIN HERE
 
 
 func _on_correct_set(value: bool) -> void:

@@ -1,4 +1,4 @@
-extends Interaction
+extends InteractionEnabler
 class_name SpotlightManager
 
 @export var bot_sprite: Sprite2D
@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _internal_interact() -> void:
 	if state == 1 && timer > 1:
 		state = 2
+		super._internal_interact()
 		print("Finished spotlight event")
 	
 func start_state() -> void:
