@@ -87,7 +87,7 @@ func _physics_process(delta) -> void:
 			var fetch_pos = position_to_fetch.global_position
 			direction = (fetch_pos - self.position).normalized()
 			cache_facing_dir(direction)
-			velocity = direction * (speed + 100)
+			velocity = direction * (speed + 1000)
 			animated_sprite_2d.play_movement_animation(facing_direction)
 			move_and_slide()
 			if abs(fetch_pos.x - self.position.x) < 10.0 && abs(fetch_pos.y - self.position.y) < 10.0:
