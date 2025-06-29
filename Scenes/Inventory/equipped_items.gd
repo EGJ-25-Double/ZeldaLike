@@ -22,3 +22,4 @@ func _on_item_b_equipped(item: ItemMemo) -> void:
 func _on_item_equipped(item: ItemMemo, target: EquippedItem) -> void:
 	var memo = item if item != null else no_item
 	target.ref.item = memo
+	target.ref.unlocked = true
