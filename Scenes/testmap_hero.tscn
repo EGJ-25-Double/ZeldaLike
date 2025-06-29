@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_cf0ln"]
-[ext_resource type="Script" path="res://Scenes/camera_dungeon.gd" id="3_cfss2"]
+[ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="3_cfss2"]
 [ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="3_fcsen"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="3_kvtte"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="4_cfss2"]
@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="11_lf3a7"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="11_y0035"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="12_6bex7"]
-[ext_resource type="PackedScene" uid="uid://6hw2356m84o7" path="res://Scenes/Rooms/room_K.tscn" id="13_hc80u"]
+[ext_resource type="PackedScene" uid="uid://6p0jpkavb6uo" path="res://Scenes/Rooms/room_K.tscn" id="13_hc80u"]
 
 [node name="Testmap" type="Node"]
 
