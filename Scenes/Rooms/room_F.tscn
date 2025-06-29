@@ -27,29 +27,29 @@ position = Vector2(-2251, -2090)
 [node name="Deco" type="Node2D" parent="." index="6"]
 
 [node name="DarthPoster2" parent="Deco" index="0" instance=ExtResource("2_ejrk2")]
-position = Vector2(-485, 731)
+position = Vector2(-502, 790)
 rotation = 0.314629
-scale = Vector2(0.538721, 0.538721)
+scale = Vector2(1.48831, 1.48831)
 
 [node name="DarthPoster" parent="Deco" index="1" instance=ExtResource("2_ejrk2")]
-position = Vector2(455, 536)
+position = Vector2(542, 398)
 rotation = 0.277853
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.71463, 1.71463)
 
 [node name="DarthPoster3" parent="Deco" index="2" instance=ExtResource("2_ejrk2")]
-position = Vector2(-109, 1258)
+position = Vector2(-47, 1275)
 rotation = -0.228565
-scale = Vector2(1.00375, 1.00375)
+scale = Vector2(1.43662, 1.43662)
 
 [node name="DarthPoster4" parent="Deco" index="3" instance=ExtResource("2_ejrk2")]
-position = Vector2(-1073, 481)
+position = Vector2(-1228, 319)
 rotation = -0.462419
-scale = Vector2(1.44, 1.44)
+scale = Vector2(2.24891, 2.24891)
 
 [node name="DarthPoster5" parent="Deco" index="4" instance=ExtResource("2_ejrk2")]
-position = Vector2(-327, 272)
+position = Vector2(-310, 158)
 rotation = -0.0698608
-scale = Vector2(0.322709, 0.322709)
+scale = Vector2(0.969177, 0.969177)
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]
