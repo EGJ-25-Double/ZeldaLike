@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="TrapListMemo" load_steps=13 format=3 uid="uid://cium7plavyqg3"]
+
+[ext_resource type="Script" uid="uid://c2rh4oq4mb4bb" path="res://Scenes/Trap/trap_list_memo.gd" id="1_uggvm"]
+[ext_resource type="Script" uid="uid://cxtnnrij85i8r" path="res://Scenes/Trap/trap_memo.gd" id="2_l1esh"]
+[ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="3_h4v4j"]
+[ext_resource type="Resource" uid="uid://cnw0g8i3rnhcx" path="res://Data/mm_item_invaders.tres" id="4_0a5dr"]
+[ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="5_0a5dr"]
+[ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="6_lg8y0"]
+
+[sub_resource type="Resource" id="Resource_lg8y0"]
+script = ExtResource("2_l1esh")
+items = Array[ExtResource("3_h4v4j")]([ExtResource("4_0a5dr")])
+metadata/_custom_type_script = "uid://cxtnnrij85i8r"
+
+[sub_resource type="Resource" id="Resource_2ahcq"]
+script = ExtResource("2_l1esh")
+items = Array[ExtResource("3_h4v4j")]([ExtResource("5_0a5dr")])
+metadata/_custom_type_script = "uid://cxtnnrij85i8r"
+
+[sub_resource type="Resource" id="Resource_o2hea"]
+script = ExtResource("2_l1esh")
+items = Array[ExtResource("3_h4v4j")]([ExtResource("6_lg8y0")])
+metadata/_custom_type_script = "uid://cxtnnrij85i8r"
+
+[sub_resource type="Resource" id="Resource_tw1ny"]
+script = ExtResource("2_l1esh")
+items = Array[ExtResource("3_h4v4j")]([ExtResource("6_lg8y0"), ExtResource("4_0a5dr")])
+metadata/_custom_type_script = "uid://cxtnnrij85i8r"
+
+[sub_resource type="Resource" id="Resource_myos0"]
+script = ExtResource("2_l1esh")
+items = Array[ExtResource("3_h4v4j")]([ExtResource("4_0a5dr"), ExtResource("5_0a5dr")])
+metadata/_custom_type_script = "uid://cxtnnrij85i8r"
+
+[sub_resource type="Resource" id="Resource_s6ta8"]
+script = ExtResource("2_l1esh")
+items = Array[ExtResource("3_h4v4j")]([ExtResource("6_lg8y0"), ExtResource("5_0a5dr")])
+metadata/_custom_type_script = "uid://cxtnnrij85i8r"
+
+[resource]
+script = ExtResource("1_uggvm")
+traps = Dictionary[int, ExtResource("2_l1esh")]({
+0: SubResource("Resource_lg8y0"),
+1: SubResource("Resource_2ahcq"),
+2: SubResource("Resource_o2hea"),
+3: SubResource("Resource_tw1ny"),
+4: SubResource("Resource_myos0"),
+5: SubResource("Resource_s6ta8")
+})
+metadata/_custom_type_script = "uid://c2rh4oq4mb4bb"
