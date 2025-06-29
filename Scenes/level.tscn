@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=9 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
+[ext_resource type="PackedScene" uid="uid://cm1a4l7hqc5nc" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="5_pa6b8"]
 [ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="6_crh0w"]
 [ext_resource type="PackedScene" uid="uid://bushlvy2gc8go" path="res://Scenes/Rooms/room_A.tscn" id="7_8c0lf"]
@@ -17,6 +18,9 @@ position = Vector2(0, -4480)
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
 position = Vector2(-2564, 1076)
+
+[node name="Doggo" parent="." instance=ExtResource("3_754fn")]
+position = Vector2(-1779, -3136)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)

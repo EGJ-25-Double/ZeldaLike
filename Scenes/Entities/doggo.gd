@@ -3,7 +3,7 @@ class_name Doggo extends CharacterBody2D
 
 @export var follow_range: int = 500
 @export var item_loved: ItemMemo
-@onready var player_hero: PlayerHero = get_tree().root.get_node("Testmap/PlayerHero")
+@onready var player_hero: PlayerHero = get_tree().root.get_node("Level/PlayerHero")
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
 
 
@@ -12,6 +12,7 @@ var roam_time: float = 2.0
 var idle_time: float = 1.5
 var sleep_time: float = 3.0
 var direction: Vector2 = Vector2.ZERO
+var facing_direction: int = Direction.Down
 var timer: float = 0.0
 var state: String = "idle"
 var isAsleep: bool = false
@@ -24,7 +25,7 @@ func _physics_process(delta) -> void:
 	match state:
 		"roam":
 			velocity = direction * speed
-			animated_sprite_2d.play_roam_animation(direction.normalized())
+			animated_sprite_2d.play_movement_animation(facing_direction)
 			move_and_slide()
 			timer -= delta
 			if timer <= 0:
@@ -32,10 +33,8 @@ func _physics_process(delta) -> void:
 				timer = idle_time
 		"idle":
 			velocity = Vector2.ZERO
-			if (!isAsleep):
-				animated_sprite_2d.play_static_animation(animated_sprite_2d.WALK_TO_IDLE)
-			else:
-				animated_sprite_2d.play_static_animation(animated_sprite_2d.SLEEP_TO_IDLE)
+			animated_sprite_2d.play_idle_animation(facing_direction)
+			if (isAsleep):
 				isAsleep = false
 			timer -= delta
 			if timer <= 0:
@@ -49,15 +48,16 @@ func _physics_process(delta) -> void:
 		"sleep":
 			isAsleep = true
 			timer -= delta
-			animated_sprite_2d.play_static_animation(animated_sprite_2d.IDLE_TO_SLEEP)
+			animated_sprite_2d.play_sleep_animation(facing_direction)
 			if timer <= 0:
 				state = "idle"
 				timer = idle_time
 		"following":
 			if (player_hero):
 				direction = (player_hero.position - self.position).normalized()
+				cache_facing_dir(direction)
 				velocity = direction * (speed + 100)
-				animated_sprite_2d.play_roam_animation(direction)
+				animated_sprite_2d.play_movement_animation(facing_direction)
 				move_and_slide()
 				if !player_has_required_item():
 					state = "roam"
@@ -67,13 +67,27 @@ func _physics_process(delta) -> void:
 func choose_new_direction():
 	var dirs = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
 	direction = dirs[randi() % dirs.size()]
+	cache_facing_dir(direction)
 
 
 func follow_player():
 	if (player_hero):
 		direction = (player_hero.position - self.position).normalized()
+		cache_facing_dir(direction)
 		velocity = direction * (speed + 100)
 
 
 func player_has_required_item() -> bool:
 	return (InventoryUtils.item_a == item_loved || InventoryUtils.item_b == item_loved)
+	
+func cache_facing_dir(dir: Vector2):
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
+			facing_direction = Direction.Right
+		else:
+			facing_direction = Direction.Left
+	else:
+		if dir.y > 0:
+			facing_direction = Direction.Down
+		else:
+			facing_direction = Direction.Up

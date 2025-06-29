@@ -21,10 +21,10 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity != Vector2.ZERO:
 		cache_player_dir()
-		animated_sprite_2d.play_movement_animation()
+		animated_sprite_2d.play_movement_animation(PlayerUtils.player_dir)
 		move_and_slide()
 	else:
-		animated_sprite_2d.play_static_animation(animated_sprite_2d.DIR_TO_IDLE)
+		animated_sprite_2d.play_idle_animation(PlayerUtils.player_dir)
 
 
 func cache_player_dir() -> void:

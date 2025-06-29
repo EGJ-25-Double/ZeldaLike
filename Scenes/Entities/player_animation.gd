@@ -16,11 +16,11 @@ const DIR_TO_MOVEMENT = {
 	Direction.Right: "walk_right"
 }
 
-func play_movement_animation():
-	if DIR_TO_MOVEMENT.keys().has(PlayerUtils.player_dir):
-		play(DIR_TO_MOVEMENT[PlayerUtils.player_dir])
+func play_movement_animation(direction: int):
+	if DIR_TO_MOVEMENT.keys().has(direction):
+		play(DIR_TO_MOVEMENT[direction])
 
 		
-func play_static_animation(anim_dic: Dictionary):
-	if anim_dic.keys().has(animation):
-		play(anim_dic[animation])
+func play_idle_animation(direction: int):
+	if DIR_TO_IDLE.keys().has(direction):
+		play(DIR_TO_IDLE[direction])

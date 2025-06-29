@@ -12,5 +12,9 @@ func _ready() -> void:
 func _on_body_entered(body) -> void:
 	if body is not PlayerHero: return
 	InventoryUtils.unlock_item(unlocked_item)
-	process_mode = Node.PROCESS_MODE_DISABLED
+	call_deferred("disable_process")
 	hide()
+
+func disable_process() -> void:
+	process_mode = Node.PROCESS_MODE_DISABLED
+	
