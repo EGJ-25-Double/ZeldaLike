@@ -41,9 +41,6 @@ radius = 157.258
 [node name="Room_B" parent="." instance=ExtResource("1_0f350")]
 position = Vector2(0, -4480)
 
-[node name="ItemUnlocker2" parent="Room_B" instance=ExtResource("11_53r2q")]
-position = Vector2(2935, 344)
-
 [node name="Room_C" parent="." instance=ExtResource("3_bvt00")]
 position = Vector2(7680, -4480)
 
