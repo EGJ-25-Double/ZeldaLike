@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bqkmbet5kph2s"]
 
 [ext_resource type="Script" uid="uid://dr4sog01mj4aa" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_qq57v"]
-[ext_resource type="FontFile" uid="uid://4nieqk7v3br8" path="res://Assets/Fonts/Kenney Rocket.ttf" id="2_y4ryc"]
+[ext_resource type="Texture2D" uid="uid://bmudm3jh7iqcy" path="res://Assets/Sprites/title_trouble.png" id="2_yobja"]
 [ext_resource type="Theme" uid="uid://coiuj78tsqptn" path="res://Assets/Themes/label.tres" id="3_7f67a"]
 [ext_resource type="AudioStream" uid="uid://1iyjrgu8jacl" path="res://Assets/Sound/Music/EGJ25_Musique_Menu_V1.mp3" id="4_gphap"]
 [ext_resource type="AudioStream" uid="uid://7tdhdpra43ph" path="res://Assets/Sound/UI/EGJ25_UI_Hover_V1.mp3" id="5_yobja"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lkur8"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kw60b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o0cfa"]
 
@@ -28,18 +28,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_lkur8")
+texture = SubResource("PlaceholderTexture2D_kw60b")
 expand_mode = 1
+stretch_mode = 1
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 166.0
-offset_right = 804.0
-offset_bottom = 308.0
-theme_override_fonts/font = ExtResource("2_y4ryc")
-theme_override_font_sizes/font_size = 76
-text = "Trouble"
+offset_right = 1020.0
+offset_bottom = 712.0
+scale = Vector2(0.743811, 0.74401)
+texture = ExtResource("2_yobja")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

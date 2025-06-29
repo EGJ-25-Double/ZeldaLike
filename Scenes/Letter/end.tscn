@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cswfkjf7uoiwp"]
+
+[ext_resource type="PackedScene" uid="uid://dg7qodest7jkn" path="res://Scenes/Letter/letter_setter.tscn" id="1_qlv0u"]
+[ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="2_44dmu"]
+[ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="3_p4v8f"]
+[ext_resource type="Resource" uid="uid://bgdb84stswvjw" path="res://Data/mm_item_lever.tres" id="4_0katc"]
+[ext_resource type="Script" uid="uid://c37nvangp4nv0" path="res://Scenes/Letter/letter_checker.gd" id="5_krd8t"]
+[ext_resource type="Texture2D" uid="uid://el380m5r0qqj" path="res://Assets/Sprites/End/T_LastHint.png" id="6_tsn8p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fq0f7"]
+radius = 600.0
+height = 1600.0
+
+[node name="end" type="Node2D"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0)
+
+[node name="LetterSetter" parent="." instance=ExtResource("1_qlv0u")]
+position = Vector2(-648, -16)
+right_item = ExtResource("2_44dmu")
+
+[node name="CollisionShape2D" parent="LetterSetter" index="0"]
+position = Vector2(-248, 264)
+
+[node name="Sprite Screen" parent="LetterSetter" index="1"]
+position = Vector2(-160, -1744)
+
+[node name="Sprite Trigger" parent="LetterSetter" index="2"]
+position = Vector2(-248, 264)
+
+[node name="LetterSetter2" parent="." instance=ExtResource("1_qlv0u")]
+position = Vector2(-32, -72)
+right_item = ExtResource("3_p4v8f")
+
+[node name="CollisionShape2D" parent="LetterSetter2" index="0"]
+position = Vector2(-144, 72)
+
+[node name="Sprite Screen" parent="LetterSetter2" index="1"]
+position = Vector2(-120, -1696)
+
+[node name="Sprite Trigger" parent="LetterSetter2" index="2"]
+position = Vector2(-144, 72)
+
+[node name="LetterSetter3" parent="." instance=ExtResource("1_qlv0u")]
+position = Vector2(480, 320)
+right_item = ExtResource("4_0katc")
+
+[node name="Sprite Screen" parent="LetterSetter3" index="1"]
+position = Vector2(0, -2088)
+
+[node name="LetterChecker" type="Control" parent="." node_paths=PackedStringArray("letters")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_krd8t")
+letters = [NodePath("../LetterSetter"), NodePath("../LetterSetter2"), NodePath("../LetterSetter3")]
+metadata/_custom_type_script = "uid://c37nvangp4nv0"
+
+[node name="Sprite2D" type="Sprite2D" parent="LetterChecker"]
+position = Vector2(-1864, 888)
+scale = Vector2(5, 5)
+texture = ExtResource("6_tsn8p")
+
+[node name="Win Area" type="Area2D" parent="LetterChecker"]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LetterChecker/Win Area"]
+position = Vector2(-144, -1408)
+shape = SubResource("CapsuleShape2D_fq0f7")
+
+[editable path="LetterSetter"]
+[editable path="LetterSetter2"]
+[editable path="LetterSetter3"]
