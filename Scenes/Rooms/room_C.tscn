@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ceoo0fkmcw5m8"]
+[gd_scene load_steps=12 format=4 uid="uid://ceoo0fkmcw5m8"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_hr50i"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_tsk47"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="4_4k467"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="5_o5vwe"]
 [ext_resource type="Resource" uid="uid://bgdb84stswvjw" path="res://Data/mm_item_lever.tres" id="6_lg5o7"]
+[ext_resource type="PackedScene" uid="uid://cedp56bhoa2xd" path="res://Scenes/Decoration/alien_label.tscn" id="7_gdbrx"]
+[ext_resource type="Texture2D" uid="uid://baddqnff2wryw" path="res://Assets/Sprites/Decoration/pink_arrow.png" id="8_btooy"]
+[ext_resource type="Texture2D" uid="uid://cfrflmoinjs8q" path="res://Assets/Sprites/Decoration/pink_gear.png" id="9_uwy47"]
+[ext_resource type="FontFile" uid="uid://cr0kib1b8rapc" path="res://Assets/Fonts/Kenney Blocks.ttf" id="10_a43g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5vwe"]
 size = Vector2(638, 270)
@@ -46,6 +50,35 @@ script = ExtResource("4_4k467")
 category = "C_NorthDoor"
 needed_item = Array[ExtResource("5_o5vwe")]([ExtResource("6_lg5o7")])
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
+
+[node name="Node2D2" type="Node2D" parent="." index="9"]
+position = Vector2(-17, -1837)
+
+[node name="RichTextLabel" parent="Node2D2" index="0" instance=ExtResource("7_gdbrx")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1500.0
+offset_bottom = 500.0
+text = "tututata"
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2" index="1"]
+position = Vector2(1092.76, 73)
+scale = Vector2(5.2976, 5.2976)
+texture = ExtResource("8_btooy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D2" index="2"]
+position = Vector2(-147, 73)
+rotation = -0.376757
+scale = Vector2(3.9921, 3.9921)
+texture = ExtResource("9_uwy47")
+
+[node name="RichTextLabel2" parent="Node2D2" index="3" instance=ExtResource("7_gdbrx")]
+offset_left = 1227.76
+offset_top = -62.0
+offset_right = 2727.76
+offset_bottom = 438.0
+theme_override_fonts/normal_font = ExtResource("10_a43g6")
+text = "1"
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]
