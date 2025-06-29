@@ -38,6 +38,9 @@ tile_set = ExtResource("2_chquh")
 [node name="DoorWest" parent="." index="2"]
 position = Vector2(-3680, 3.05176e-05)
 
+[node name="DoorEast" parent="." index="3"]
+position = Vector2(3680, -1164)
+
 [node name="ItemUnlocker" parent="." index="6" instance=ExtResource("2_kfbkq")]
 position = Vector2(2091, -4)
 unlocked_item = ExtResource("3_x1hi5")

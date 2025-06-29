@@ -4,7 +4,7 @@ class_name PlayerHero
 
 @onready var animated_sprite_2d: CharacterAnimation = $AnimatedSprite2D
 
-const SPEED = 80000.0
+const SPEED = 70000.0
 static var instance: PlayerHero
 
 
