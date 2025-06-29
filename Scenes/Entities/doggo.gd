@@ -30,6 +30,17 @@ var hasFetch: bool = false
 func _ready() -> void:
 	instance = self
 	InventoryUtils.subscribe_to_item_used(_on_item_used)
+	Events.room_entered.connect(func(_room):
+		facing_direction = PlayerUtils.player_dir
+		if (facing_direction == Direction.Down):
+			direction = Vector2.DOWN
+		elif (facing_direction == Direction.Up):
+			direction = Vector2.UP
+		elif (facing_direction == Direction.Left):
+			direction = Vector2.LEFT
+		elif (facing_direction == Direction.Right):
+			direction = Vector2.RIGHT
+	)
 
 
 func _physics_process(delta) -> void:
@@ -78,7 +89,7 @@ func _physics_process(delta) -> void:
 				velocity = direction * (speed + 100)
 				animated_sprite_2d.play_movement_animation(facing_direction)
 				move_and_slide()
-				if abs(player_hero.position.x - self.position.x) < 10.0 && abs(player_hero.position.y - self.position.y) < 10.0:
+				if abs(player_hero.position.x - self.position.x) + abs(player_hero.position.y - self.position.y) < 100.0:
 					velocity = Vector2.ZERO
 					state = "wait"
 					timer = idle_time
