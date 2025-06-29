@@ -1,0 +1,404 @@
+[gd_scene load_steps=7 format=4 uid="uid://6hw2356m84o7"]
+
+[ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_v1plw"]
+[ext_resource type="PackedScene" uid="uid://bcob1x3wgxcco" path="res://Scenes/Trap/trap_handler.tscn" id="2_oosf1"]
+[ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_s3wwb"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_kwt8g"]
+[ext_resource type="PackedScene" uid="uid://cybbburxfpqly" path="res://Scenes/Trap/trap_tile.tscn" id="3_lc4mr"]
+[ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="4_tuan3"]
+
+[node name="Room" instance=ExtResource("1_v1plw")]
+
+[node name="GroundTileLayer" parent="TileLayers" index="0"]
+tile_map_data = PackedByteArray("AAD+//3/AAAAAAoAAAD+//7/AAAAAAoAAAD+////AAAAAAQAAAD///z/AAAAAAoAAAD///3/AAAAAAAAAAD///7/AAAAAAoAAAD/////AAAAAAQAAAAAAPz/AAAAAAoAAAAAAP3/AAAAAAoAAAABAPz/AAAAAAoAAAD+//z/AAAAAAoAAAAAAP7/AAAAAAoAAAAAAP//AAAAAAQAAAABAP7/AAAAAAoAAAABAP//AAAAAAQAAAABAP3/AAAAAAoAAAACAP//AAAAAAQAAAADAP//AAADAAEAAFADAAAAAAACAAEAAFADAAEAAAACAAEAAFADAAIAAAADAAEAADADAAMAAAAEAAIAAFADAAQAAAACAAEAAFADAAUAAAABAAEAADAEAAAAAAAAAAoAAAAEAAEAAAAAAAoAAAAEAAIAAAAAAAoAAAAEAAMAAAAAAAoAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAoAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAoAAAAFAAMAAAAAAAoAAAAFAAQAAAAAAAoAAAAFAAUAAAAAAAoAAAACAP7/AAAAAAoAAAACAP3/AAAAAAoAAAACAPz/AAAAAAoAAAADAPz/AAAEAAMAAFADAP3/AAACAAEAAFADAP7/AAACAAEAAFAEAPz/AAAAAAoAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAoAAAAEAP//AAAAAAoAAAAFAPz/AAAAAAoAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAoAAAAFAP//AAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAoAAAABAAYAAAAAAAoAAAACAAYAAAAAAAAAAGD+/wYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAACAFAAYAAAAAAAoAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAoAAAAIAAYAAAAAAAoAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAD9/wYAAAAAAAAAAAD8/wYAAAAAAAoAAAD7/wYAAAAAAAAAACD6/wYAAAAAAAAAAAD5/wYAAAACAAEAAFD4/wYAAAAAAAQAAAD3/wYAAAAAAAQAAAD2/wYAAAACAAEAAGD1/wYAAAAAAAoAAAALAAUAAAAAAAoAAAALAAQAAAAAAAAAACALAAMAAAAAAAAAAAALAAIAAAAAAAoAAAALAAEAAAAAAAAAAAALAAAAAAAAAAoAAAALAP7/AAAAAAAAADALAP3/AAAAAAoAAAALAPz/AAAAAAAAAGALAPv/AAAAAAAAADD0//v/AAAAAAAAADD0//z/AAAAAAoAAAD0//3/AAAAAAAAAAD0//7/AAAAAAAAAFD0////AAAAAAoAAAD0/wAAAAAAAAAAAAD0/wEAAAAAAAoAAAD0/wIAAAAAAAAAAAD0/wMAAAAAAAAAAAD0/wQAAAAAAAAAAFD0/wUAAAAAAAoAAAD0//r/AAAAAAAAAAALAPr/AAAAAAoAAAD1//n/AAAAAAAAAAD2//n/AAAAAAAAAGD3//n/AAAAAAAAAAD4//n/AAAAAAoAAAD5//n/AAAAAAoAAAD6//n/AAAAAAAAAAD7//n/AAAAAAAAAHD8//n/AAAAAAoAAAD9//n/AAAAAAAAAAD+//n/AAAAAAoAAAD///n/AAAAAAoAAAAAAPn/AAAAAAoAAAABAPn/AAAAAAoAAAACAPn/AAAAAAAAAAADAPn/AAAAAAoAAAAEAPn/AAAAAAoAAAAFAPn/AAAAAAAAAAAGAPn/AAAAAAoAAAAHAPn/AAAAAAoAAAAIAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAKAPn/AAAAAAoAAAD1//r/AAABAAEAAAD2//r/AAAEAAMAAAD3//r/AAAEAAMAABD4//r/AAACAAEAAAD5//r/AAAEAAMAAAD6//r/AAACAAEAAAD7//r/AAACAAEAAAD8//r/AAACAAEAABD9//r/AAAEAAMAAAD+//r/AAACAAEAABD///r/AAACAAEAABAAAPr/AAACAAEAABABAPr/AAACAAEAABACAPr/AAACAAEAAAADAPr/AAABAAEAAFAEAPr/AAAAAAoAAAAFAPr/AAAAAAAAAAAGAPr/AAAAAAAAAAAHAPr/AAAAAAoAAAAIAPr/AAAAAAoAAAAJAPr/AAAAAAoAAAAKAPr/AAAAAAoAAAD1//v/AAACAAEAAGD1//z/AAAEAAMAAGD1//3/AAACAAEAAGD1//7/AAAEAAIAAGD1/wAAAAACAAEAAGD1/wEAAAACAAEAAGD1/wMAAAACAAEAAGD1/wQAAAACAAEAAGD1/wUAAAABAAEAAGD2//v/AAAAAAoAAAD2//z/AAAAAAoAAAD2//3/AAAAAAoAAAD2//7/AAAAAAoAAAD2////AAAAAAQAAAD2/wAAAAAAAAQAAAD2/wEAAAAAAAQAAAD2/wIAAAAAAAQAAAD2/wMAAAAAAAQAAAD2/wQAAAAAAAQAAAD2/wUAAAADAAEAAGD3//v/AAAAAAoAAAD3//z/AAAAAAAAAAD3//3/AAAAAAoAAAD3//7/AAAAAAoAAAD3////AAAAAAQAAAD3/wAAAAAAAAQAAAD3/wEAAAAAAAQAAAD3/wIAAAAAAAQAAAD3/wMAAAAAAAQAAAD3/wQAAAAAAAQAAAD3/wUAAAAAAAQAAAD4//v/AAAAAAAAAAD4//z/AAAAAAAAAAD4//3/AAAAAAAAAAD4//7/AAAAAAoAAAD4////AAAAAAQAAAD4/wAAAAAAAAQAAAD4/wEAAAAAAAQAAAD4/wIAAAAAAAQAAAD4/wMAAAAAAAQAAAD4/wQAAAAAAAQAAAD4/wUAAAAAAAQAAAD5//v/AAAAAAAAAAD5//z/AAAAAAoAAAD5//3/AAAAAAAAAAD5//7/AAAAAAoAAAD5////AAAAAAQAAAD5/wAAAAAAAAQAAAD5/wEAAAAAAAQAAAD5/wIAAAAAAAQAAAD5/wMAAAAAAAQAAAD5/wQAAAAAAAQAAAD5/wUAAAADAAEAADD6//v/AAAAAAoAAAD6//z/AAAAAAoAAAD6//3/AAAAAAAAAAD6//7/AAAAAAoAAAD6////AAAAAAQAAAD6/wAAAAAAAAQAAAD6/wEAAAAAAAQAAAD6/wIAAAAAAAQAAAD6/wMAAAAAAAoAAAD6/wQAAAAAAAoAAAD6/wUAAAACAAEAADD7//v/AAAAAAoAAAD7//z/AAAAAAoAAAD7//3/AAAAAAoAAAD7//7/AAAAAAoAAAD7////AAAAAAQAAAD7/wAAAAAAAAQAAAD7/wEAAAABAAQAAAD7/wIAAAAAAAQAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAD7/wUAAAACAAEAADD8//v/AAAAAAoAAAD8//z/AAAAAAoAAAD8//3/AAAAAAoAAAD8//7/AAAAAAAAAAD8////AAAAAAQAAAD8/wAAAAAAAAQAAAD8/wEAAAAAAAQAAAD8/wIAAAAAAAQAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAoAAAD8/wUAAAACAAEAADD9//v/AAAAAAoAAAD9//z/AAAAAAoAAAD9//3/AAAAAAoAAAD9//7/AAAAAAoAAAD9////AAAAAAQAAAD+//v/AAAAAAAAAAD///v/AAAAAAoAAAAAAPv/AAAAAAoAAAABAPv/AAAAAAoAAAACAPv/AAAAAAAAAAADAPv/AAACAAEAAFAEAPv/AAAAAAoAAAAFAPv/AAAAAAoAAAAGAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAPv/AAAAAAoAAAAKAPv/AAAAAAoAAAAGAPz/AAAAAAoAAAAGAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAAGAP//AAAAAAoAAAAGAAAAAAAAAAoAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAoAAAAGAAMAAAAAAAoAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAPz/AAAAAAoAAAAHAP3/AAAAAAoAAAAHAP7/AAAAAAoAAAAHAP//AAAAAAoAAAAHAAAAAAAAAAoAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAoAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAoAAAAHAAUAAAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAoAAAAIAP7/AAAAAAoAAAAIAP//AAAAAAoAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAoAAAAIAAIAAAAAAAoAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAoAAAAIAAUAAAAAAAoAAAAJAPz/AAAAAAoAAAAJAP3/AAAAAAoAAAAJAP7/AAAAAAoAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAoAAAAJAAEAAAAAAAoAAAAJAAIAAAAAAAoAAAAJAAMAAAAAAAoAAAAJAAQAAAAAAAoAAAAJAAUAAAAAAAoAAAAKAPz/AAAAAAoAAAAKAP3/AAAAAAAAAAAKAAAAAAAAAAoAAAAKAAEAAAAAAAoAAAAKAAIAAAAAAAoAAAAKAAMAAAAAAAoAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAD0/wYAAAAAAAAAAAALAAYAAAAAAAoAAAALAPn/AAAAAAoAAAD0//n/AAAAAAoAAAD9/wAAAAAAAAQAAAD9/wEAAAAAAAQAAAD9/wIAAAAAAAQAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAoAAAD9/wUAAAAEAAIAADD+/wAAAAAAAAQAAAD+/wEAAAAAAAQAAAD+/wIAAAAAAAQAAAD+/wMAAAAAAAAAAAD+/wQAAAAAAAoAAAD+/wUAAAACAAEAADD//wAAAAAAAAQAAAD//wEAAAAAAAQAAAD//wIAAAAAAAQAAAD//wMAAAAAAAAAAAD//wQAAAAAAAoAAAD//wUAAAACAAEAADAAAAAAAAAAAAQAAAAAAAEAAAAAAAQAAAAAAAIAAAAAAAQAAAAAAAMAAAAAAAoAAAAAAAQAAAAAAAAAAAAAAAUAAAACAAEAADABAAAAAAAAAAQAAAABAAEAAAAAAAQAAAABAAIAAAAAAAQAAAABAAMAAAAAAAoAAAABAAQAAAAAAAAAAAABAAUAAAACAAEAADACAAAAAAAAAAQAAFACAAEAAAAAAAQAAAACAAIAAAAAAAQAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAACAAEAADAKAP7/AAAAAAAAAAD1////AAACAAEAAGALAP//AAAAAAoAAAAKAP//AAAAAAAAAAD1/wIAAAACAAEAAGA=")
+
+[node name="ObstaclesTileLayer" parent="TileLayers" index="1"]
+visible = false
+
+[node name="TrapHandler" parent="TileLayers" index="2" node_paths=PackedStringArray("traps") instance=ExtResource("2_oosf1")]
+traps = [NodePath("TrapTile"), NodePath("TrapTile2"), NodePath("TrapTile3"), NodePath("TrapTile4"), NodePath("TrapTile5"), NodePath("TrapTile6"), NodePath("TrapTile7"), NodePath("TrapTile8"), NodePath("TrapTile9"), NodePath("TrapTile10"), NodePath("TrapTile11"), NodePath("TrapTile12"), NodePath("TrapTile13"), NodePath("TrapTile14"), NodePath("TrapTile15"), NodePath("TrapTile16"), NodePath("TrapTile17"), NodePath("TrapTile18"), NodePath("TrapTile19"), NodePath("TrapTile20"), NodePath("TrapTile21"), NodePath("TrapTile22"), NodePath("TrapTile23"), NodePath("TrapTile24"), NodePath("TrapTile25"), NodePath("TrapTile26"), NodePath("TrapTile27"), NodePath("TrapTile28"), NodePath("TrapTile29"), NodePath("TrapTile30"), NodePath("TrapTile31"), NodePath("TrapTile32"), NodePath("TrapTile33"), NodePath("TrapTile34"), NodePath("TrapTile35"), NodePath("TrapTile36"), NodePath("TrapTile37"), NodePath("TrapTile38"), NodePath("TrapTile39"), NodePath("TrapTile40"), NodePath("TrapTile41"), NodePath("TrapTile42"), NodePath("TrapTile43"), NodePath("TrapTile44"), NodePath("TrapTile45"), NodePath("TrapTile46"), NodePath("TrapTile47"), NodePath("TrapTile48"), NodePath("TrapTile49"), NodePath("TrapTile50"), NodePath("TrapTile51"), NodePath("TrapTile52"), NodePath("TrapTile53"), NodePath("TrapTile54"), NodePath("TrapTile55"), NodePath("TrapTile56"), NodePath("TrapTile57"), NodePath("TrapTile58"), NodePath("TrapTile59"), NodePath("TrapTile60"), NodePath("TrapTile61"), NodePath("TrapTile62"), NodePath("TrapTile63"), NodePath("TrapTile64"), NodePath("TrapTile65"), NodePath("TrapTile66"), NodePath("TrapTile67"), NodePath("TrapTile68"), NodePath("TrapTile69"), NodePath("TrapTile70"), NodePath("TrapTile71"), NodePath("TrapTile72"), NodePath("TrapTile73"), NodePath("TrapTile74"), NodePath("TrapTile75"), NodePath("TrapTile76"), NodePath("TrapTile77"), NodePath("TrapTile78"), NodePath("TrapTile79"), NodePath("TrapTile80"), NodePath("TrapTile81"), NodePath("TrapTile82"), NodePath("TrapTile83"), NodePath("TrapTile84"), NodePath("TrapTile85"), NodePath("TrapTile86"), NodePath("TrapTile87"), NodePath("TrapTile88"), NodePath("TrapTile89"), NodePath("TrapTile90"), NodePath("TrapTile91"), NodePath("TrapTile92"), NodePath("TrapTile93"), NodePath("TrapTile94"), NodePath("TrapTile95"), NodePath("TrapTile96")]
+
+[node name="Spawn Point" parent="TileLayers/TrapHandler" index="0"]
+position = Vector2(-2408, 160)
+
+[node name="TrapTile" parent="TileLayers/TrapHandler" index="1" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, 880)
+
+[node name="TrapTile2" parent="TileLayers/TrapHandler" index="2" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, 880)
+type = 4
+
+[node name="TrapTile3" parent="TileLayers/TrapHandler" index="3" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, 880)
+type = 1
+
+[node name="TrapTile4" parent="TileLayers/TrapHandler" index="4" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, 880)
+type = 2
+
+[node name="TrapTile5" parent="TileLayers/TrapHandler" index="5" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, 880)
+type = 3
+
+[node name="TrapTile6" parent="TileLayers/TrapHandler" index="6" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, 880)
+
+[node name="TrapTile7" parent="TileLayers/TrapHandler" index="7" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, 880)
+type = 3
+
+[node name="TrapTile8" parent="TileLayers/TrapHandler" index="8" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, 880)
+type = 3
+
+[node name="TrapTile9" parent="TileLayers/TrapHandler" index="9" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, 880)
+type = 2
+
+[node name="TrapTile10" parent="TileLayers/TrapHandler" index="10" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, 880)
+type = 5
+
+[node name="TrapTile11" parent="TileLayers/TrapHandler" index="11" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, 880)
+type = 5
+
+[node name="TrapTile12" parent="TileLayers/TrapHandler" index="12" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, 880)
+type = 2
+
+[node name="TrapTile13" parent="TileLayers/TrapHandler" index="13" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, 720)
+type = 3
+
+[node name="TrapTile14" parent="TileLayers/TrapHandler" index="14" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, 720)
+type = 3
+
+[node name="TrapTile15" parent="TileLayers/TrapHandler" index="15" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, 720)
+type = 3
+
+[node name="TrapTile16" parent="TileLayers/TrapHandler" index="16" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, 720)
+type = 4
+
+[node name="TrapTile17" parent="TileLayers/TrapHandler" index="17" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, 720)
+
+[node name="TrapTile18" parent="TileLayers/TrapHandler" index="18" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, 720)
+type = 2
+
+[node name="TrapTile19" parent="TileLayers/TrapHandler" index="19" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, 720)
+type = 2
+
+[node name="TrapTile20" parent="TileLayers/TrapHandler" index="20" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, 720)
+
+[node name="TrapTile21" parent="TileLayers/TrapHandler" index="21" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, 720)
+
+[node name="TrapTile22" parent="TileLayers/TrapHandler" index="22" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, 720)
+type = 3
+
+[node name="TrapTile23" parent="TileLayers/TrapHandler" index="23" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, 720)
+type = 4
+
+[node name="TrapTile24" parent="TileLayers/TrapHandler" index="24" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, 720)
+type = 1
+
+[node name="TrapTile25" parent="TileLayers/TrapHandler" index="25" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, 560)
+type = 2
+
+[node name="TrapTile26" parent="TileLayers/TrapHandler" index="26" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, 560)
+
+[node name="TrapTile27" parent="TileLayers/TrapHandler" index="27" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, 560)
+type = 3
+
+[node name="TrapTile28" parent="TileLayers/TrapHandler" index="28" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, 560)
+type = 3
+
+[node name="TrapTile29" parent="TileLayers/TrapHandler" index="29" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, 560)
+type = 3
+
+[node name="TrapTile30" parent="TileLayers/TrapHandler" index="30" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, 560)
+
+[node name="TrapTile31" parent="TileLayers/TrapHandler" index="31" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, 560)
+type = 1
+
+[node name="TrapTile32" parent="TileLayers/TrapHandler" index="32" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, 560)
+type = 2
+
+[node name="TrapTile33" parent="TileLayers/TrapHandler" index="33" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, 560)
+type = 3
+
+[node name="TrapTile34" parent="TileLayers/TrapHandler" index="34" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, 560)
+type = 3
+
+[node name="TrapTile35" parent="TileLayers/TrapHandler" index="35" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, 560)
+
+[node name="TrapTile36" parent="TileLayers/TrapHandler" index="36" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, 560)
+type = 4
+
+[node name="TrapTile37" parent="TileLayers/TrapHandler" index="37" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, 400)
+type = 1
+
+[node name="TrapTile38" parent="TileLayers/TrapHandler" index="38" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, 400)
+type = 3
+
+[node name="TrapTile39" parent="TileLayers/TrapHandler" index="39" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, 400)
+
+[node name="TrapTile40" parent="TileLayers/TrapHandler" index="40" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, 400)
+type = 2
+
+[node name="TrapTile41" parent="TileLayers/TrapHandler" index="41" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, 400)
+
+[node name="TrapTile42" parent="TileLayers/TrapHandler" index="42" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, 400)
+type = 3
+
+[node name="TrapTile43" parent="TileLayers/TrapHandler" index="43" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, 400)
+type = 1
+
+[node name="TrapTile44" parent="TileLayers/TrapHandler" index="44" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, 400)
+type = 4
+
+[node name="TrapTile45" parent="TileLayers/TrapHandler" index="45" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, 400)
+
+[node name="TrapTile46" parent="TileLayers/TrapHandler" index="46" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, 400)
+type = 3
+
+[node name="TrapTile47" parent="TileLayers/TrapHandler" index="47" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, 400)
+
+[node name="TrapTile48" parent="TileLayers/TrapHandler" index="48" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, 400)
+type = 3
+
+[node name="TrapTile49" parent="TileLayers/TrapHandler" index="49" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, 240)
+type = 4
+
+[node name="TrapTile50" parent="TileLayers/TrapHandler" index="50" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, 240)
+type = 5
+
+[node name="TrapTile51" parent="TileLayers/TrapHandler" index="51" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, 240)
+type = 3
+
+[node name="TrapTile52" parent="TileLayers/TrapHandler" index="52" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, 240)
+type = 3
+
+[node name="TrapTile53" parent="TileLayers/TrapHandler" index="53" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, 240)
+type = 1
+
+[node name="TrapTile54" parent="TileLayers/TrapHandler" index="54" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, 240)
+type = 4
+
+[node name="TrapTile55" parent="TileLayers/TrapHandler" index="55" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, 240)
+type = 5
+
+[node name="TrapTile56" parent="TileLayers/TrapHandler" index="56" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, 240)
+
+[node name="TrapTile57" parent="TileLayers/TrapHandler" index="57" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, 240)
+type = 4
+
+[node name="TrapTile58" parent="TileLayers/TrapHandler" index="58" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, 240)
+type = 3
+
+[node name="TrapTile59" parent="TileLayers/TrapHandler" index="59" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, 240)
+type = 3
+
+[node name="TrapTile60" parent="TileLayers/TrapHandler" index="60" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, 240)
+
+[node name="TrapTile61" parent="TileLayers/TrapHandler" index="61" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, 80)
+type = 5
+
+[node name="TrapTile62" parent="TileLayers/TrapHandler" index="62" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, 80)
+
+[node name="TrapTile63" parent="TileLayers/TrapHandler" index="63" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, 80)
+type = 5
+
+[node name="TrapTile64" parent="TileLayers/TrapHandler" index="64" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, 80)
+type = 4
+
+[node name="TrapTile65" parent="TileLayers/TrapHandler" index="65" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, 80)
+type = 3
+
+[node name="TrapTile66" parent="TileLayers/TrapHandler" index="66" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, 80)
+type = 4
+
+[node name="TrapTile67" parent="TileLayers/TrapHandler" index="67" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, 80)
+type = 5
+
+[node name="TrapTile68" parent="TileLayers/TrapHandler" index="68" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, 80)
+type = 5
+
+[node name="TrapTile69" parent="TileLayers/TrapHandler" index="69" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, 80)
+type = 5
+
+[node name="TrapTile70" parent="TileLayers/TrapHandler" index="70" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, 80)
+type = 4
+
+[node name="TrapTile71" parent="TileLayers/TrapHandler" index="71" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, 80)
+type = 5
+
+[node name="TrapTile72" parent="TileLayers/TrapHandler" index="72" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, 80)
+type = 5
+
+[node name="TrapTile73" parent="TileLayers/TrapHandler" index="73" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, -80)
+type = 2
+
+[node name="TrapTile74" parent="TileLayers/TrapHandler" index="74" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, -80)
+type = 5
+
+[node name="TrapTile75" parent="TileLayers/TrapHandler" index="75" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, -80)
+type = 3
+
+[node name="TrapTile76" parent="TileLayers/TrapHandler" index="76" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, -80)
+type = 5
+
+[node name="TrapTile77" parent="TileLayers/TrapHandler" index="77" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, -80)
+type = 5
+
+[node name="TrapTile78" parent="TileLayers/TrapHandler" index="78" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, -80)
+
+[node name="TrapTile79" parent="TileLayers/TrapHandler" index="79" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, -80)
+type = 4
+
+[node name="TrapTile80" parent="TileLayers/TrapHandler" index="80" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, -80)
+type = 2
+
+[node name="TrapTile81" parent="TileLayers/TrapHandler" index="81" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, -80)
+type = 1
+
+[node name="TrapTile82" parent="TileLayers/TrapHandler" index="82" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, -80)
+type = 3
+
+[node name="TrapTile83" parent="TileLayers/TrapHandler" index="83" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, -80)
+
+[node name="TrapTile84" parent="TileLayers/TrapHandler" index="84" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, -80)
+type = 4
+
+[node name="TrapTile85" parent="TileLayers/TrapHandler" index="85" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1848, -240)
+
+[node name="TrapTile86" parent="TileLayers/TrapHandler" index="86" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1688, -240)
+type = 1
+
+[node name="TrapTile87" parent="TileLayers/TrapHandler" index="87" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1528, -240)
+type = 3
+
+[node name="TrapTile88" parent="TileLayers/TrapHandler" index="88" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1368, -240)
+type = 4
+
+[node name="TrapTile89" parent="TileLayers/TrapHandler" index="89" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1208, -240)
+type = 5
+
+[node name="TrapTile90" parent="TileLayers/TrapHandler" index="90" instance=ExtResource("3_lc4mr")]
+position = Vector2(-1048, -240)
+type = 2
+
+[node name="TrapTile91" parent="TileLayers/TrapHandler" index="91" instance=ExtResource("3_lc4mr")]
+position = Vector2(-888, -240)
+type = 1
+
+[node name="TrapTile92" parent="TileLayers/TrapHandler" index="92" instance=ExtResource("3_lc4mr")]
+position = Vector2(-728, -240)
+type = 5
+
+[node name="TrapTile93" parent="TileLayers/TrapHandler" index="93" instance=ExtResource("3_lc4mr")]
+position = Vector2(-568, -240)
+
+[node name="TrapTile94" parent="TileLayers/TrapHandler" index="94" instance=ExtResource("3_lc4mr")]
+position = Vector2(-408, -240)
+type = 5
+
+[node name="TrapTile95" parent="TileLayers/TrapHandler" index="95" instance=ExtResource("3_lc4mr")]
+position = Vector2(-248, -240)
+type = 2
+
+[node name="TrapTile96" parent="TileLayers/TrapHandler" index="96" instance=ExtResource("3_lc4mr")]
+position = Vector2(-88, -240)
+type = 4
+
+[node name="ObstaclesTileLayer2" type="TileMapLayer" parent="TileLayers" index="3"]
+visible = false
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAFAAIAAAAAAAoAAAAEAAIAAAAAAAoAAAADAAIAAAAAAAoAAAACAAIAAAAAAAoAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAoAAAD+/wIAAAAAAAoAAAD9/wIAAAAAAAoAAAD8/wIAAAAAAAoAAAD7/wIAAAAAAAoAAAD6/wIAAAAAAAAAAAD6/wEAAAAAAAoAAAD6/wAAAAAAAAoAAAD6////AAAAAAoAAAD6//7/AAAAAAoAAAD6//3/AAAAAAoAAAD6//z/AAAAAAoAAAD7//z/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAoAAAD///z/AAAAAAoAAAAAAPz/AAAAAAoAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAoAAAAFAPz/AAAAAAoAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAoAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAoAAAAFAAEAAAAAAAoAAAAEAAEAAAAAAAoAAAADAAEAAAAAAAoAAAACAAEAAAAAAAoAAAABAAEAAAAAAAoAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAoAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAoAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAAoAAAACAAAAAAAAAAoAAAADAAAAAAAAAAoAAAAEAAAAAAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAoAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAoAAAD9////AAAAAAoAAAD8////AAAAAAAAAAD7////AAAAAAoAAAD7//7/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAoAAAD+//7/AAAAAAoAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAoAAAACAP7/AAAAAAoAAAADAP7/AAAAAAoAAAAEAP7/AAAAAAoAAAAEAP3/AAAAAAoAAAADAP3/AAAAAAAAAAACAP3/AAAAAAoAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAoAAAD+//3/AAAAAAoAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAoAAAA=")
+enabled = false
+tile_set = ExtResource("2_s3wwb")
+
+[node name="ItemUnlocker" parent="." index="6" instance=ExtResource("3_kwt8g")]
+position = Vector2(544, 376)
+unlocked_item = ExtResource("4_tuan3")
+
+[editable path="TileLayers/TrapHandler"]
+[editable path="DoorWest"]
+[editable path="DoorEast"]
+[editable path="DoorNorth"]
+[editable path="DoorSouth"]

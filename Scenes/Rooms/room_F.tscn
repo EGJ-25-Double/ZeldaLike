@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=4 uid="uid://d3qq4px8151ew"]
+[gd_scene load_steps=3 format=4 uid="uid://h2fxsi8whilu"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_b8odx"]
 [ext_resource type="PackedScene" uid="uid://cr203cualfmga" path="res://Scenes/Decoration/Darth_Poster.tscn" id="2_ejrk2"]
