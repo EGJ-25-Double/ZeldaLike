@@ -49,6 +49,7 @@ script = ExtResource("5_xckcq")
 category = "D_Void"
 mapLinked = NodePath("../TileLayers/EventTileLayer")
 fade = true
+once = true
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
 [editable path="DoorWest"]
