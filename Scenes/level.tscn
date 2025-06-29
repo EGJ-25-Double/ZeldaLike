@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://nvmtnqkhmgc0" path="res://Scenes/Rooms/room_H.tscn" id="8_c7le1"]
 [ext_resource type="AudioStream" uid="uid://o4y6d8u0tkc3" path="res://Assets/Sound/Music/EGJ25_Musique_AlienWorldV1.mp3" id="9_nngtn"]
 [ext_resource type="PackedScene" uid="uid://cbtu164odh7kl" path="res://Scenes/Rooms/room_J.tscn" id="10_nngtn"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="11_53r2q"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="11_53r2q"]
 [ext_resource type="PackedScene" uid="uid://6p0jpkavb6uo" path="res://Scenes/Rooms/room_K.tscn" id="11_vofx3"]
 [ext_resource type="Texture2D" uid="uid://ct8i5xgion5vf" path="res://Assets/Sprites/Decoration/SpotlightBot.png" id="12_0cmrb"]
 [ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="12_luodc"]
@@ -40,6 +40,9 @@ radius = 157.258
 
 [node name="Room_B" parent="." instance=ExtResource("1_0f350")]
 position = Vector2(0, -4480)
+
+[node name="ItemUnlocker2" parent="Room_B" instance=ExtResource("11_53r2q")]
+position = Vector2(2935, 344)
 
 [node name="Room_C" parent="." instance=ExtResource("3_bvt00")]
 position = Vector2(7680, -4480)
@@ -112,9 +115,6 @@ position = Vector2(-1779, -3136)
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
 position = Vector2(-2564, 1076)
-
-[node name="ItemUnlocker2" parent="." instance=ExtResource("11_53r2q")]
-position = Vector2(2935, -4136)
 
 [node name="SpotlightTop" type="Sprite2D" parent="."]
 position = Vector2(-169, -127)
