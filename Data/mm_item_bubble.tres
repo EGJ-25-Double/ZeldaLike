@@ -7,5 +7,6 @@
 script = ExtResource("1_w8ekf")
 name = "Heart"
 sprite = ExtResource("2_3ubl8")
-unlocked_at_start = true
+unlocked_at_start = false
+letter = "U"
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"

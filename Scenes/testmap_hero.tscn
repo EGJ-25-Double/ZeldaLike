@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_cfss2"]
 [ext_resource type="PackedScene" uid="uid://cdv672q6tewhj" path="res://Scenes/Entities/player_hero.tscn" id="1_ghxtc"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_cf0ln"]
-[ext_resource type="Script" path="res://Scenes/camera_dungeon.gd" id="3_cfss2"]
+[ext_resource type="Script" uid="uid://d4f30fqu3hxeg" path="res://Scenes/camera_dungeon.gd" id="3_cfss2"]
 [ext_resource type="PackedScene" uid="uid://d1qo3atlophot" path="res://Scenes/Inventory/inventory_list.tscn" id="3_fcsen"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="3_kvtte"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="4_cfss2"]
@@ -112,9 +112,8 @@ stream = ExtResource("12_6bex7")
 autoplay = true
 bus = &"Music"
 
-[node name="Doggo" parent="." node_paths=PackedStringArray("position_to_fetch") instance=ExtResource("4_cfss2")]
+[node name="Doggo" parent="." instance=ExtResource("4_cfss2")]
 item_to_fetch = ExtResource("11_lf3a7")
-position_to_fetch = NodePath("../Room/DoggoFetchPoint")
 
 [editable path="Room"]
 [editable path="Room/DoorWest"]

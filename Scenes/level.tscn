@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=31 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cfqkswilifbnx" path="res://Assets/Sprites/Decoration/SpotlightTop.png" id="14_00k4y"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="15_2klc5"]
 [ext_resource type="Script" uid="uid://4j7iqwd6dew0" path="res://Scenes/Endgame/spotlight_manager.gd" id="19_3a44l"]
+[ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="21_luodc"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="22_gf56v"]
 [ext_resource type="Resource" uid="uid://bk5rv11wrpr4u" path="res://Data/mm_item_cake.tres" id="23_6y3s5"]
 [ext_resource type="Script" uid="uid://dqcnrb82kxag7" path="res://Scenes/Endgame/spotlight_caller.gd" id="25_6y3s5"]
@@ -40,9 +41,6 @@ radius = 157.258
 
 [node name="Room_B" parent="." instance=ExtResource("1_0f350")]
 position = Vector2(0, -4480)
-
-[node name="ItemUnlocker2" parent="Room_B" instance=ExtResource("11_53r2q")]
-position = Vector2(2935, 344)
 
 [node name="Room_C" parent="." instance=ExtResource("3_bvt00")]
 position = Vector2(7680, -4480)
@@ -110,8 +108,12 @@ interactions = [NodePath("../SpotlightManager")]
 [node name="CollisionShape2D" parent="EndSpotlightTrigger" index="0"]
 shape = SubResource("CircleShape2D_24uko")
 
-[node name="Doggo" parent="." instance=ExtResource("3_754fn")]
+[node name="Doggo" parent="." node_paths=PackedStringArray("position_to_fetch") instance=ExtResource("3_754fn")]
 position = Vector2(-1779, -3136)
+scale = Vector2(1, 1)
+item_to_fetch = ExtResource("21_luodc")
+room_to_fetch = "Room_B"
+position_to_fetch = NodePath("../Room_B/RightDoor_Trigger/RightDoor_Marker")
 
 [node name="PlayerHero" parent="." instance=ExtResource("5_pa6b8")]
 position = Vector2(-2564, 1076)
@@ -149,5 +151,15 @@ stream = ExtResource("9_nngtn")
 autoplay = true
 bus = &"Music"
 
+[editable path="Room_B"]
+[editable path="Room_B/DoorWest"]
+[editable path="Room_B/DoorEast"]
+[editable path="Room_B/DoorNorth"]
+[editable path="Room_B/DoorSouth"]
+[editable path="Room_B/DoorSouthE"]
+[editable path="Room_B/LeftDoor_Trigger"]
+[editable path="Room_B/UpDoor_Trigger"]
+[editable path="Room_B/DownDoor_Trigger"]
+[editable path="Room_B/RightDoor_Trigger"]
 [editable path="StartSpotlightTrigger"]
 [editable path="EndSpotlightTrigger"]

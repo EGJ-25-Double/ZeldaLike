@@ -1,7 +1,9 @@
 extends Control
-@onready var sound_hover_player = $ButtonHover
-@onready var sound_clic_player = $ButtonPress
-@onready var sound_startgame_player = $StartGame
+
+@onready var music_menu: AudioStreamPlayer = $MusicMenu
+@onready var button_hover: AudioStreamPlayer = $ButtonHover
+@onready var button_press: AudioStreamPlayer = $ButtonPress
+@onready var start_game: AudioStreamPlayer = $StartGame
 
 func _ready():
 	$VBoxContainer/PlayBtn.grab_focus()
