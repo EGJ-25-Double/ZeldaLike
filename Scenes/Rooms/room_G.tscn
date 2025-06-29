@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://b6eeodi4eel07"]
+[gd_scene load_steps=22 format=4 uid="uid://b6eeodi4eel07"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_w6irh"]
 [ext_resource type="PackedScene" uid="uid://c42gp8lxtybha" path="res://Scenes/Decoration/planet.tscn" id="2_a1qt1"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_cwpuu"]
+[ext_resource type="FontFile" uid="uid://dfi37tb8lky5n" path="res://Assets/Fonts/StandardGalacticAlphabet-Regular.ttf" id="3_7bwyy"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="3_eduek"]
 [ext_resource type="Script" uid="uid://6syjsf2hy8tq" path="res://Scenes/Interaction/interaction_queue.gd" id="4_86ru1"]
 [ext_resource type="Texture2D" uid="uid://ca22t54mm8gki" path="res://Assets/Sprites/Decoration/Planet_0002s_0002_terre.png" id="5_7bwyy"]
@@ -14,9 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://dlx38w3smc7p" path="res://Assets/Sprites/Decoration/Planet_0002s_0005_uranus.png" id="7_iyhll"]
 [ext_resource type="Texture2D" uid="uid://ckl5w34pc5v2i" path="res://Assets/Sprites/Decoration/Planet_0002s_0000_mercure.png" id="8_77t2q"]
 [ext_resource type="Texture2D" uid="uid://e670h61cd5bn" path="res://Assets/Sprites/Decoration/Planet_0002s_0001_venus.png" id="9_bbak2"]
-[ext_resource type="FontFile" uid="uid://xfkg5c600cmw" path="res://Assets/Fonts/LuciusCipher.ttf" id="10_e8kv1"]
 [ext_resource type="Texture2D" uid="uid://d4i55a150f0lp" path="res://Assets/Sprites/Decoration/Planet_0002s_0006_jupiter.png" id="10_r8a2d"]
 [ext_resource type="Texture2D" uid="uid://bmeebk000pk0o" path="res://Assets/Sprites/Decoration/Planet_0002s_0007_saturn.png" id="11_ccmor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcmye"]
+size = Vector2(20, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecnvq"]
+size = Vector2(74, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8kv1"]
 
@@ -45,18 +51,30 @@ position = Vector2(6.4, 8.8)
 [node name="DoorWest" parent="." index="2"]
 position = Vector2(-2400, 9.53674e-07)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWest/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_lcmye")
+
 [node name="DoorEast" parent="." index="3"]
 position = Vector2(2392, 1.81899e-12)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorEast/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_lcmye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorNorth/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ecnvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorSouth/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ecnvq")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." index="6"]
 custom_minimum_size = Vector2(600, 300)
-offset_left = -1120.0
+offset_left = -1088.0
 offset_top = -936.0
-offset_right = 380.0
+offset_right = 412.0
 offset_bottom = -436.0
-theme_override_fonts/normal_font = ExtResource("10_e8kv1")
+theme_override_fonts/normal_font = ExtResource("3_7bwyy")
 bbcode_enabled = true
-text = "[font_size=150][color=#ff87ffff]En avant Mars !"
+text = "[font_size=160][color=#ff87ffff]En avant Mars"
 
 [node name="Planets" type="Node2D" parent="." index="7"]
 

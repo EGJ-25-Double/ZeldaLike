@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://lgksyifx3ymi"]
+
+[ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_1w51d"]
+
+[node name="Room" instance=ExtResource("1_1w51d")]
+
+[editable path="DoorWest"]
+[editable path="DoorEast"]
+[editable path="DoorNorth"]
+[editable path="DoorSouth"]
