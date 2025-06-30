@@ -10,7 +10,14 @@
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("3_advrm")
 
-[node name="RichTextLabel2" parent="Sprite2D2" instance=ExtResource("2_advrm")]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1_5uacd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("2_jlp3q")
+
+[node name="RichTextLabel2" parent="." instance=ExtResource("2_advrm")]
 custom_minimum_size = Vector2(100, 100)
 offset_left = -100.0
 offset_top = -226.0
@@ -20,10 +27,3 @@ theme_override_font_sizes/normal_font_size = 60
 text = "TBL"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-texture = ExtResource("1_5uacd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-texture = ExtResource("2_jlp3q")
