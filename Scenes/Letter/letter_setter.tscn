@@ -6,14 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://ovmdhp1aljo5" path="res://Assets/Sprites/LetterSetter/T_ScreenOn.png" id="4_hpgax"]
 [ext_resource type="Texture2D" uid="uid://epiou8pmy44k" path="res://Assets/Sprites/LetterSetter/T_TriggerOff.png" id="5_4krem"]
 [ext_resource type="Texture2D" uid="uid://bincfxwfcwgig" path="res://Assets/Sprites/LetterSetter/T_TriggerOn.png" id="6_6ob44"]
-[ext_resource type="FontFile" uid="uid://dfi37tb8lky5n" path="res://Assets/Fonts/StandardGalacticAlphabet-Regular.ttf" id="7_tx07x"]
+[ext_resource type="FontFile" uid="uid://cpwmw26qw4srm" path="res://Assets/Fonts/Kenney Mini Square Mono.ttf" id="7_ixfhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24uko"]
-size = Vector2(256, 224)
+size = Vector2(387, 388)
 
 [sub_resource type="LabelSettings" id="LabelSettings_24uko"]
-font = ExtResource("7_tx07x")
-font_size = 220
+font = ExtResource("7_ixfhh")
+font_size = 180
 font_color = Color(0.854902, 0, 0.121569, 1)
 
 [node name="LetterSetter" type="Area2D"]
@@ -30,6 +30,7 @@ trigger_on = ExtResource("6_6ob44")
 metadata/_custom_type_script = "uid://c7g11drl5tfms"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_24uko")
 
 [node name="Sprite Screen" type="Sprite2D" parent="."]
@@ -41,10 +42,10 @@ texture = ExtResource("3_dq5as")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -128.0
+offset_left = -116.0
 offset_top = -128.0
 offset_right = -128.0
-offset_bottom = -128.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_24uko")
