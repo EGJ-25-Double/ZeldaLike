@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dfi37tb8lky5n" path="res://Assets/Fonts/StandardGalacticAlphabet-Regular.ttf" id="7_tx07x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24uko"]
-size = Vector2(256, 224)
+size = Vector2(387, 388)
 
 [sub_resource type="LabelSettings" id="LabelSettings_24uko"]
 font = ExtResource("7_tx07x")
@@ -30,6 +30,7 @@ trigger_on = ExtResource("6_6ob44")
 metadata/_custom_type_script = "uid://c7g11drl5tfms"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_24uko")
 
 [node name="Sprite Screen" type="Sprite2D" parent="."]

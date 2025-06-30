@@ -20,8 +20,8 @@ func _ready() -> void:
 
 func _on_win_area_entered(body) -> void:
 	if !done: return
+	if InventoryUtils.item_a != null || InventoryUtils.item_b != null: return
 	get_tree().change_scene_to_file("res://Scenes/Menus/victory_screen.tscn")
-	#TODO: WIN HERE
 
 
 func _on_correct_set(value: bool) -> void:

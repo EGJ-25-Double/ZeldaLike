@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=31 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="12_pnhnk"]
 [ext_resource type="Texture2D" uid="uid://cfqkswilifbnx" path="res://Assets/Sprites/Decoration/SpotlightTop.png" id="14_00k4y"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="15_2klc5"]
+[ext_resource type="Script" uid="uid://u3j14xny57dr" path="res://Scenes/Interaction/interaction_enabler.gd" id="16_luodc"]
 [ext_resource type="Script" uid="uid://4j7iqwd6dew0" path="res://Scenes/Endgame/spotlight_manager.gd" id="19_3a44l"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="21_luodc"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="22_gf56v"]
@@ -79,7 +80,14 @@ bot_sprite = NodePath("../SpotlightBot")
 top_sprite = NodePath("../SpotlightTop")
 collision_transform = NodePath("../EndSpotlightTrigger/CollisionShape2D")
 object = NodePath("../end")
+enable = true
 needed_item = Array[ExtResource("22_gf56v")]([ExtResource("23_6y3s5")])
+
+[node name="InteractionEnabler" type="Node" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("16_luodc")
+object = NodePath("../Room_A/Stargate/Sprite2D")
+enable = true
+metadata/_custom_type_script = "uid://u3j14xny57dr"
 
 [node name="StartSpotlightTrigger" parent="." node_paths=PackedStringArray("interactions") instance=ExtResource("12_pnhnk")]
 position = Vector2(-273, 702)
@@ -149,6 +157,29 @@ bus = &"Music"
 
 [node name="end" parent="." instance=ExtResource("29_1cgv8")]
 
+[node name="CollisionShape2D" parent="end/LetterSetter" index="0"]
+position = Vector2(-316, 180)
+
+[node name="Sprite Trigger" parent="end/LetterSetter" index="2"]
+position = Vector2(-316, 180)
+
+[node name="CollisionShape2D" parent="end/LetterSetter2" index="0"]
+position = Vector2(-134, 567)
+
+[node name="Sprite Trigger" parent="end/LetterSetter2" index="2"]
+position = Vector2(-134, 567)
+
+[node name="CollisionShape2D" parent="end/LetterChecker/Win Area" index="0"]
+position = Vector2(-200, -787)
+
+[editable path="Room_A"]
+[editable path="Room_A/DoorWest"]
+[editable path="Room_A/DoorEast"]
+[editable path="Room_A/DoorNorth"]
+[editable path="Room_A/DoorSouth"]
+[editable path="Room_A/Trigger"]
+[editable path="Room_A/DoorNorthEast"]
+[editable path="Room_A/Stargate"]
 [editable path="Room_B"]
 [editable path="Room_B/DoorWest"]
 [editable path="Room_B/DoorEast"]
@@ -161,3 +192,7 @@ bus = &"Music"
 [editable path="Room_B/RightDoor_Trigger"]
 [editable path="StartSpotlightTrigger"]
 [editable path="EndSpotlightTrigger"]
+[editable path="end"]
+[editable path="end/LetterSetter"]
+[editable path="end/LetterSetter2"]
+[editable path="end/LetterSetter3"]
