@@ -212,6 +212,7 @@ mapLinked = NodePath("../../TileLayers/ObstaclesTileLayer2")
 category = "Puzzle1"
 
 [node name="QrCode" parent="." index="8" instance=ExtResource("6_61usn")]
+visible = false
 position = Vector2(1437, -1120)
 scale = Vector2(0.832541, 0.832541)
 

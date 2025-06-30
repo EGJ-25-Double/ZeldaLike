@@ -52,6 +52,7 @@ rotation = -0.0698608
 scale = Vector2(0.969177, 0.969177)
 
 [node name="QrCode" parent="." index="8" instance=ExtResource("3_uwuta")]
+visible = false
 position = Vector2(-581, 1437)
 rotation = 0.435056
 scale = Vector2(0.832541, 0.832541)

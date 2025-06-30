@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dlmjxyw43g2a1"]
+[gd_scene load_steps=8 format=4 uid="uid://dct4xqaqopowf"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_edd3e"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_7vuos"]
-[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_dwogv"]
-[ext_resource type="PackedScene" uid="uid://de5yd0030g5m6" path="res://Scenes/Decoration/mickey_hint.tscn" id="4_d7yli"]
+[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_dwogv"]
+[ext_resource type="PackedScene" uid="uid://04i5o0fyeihh" path="res://Scenes/Decoration/mickey_hint.tscn" id="4_d7yli"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="4_es5bx"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="5_xckcq"]
 
@@ -31,6 +31,7 @@ position = Vector2(-646, 2090)
 position = Vector2(0, -312)
 
 [node name="MickeyHint" parent="." index="7" instance=ExtResource("4_d7yli")]
+visible = false
 position = Vector2(2417, 39)
 scale = Vector2(5.54341, 5.54341)
 

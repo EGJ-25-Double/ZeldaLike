@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b2ejijulv6sf0" path="res://Assets/Sprites/PlayerHero/cellsquare.png" id="6_564el"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q4s8y"]
-radius = 9.0
-height = 22.0
+radius = 6.8
+height = 21.8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_564el"]
 shader = ExtResource("5_l2mcj")
@@ -31,7 +31,8 @@ autoplay = "idle_down"
 script = ExtResource("3_580jn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(10, 10)
+position = Vector2(-12, 0)
+scale = Vector2(9.08, 9.04)
 shape = SubResource("CapsuleShape2D_q4s8y")
 
 [node name="Interacter" type="Node" parent="."]

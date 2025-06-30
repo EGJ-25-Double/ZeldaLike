@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=4 uid="uid://dnvoypnv7xmo"]
+[gd_scene load_steps=8 format=4 uid="uid://dnvoypnv7xmo"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_3nwbe"]
-[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_cpw60"]
+[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_cpw60"]
 [ext_resource type="Resource" uid="uid://vcih31l4p7a6" path="res://Data/mm_item_bubble.tres" id="3_cpep6"]
-[ext_resource type="PackedScene" uid="uid://dagmyhwyujqlo" path="res://Scenes/Decoration/Platform_Hint.tscn" id="4_ogpek"]
+[ext_resource type="PackedScene" uid="uid://dxevjdximuvx8" path="res://Scenes/Decoration/Platform_Hint.tscn" id="4_ogpek"]
+[ext_resource type="Texture2D" uid="uid://m86dygyq7op6" path="res://Assets/Sprites/Decoration/spotlights.png" id="5_o37o0"]
+[ext_resource type="Theme" uid="uid://coiuj78tsqptn" path="res://Assets/Themes/label.tres" id="6_nfqlr"]
+[ext_resource type="Texture2D" uid="uid://bvhh86usjwsee" path="res://Assets/Sprites/Decoration/timer@2x.png" id="7_0kduo"]
 
 [node name="Room_E" instance=ExtResource("1_3nwbe")]
 
@@ -20,6 +23,32 @@ unlocked_item = ExtResource("3_cpep6")
 [node name="PlatformHint" parent="." index="7" instance=ExtResource("4_ogpek")]
 position = Vector2(504, -192)
 scale = Vector2(13.3, 13.3)
+
+[node name="TextureRect" type="TextureRect" parent="." index="9"]
+offset_left = -1699.0
+offset_top = -1413.0
+offset_right = -1349.0
+offset_bottom = -1063.0
+scale = Vector2(2.43046, 2.01791)
+texture = ExtResource("5_o37o0")
+
+[node name="Label" type="Label" parent="." index="10"]
+offset_left = -1625.0
+offset_top = -251.0
+offset_right = -1325.0
+offset_bottom = -63.0
+theme = ExtResource("6_nfqlr")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "10"
+
+[node name="TextureRect2" type="TextureRect" parent="." index="11"]
+offset_left = -1296.0
+offset_top = -276.0
+offset_right = -1040.0
+offset_bottom = -20.0
+scale = Vector2(0.86764, 0.94897)
+texture = ExtResource("7_0kduo")
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]

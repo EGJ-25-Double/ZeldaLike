@@ -1,6 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://d0tity4huc4h1"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://d0tity4huc4h1"]
 
+[ext_resource type="Texture2D" uid="uid://b7fnurxurx3rd" path="res://Assets/Sprites/Doggo/DogIdleFront.png" id="1_r8h13"]
+[ext_resource type="Texture2D" uid="uid://biu1q7mlsho43" path="res://Assets/Sprites/Doggo/DogIdleside.png" id="2_v1jbj"]
+[ext_resource type="Texture2D" uid="uid://b8teffwnsnmoi" path="res://Assets/Sprites/Doggo/DogIdleright.png" id="3_0xyfk"]
 [ext_resource type="Texture2D" uid="uid://bx0d02b0e0nii" path="res://Assets/Sprites/Doggo/DogWalkFrontPose1.png" id="3_fpcy1"]
+[ext_resource type="Texture2D" uid="uid://2shc1u2dejnt" path="res://Assets/Sprites/Doggo/DogIdleBack.png" id="4_prvqx"]
 [ext_resource type="Texture2D" uid="uid://bqwgt4542cf1n" path="res://Assets/Sprites/Doggo/DogWalkFrontPose2.png" id="4_w6lu1"]
 [ext_resource type="Texture2D" uid="uid://cyj4v28dsx6ef" path="res://Assets/Sprites/Doggo/DogWalkSidePose1.png" id="5_r8h13"]
 [ext_resource type="Texture2D" uid="uid://bcmuyjaualxjt" path="res://Assets/Sprites/Doggo/DogWalkSidePose2.png" id="6_v1jbj"]
@@ -13,10 +17,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fpcy1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_w6lu1")
+"texture": ExtResource("1_r8h13")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -24,10 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_r8h13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_v1jbj")
+"texture": ExtResource("2_v1jbj")
 }],
 "loop": true,
 "name": &"idle_left",
@@ -35,10 +33,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0xyfk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_prvqx")
+"texture": ExtResource("3_0xyfk")
 }],
 "loop": true,
 "name": &"idle_right",
@@ -46,10 +41,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_u5asn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_wnb7i")
+"texture": ExtResource("4_prvqx")
 }],
 "loop": true,
 "name": &"idle_up",
@@ -57,10 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fpcy1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_w6lu1")
+"texture": ExtResource("1_r8h13")
 }],
 "loop": false,
 "name": &"sleep_down",
@@ -68,10 +57,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_r8h13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_v1jbj")
+"texture": ExtResource("2_v1jbj")
 }],
 "loop": false,
 "name": &"sleep_left",
@@ -79,10 +65,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0xyfk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_prvqx")
+"texture": ExtResource("3_0xyfk")
 }],
 "loop": false,
 "name": &"sleep_right",
@@ -90,10 +73,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_u5asn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_wnb7i")
+"texture": ExtResource("4_prvqx")
 }],
 "loop": false,
 "name": &"sleep_up",
