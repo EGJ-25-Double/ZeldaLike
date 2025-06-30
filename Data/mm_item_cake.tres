@@ -7,6 +7,6 @@
 script = ExtResource("1_h4qe2")
 name = "Cake"
 sprite = ExtResource("2_gtjtt")
-unlocked_at_start = true
+unlocked_at_start = false
 letter = "E"
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"
