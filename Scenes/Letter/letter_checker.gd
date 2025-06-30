@@ -9,6 +9,7 @@ extends Control
 
 
 var done: bool
+var is_interacting
 
 
 func _ready() -> void:
@@ -16,12 +17,22 @@ func _ready() -> void:
 	for letter in letters:
 		letter.correct_set.connect(_on_correct_set)
 	win_area.body_entered.connect(_on_win_area_entered)
+	win_area.body_exited.connect(_on_win_area_exited)
+
+
+func _process(delta: float) -> void:
+	if !is_interacting: return
+	if !done: return
+	if InventoryUtils.item_a != null || InventoryUtils.item_b != null: return 
+	get_tree().change_scene_to_file("res://Scenes/Menus/victory_screen.tscn")
 
 
 func _on_win_area_entered(body) -> void:
-	if !done: return
-	if InventoryUtils.item_a != null || InventoryUtils.item_b != null: return
-	get_tree().change_scene_to_file("res://Scenes/Menus/victory_screen.tscn")
+	is_interacting = true
+
+
+func _on_win_area_exited(body) -> void:
+	is_interacting = true
 
 
 func _on_correct_set(value: bool) -> void:
