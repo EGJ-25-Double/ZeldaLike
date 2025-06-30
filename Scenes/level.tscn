@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ci7eaqv22eyv2"]
+[gd_scene load_steps=32 format=3 uid="uid://ci7eaqv22eyv2"]
 
 [ext_resource type="PackedScene" uid="uid://b0qh3kgdrrh46" path="res://Scenes/Rooms/room_B.tscn" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://upphxpi48t1y" path="res://Scenes/Entities/doggo.tscn" id="3_754fn"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="12_pnhnk"]
 [ext_resource type="Texture2D" uid="uid://cfqkswilifbnx" path="res://Assets/Sprites/Decoration/SpotlightTop.png" id="14_00k4y"]
 [ext_resource type="PackedScene" uid="uid://c6x8d65unklmm" path="res://Scenes/Trap/screen_flasher.tscn" id="15_2klc5"]
+[ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="15_luodc"]
 [ext_resource type="Script" uid="uid://u3j14xny57dr" path="res://Scenes/Interaction/interaction_enabler.gd" id="16_luodc"]
 [ext_resource type="Script" uid="uid://4j7iqwd6dew0" path="res://Scenes/Endgame/spotlight_manager.gd" id="19_3a44l"]
 [ext_resource type="Resource" uid="uid://bwlh1iaq8phhn" path="res://Data/mm_item_compass.tres" id="21_luodc"]
@@ -81,7 +82,7 @@ top_sprite = NodePath("../SpotlightTop")
 collision_transform = NodePath("../EndSpotlightTrigger/CollisionShape2D")
 object = NodePath("../end")
 enable = true
-needed_item = Array[ExtResource("22_gf56v")]([ExtResource("23_6y3s5")])
+needed_item = Array[ExtResource("22_gf56v")]([ExtResource("15_luodc"), ExtResource("23_6y3s5")])
 
 [node name="InteractionEnabler" type="Node" parent="." node_paths=PackedStringArray("object")]
 script = ExtResource("16_luodc")
