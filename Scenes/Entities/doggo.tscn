@@ -21,8 +21,9 @@ item_loved = ExtResource("2_h0lky")
 position = Vector2(15.7692, -107.154)
 scale = Vector2(0.783051, 0.783051)
 sprite_frames = ExtResource("3_60p3r")
-animation = &"sleep_right"
+animation = &"idle_up"
 autoplay = "idle_down"
+frame_progress = 0.441173
 script = ExtResource("3_m3hmc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
