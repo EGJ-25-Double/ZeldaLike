@@ -67,7 +67,7 @@ func _physics_process(delta) -> void:
 				isAsleep = false
 			timer -= delta
 			if timer <= 0:
-				if (randi() % 100 < 30):
+				if (randi() % 100 < 10):
 					state = "sleep"
 					timer = sleep_time
 					return

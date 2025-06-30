@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cfrflmoinjs8q" path="res://Assets/Sprites/Decoration/pink_gear.png" id="9_uwy47"]
 [ext_resource type="FontFile" uid="uid://cr0kib1b8rapc" path="res://Assets/Fonts/Kenney Blocks.ttf" id="10_a43g6"]
 [ext_resource type="Texture2D" uid="uid://ch41xhkcf2x7c" path="res://Assets/Sprites/Decoration/Alien_masques_0004_Sailor.png" id="11_uwy47"]
-[ext_resource type="Texture2D" uid="uid://1qgc3ydbjomg" path="res://Assets/Sprites/Decoration/curtain1.png" id="12_a43g6"]
+[ext_resource type="Texture2D" uid="uid://5i6fmuuhtges" path="res://Assets/Sprites/Decoration/curtain2.png" id="12_uwy47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5vwe"]
 size = Vector2(638, 270)
@@ -98,7 +98,7 @@ offset_top = -10.0
 offset_right = 1669.0
 offset_bottom = 641.0
 scale = Vector2(2.16079, 1.89886)
-texture = ExtResource("12_a43g6")
+texture = ExtResource("12_uwy47")
 
 [node name="TextureRect3" type="TextureRect" parent="." index="13"]
 offset_left = 2031.0
