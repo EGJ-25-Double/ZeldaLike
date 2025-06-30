@@ -53,4 +53,4 @@ func _set_translation() -> String:
 		if states.has(translation.category):
 			if states[translation.category] == translation.state:
 				return translation.translation
-	return "Ouaff. (Rien à traduire ici...)"
+	return "Woof. (Nothing to translate here...)"

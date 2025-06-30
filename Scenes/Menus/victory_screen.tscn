@@ -42,6 +42,7 @@ offset_bottom = 32.0
 scale = Vector2(1.2335, 3.83115)
 theme = ExtResource("4_iqb6t")
 theme_override_colors/font_color = Color(0.993345, 0.316863, 0.713445, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Yaaay Miss Understanding went back to planet earth ! Well Done !!!!"
 
 [node name="Button" type="Button" parent="."]
