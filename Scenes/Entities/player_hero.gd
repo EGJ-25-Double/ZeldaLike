@@ -90,9 +90,11 @@ func show_interaction_feedback(success: bool) -> void:
 		_shadow_sprite.hide()
 	)
 
-static func _on_interaction_success() -> void:
-	instance.show_interaction_feedback(true)
+static func _on_interaction_success(item: ItemMemo) -> void:
+	if (item != null):
+		instance.show_interaction_feedback(true)
 
-static func _on_interaction_fail() -> void:
-	instance.show_interaction_feedback(false)
+static func _on_interaction_fail(item: ItemMemo) -> void:
+	if (item != null):
+		instance.show_interaction_feedback(false)
 	
