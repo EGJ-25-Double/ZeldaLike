@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cljbyyyenxc7x"]
+
+[ext_resource type="Texture2D" uid="uid://wbm7bxwswg2k" path="res://Assets/Sprites/Rooms/Stargate/Stargate_activated.png" id="1_5uacd"]
+[ext_resource type="PackedScene" uid="uid://cedp56bhoa2xd" path="res://Scenes/Decoration/alien_label.tscn" id="2_advrm"]
+[ext_resource type="Texture2D" uid="uid://ctpe84wq558p5" path="res://Assets/Sprites/Rooms/Stargate/Stargate_portal.png" id="2_jlp3q"]
+[ext_resource type="Texture2D" uid="uid://bh37y57hanjcr" path="res://Assets/Sprites/Rooms/Stargate/Stargate_deactivated.png" id="3_advrm"]
+
+[node name="Stargate" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("3_advrm")
+
+[node name="RichTextLabel2" parent="Sprite2D2" instance=ExtResource("2_advrm")]
+custom_minimum_size = Vector2(100, 100)
+offset_left = -100.0
+offset_top = -226.0
+offset_right = 100.0
+offset_bottom = -126.0
+theme_override_font_sizes/normal_font_size = 60
+text = "TBL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_5uacd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("2_jlp3q")
