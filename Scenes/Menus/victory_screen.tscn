@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dylogee0jf8j"]
+[gd_scene load_steps=7 format=3 uid="uid://dylogee0jf8j"]
 
 [ext_resource type="Script" uid="uid://ce1i1txq5k38l" path="res://Scenes/Menus/victory_screen.gd" id="1_sbvcn"]
 [ext_resource type="Texture2D" uid="uid://bepdrvqxvdm5e" path="res://Assets/Sprites/Decoration/image.png" id="2_7phl1"]
 [ext_resource type="Texture2D" uid="uid://d2qfuratp38su" path="res://Assets/Sprites/PlayerHero/Sprites/IdleFront/missU_anim_0025.png" id="3_yj0rk"]
 [ext_resource type="Theme" uid="uid://coiuj78tsqptn" path="res://Assets/Themes/label.tres" id="4_iqb6t"]
 [ext_resource type="Theme" uid="uid://ca0p1v2e7g316" path="res://Assets/Themes/button.tres" id="5_f5rku"]
+[ext_resource type="AudioStream" uid="uid://b2cgi1eryyitc" path="res://Assets/Sound/Music/EGJ25_Musique_HumanWorldV2.mp3" id="6_yj0rk"]
 
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
@@ -53,5 +54,9 @@ offset_right = 705.0
 offset_bottom = 227.0
 theme = ExtResource("5_f5rku")
 text = "Back to main menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yj0rk")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
