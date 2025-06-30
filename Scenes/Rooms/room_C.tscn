@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ceoo0fkmcw5m8"]
+[gd_scene load_steps=14 format=4 uid="uid://ceoo0fkmcw5m8"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_hr50i"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_tsk47"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://baddqnff2wryw" path="res://Assets/Sprites/Decoration/pink_arrow.png" id="8_btooy"]
 [ext_resource type="Texture2D" uid="uid://cfrflmoinjs8q" path="res://Assets/Sprites/Decoration/pink_gear.png" id="9_uwy47"]
 [ext_resource type="FontFile" uid="uid://cr0kib1b8rapc" path="res://Assets/Fonts/Kenney Blocks.ttf" id="10_a43g6"]
+[ext_resource type="Texture2D" uid="uid://ch41xhkcf2x7c" path="res://Assets/Sprites/Decoration/Alien_masques_0004_Sailor.png" id="11_uwy47"]
+[ext_resource type="Texture2D" uid="uid://1qgc3ydbjomg" path="res://Assets/Sprites/Decoration/curtain1.png" id="12_a43g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5vwe"]
 size = Vector2(638, 270)
@@ -59,6 +61,7 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 1500.0
 offset_bottom = 500.0
+theme_override_colors/default_color = Color(0.603743, 0.000313427, 0.616338, 1)
 text = "tututata"
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D2" index="1"]
@@ -77,8 +80,33 @@ offset_left = 1227.76
 offset_top = -62.0
 offset_right = 2727.76
 offset_bottom = 438.0
+theme_override_colors/default_color = Color(0.603922, 0, 0.615686, 1)
 theme_override_fonts/normal_font = ExtResource("10_a43g6")
 text = "1"
+
+[node name="TextureRect" type="TextureRect" parent="." index="11"]
+offset_left = 2435.0
+offset_top = 285.0
+offset_right = 3062.0
+offset_bottom = 936.0
+scale = Vector2(0.425377, 0.315458)
+texture = ExtResource("11_uwy47")
+
+[node name="TextureRect2" type="TextureRect" parent="." index="12"]
+offset_left = 1689.0
+offset_top = 71.0
+offset_right = 1862.0
+offset_bottom = 722.0
+texture = ExtResource("12_a43g6")
+
+[node name="TextureRect3" type="TextureRect" parent="." index="13"]
+offset_left = 2031.0
+offset_top = 254.0
+offset_right = 2204.0
+offset_bottom = 905.0
+scale = Vector2(1.81721, 0.402141)
+texture = ExtResource("8_btooy")
+flip_h = true
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]

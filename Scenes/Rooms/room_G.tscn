@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_cwpuu"]
 [ext_resource type="PackedScene" uid="uid://cedp56bhoa2xd" path="res://Scenes/Decoration/alien_label.tscn" id="3_7bwyy"]
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="3_eduek"]
-[ext_resource type="Script" uid="uid://6syjsf2hy8tq" path="res://Scenes/Interaction/interaction_queue.gd" id="4_86ru1"]
+[ext_resource type="Script" path="res://Scenes/Interaction/interaction_queue.gd" id="4_86ru1"]
 [ext_resource type="Texture2D" uid="uid://ca22t54mm8gki" path="res://Assets/Sprites/Decoration/Planet_0002s_0002_terre.png" id="5_7bwyy"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="5_e8kv1"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="5_wtfp4"]

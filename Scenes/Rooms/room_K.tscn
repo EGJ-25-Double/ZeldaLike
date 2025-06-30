@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_v1plw"]
 [ext_resource type="PackedScene" uid="uid://bcob1x3wgxcco" path="res://Scenes/Trap/trap_handler.tscn" id="2_oosf1"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_s3wwb"]
-[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_kwt8g"]
+[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="3_kwt8g"]
 [ext_resource type="PackedScene" uid="uid://cybbburxfpqly" path="res://Scenes/Trap/trap_tile.tscn" id="3_lc4mr"]
 [ext_resource type="Resource" uid="uid://b47irjqkfnhbt" path="res://Data/mm_item_party_blower.tres" id="4_tuan3"]
 [ext_resource type="PackedScene" uid="uid://cyyolh7rntpxh" path="res://Scenes/Decoration/PNJ.tscn" id="7_lc4mr"]
@@ -390,7 +390,6 @@ type = 4
 [node name="ObstaclesTileLayer2" type="TileMapLayer" parent="TileLayers" index="3"]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD//wIAAAAAAAoAAAD+/wIAAAAAAAoAAAD9/wIAAAAAAAoAAAD8/wIAAAAAAAoAAAD7/wIAAAAAAAoAAAD6/wIAAAAAAAAAAAD6/wEAAAAAAAoAAAD6/wAAAAAAAAoAAAD6////AAAAAAoAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAoAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAoAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAoAAAD9////AAAAAAoAAAD8////AAAAAAAAAAD7////AAAAAAoAAAA=")
-enabled = false
 tile_set = ExtResource("2_s3wwb")
 
 [node name="DoorSouth" parent="." index="5"]
@@ -409,7 +408,6 @@ direction = 3
 
 [node name="CollisionShape2D" parent="Pnj/Trigger" index="0"]
 position = Vector2(-40.2681, 0)
-scale = Vector2(1, 1)
 
 [node name="State" parent="Pnj" index="2" node_paths=PackedStringArray("mapLinked")]
 category = "Puzzle2"
