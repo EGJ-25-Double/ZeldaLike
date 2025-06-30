@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ysbf22hdijgi" path="res://Scenes/Interaction/trigger.tscn" id="5_0d7l7"]
 [ext_resource type="Script" uid="uid://b2vmix77s6tr7" path="res://Scenes/room_state.gd" id="6_yfihf"]
 [ext_resource type="Script" uid="uid://bhbmc3hqm0ekf" path="res://Scenes/Inventory/item_memo.gd" id="7_vbh2w"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/door.tscn" id="8_ek16v"]
+[ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="8_ek16v"]
 [ext_resource type="PackedScene" uid="uid://cljbyyyenxc7x" path="res://Scenes/Endgame/stargate.tscn" id="9_hlhsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbh2w"]

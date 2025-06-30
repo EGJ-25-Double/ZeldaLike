@@ -101,7 +101,7 @@ func _physics_process(delta) -> void:
 			velocity = direction * (speed + 1000)
 			animated_sprite_2d.play_movement_animation(facing_direction)
 			move_and_slide()
-			if abs(fetch_pos.x - self.position.x) < 10.0 && abs(fetch_pos.y - self.position.y) < 10.0:
+			if abs(fetch_pos.x - self.position.x) < 50.0 && abs(fetch_pos.y - self.position.y) < 50.0:
 				velocity = Vector2.ZERO
 				cache_facing_dir(direction)
 				hasFetch = true
