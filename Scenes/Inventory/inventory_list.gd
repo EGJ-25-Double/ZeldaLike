@@ -51,8 +51,8 @@ func _on_inventory_opened(is_open: bool) -> void:
 func _on_item_unlocked(item: ItemMemo) -> void:
 	if item == null: return
 	var temp = items_by_memo[item]
-	update_item_count()
 	temp.unlocked = true
+	update_item_count()
 	if InventoryUtils.item_a == null:
 		temp.action = InventoryItem.Action.A
 	elif InventoryUtils.item_b == null:
