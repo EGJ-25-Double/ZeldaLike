@@ -249,6 +249,9 @@ fade = true
 needed_item = Array[ExtResource("5_e8kv1")]([ExtResource("18_ymgir")])
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
+[node name="RoomNumberHint" parent="." index="24"]
+text = "5"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]

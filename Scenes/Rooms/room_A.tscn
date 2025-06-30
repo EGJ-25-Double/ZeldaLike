@@ -80,6 +80,13 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 polygon = PackedVector2Array(-302, 175, -302, -176, 316, -173, 327, 166, 206, 259, 214, 344, 429, 204, 437, -212, 235, -413, 270, -690, 21, -747, -238, -693, -210, -413, -406, -217, -404, 206, -184, 345, -191, 255)
 
+[node name="RoomNumberHint" parent="." index="14"]
+offset_left = 1309.0
+offset_top = -1771.0
+offset_right = 2308.0
+offset_bottom = -522.0
+text = "8"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]

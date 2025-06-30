@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://biai3yc235x6m"]
+[gd_scene load_steps=10 format=4 uid="uid://biai3yc235x6m"]
 
 [ext_resource type="Script" uid="uid://xvn47lshjlo3" path="res://Scenes/Entities/room.gd" id="1_dyxu8"]
 [ext_resource type="TileSet" uid="uid://b3tjhq42xbko4" path="res://Assets/Sprites/Rooms/RoomTileSet.tres" id="2_ecnvq"]
 [ext_resource type="PackedScene" uid="uid://lcbiyxs4wmy8" path="res://Scenes/Entities/door.tscn" id="3_rdcm0"]
 [ext_resource type="AudioStream" uid="uid://syx874iwv4bn" path="res://Assets/Sound/SFX/EGJ25_SFX_RoomChange_V1.mp3" id="4_g3m34"]
+[ext_resource type="Theme" uid="uid://coiuj78tsqptn" path="res://Assets/Themes/label.tres" id="5_c2haw"]
+[ext_resource type="FontFile" uid="uid://hg1l1buke7cj" path="res://Assets/Fonts/Kenney Future.ttf" id="6_622ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cf0ln"]
 size = Vector2(644, 320)
@@ -90,6 +92,17 @@ shape = SubResource("RectangleShape2D_ecnvq")
 [node name="RoomChange" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_g3m34")
 bus = &"SFX"
+
+[node name="RoomNumberHint" type="Label" parent="."]
+offset_left = -292.0
+offset_top = -574.0
+offset_right = 707.0
+offset_bottom = 675.0
+theme = ExtResource("5_c2haw")
+theme_override_colors/font_color = Color(0.827451, 0.266667, 0, 0.607843)
+theme_override_fonts/font = ExtResource("6_622ha")
+theme_override_font_sizes/font_size = 999
+text = "0"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 

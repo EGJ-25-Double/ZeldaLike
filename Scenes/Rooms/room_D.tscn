@@ -58,6 +58,14 @@ fade = true
 once = true
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
+[node name="RoomNumberHint" parent="." index="12"]
+visible = false
+offset_left = -920.0
+offset_top = 726.0
+offset_right = 79.0
+offset_bottom = 1975.0
+text = "3"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]

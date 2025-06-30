@@ -85,18 +85,19 @@ theme_override_fonts/normal_font = ExtResource("10_a43g6")
 text = "1"
 
 [node name="TextureRect" type="TextureRect" parent="." index="11"]
-offset_left = 2435.0
-offset_top = 285.0
-offset_right = 3062.0
-offset_bottom = 936.0
-scale = Vector2(0.425377, 0.315458)
+offset_left = 2445.0
+offset_top = 214.0
+offset_right = 3072.0
+offset_bottom = 865.0
+scale = Vector2(0.585378, 0.555457)
 texture = ExtResource("11_uwy47")
 
 [node name="TextureRect2" type="TextureRect" parent="." index="12"]
-offset_left = 1689.0
-offset_top = 71.0
-offset_right = 1862.0
-offset_bottom = 722.0
+offset_left = 1496.0
+offset_top = -10.0
+offset_right = 1669.0
+offset_bottom = 641.0
+scale = Vector2(2.16079, 1.89886)
 texture = ExtResource("12_a43g6")
 
 [node name="TextureRect3" type="TextureRect" parent="." index="13"]
@@ -107,6 +108,13 @@ offset_bottom = 905.0
 scale = Vector2(1.81721, 0.402141)
 texture = ExtResource("8_btooy")
 flip_h = true
+
+[node name="RoomNumberHint" parent="." index="14"]
+offset_left = -3010.0
+offset_top = -239.0
+offset_right = -2011.0
+offset_bottom = 1010.0
+text = "3"
 
 [editable path="DoorWest"]
 [editable path="DoorEast"]

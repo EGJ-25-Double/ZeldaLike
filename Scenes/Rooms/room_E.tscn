@@ -50,6 +50,13 @@ offset_bottom = -20.0
 scale = Vector2(0.86764, 0.94897)
 texture = ExtResource("7_0kduo")
 
+[node name="RoomNumberHint" parent="." index="12"]
+offset_left = -3157.0
+offset_top = 653.0
+offset_right = -2158.0
+offset_bottom = 1902.0
+text = "2"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]

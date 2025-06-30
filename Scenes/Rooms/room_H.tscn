@@ -103,6 +103,14 @@ category = "Cartridge_Room_Hollow"
 mapLinked = NodePath("../TileLayers/ObstaclesTileLayer3")
 metadata/_custom_type_script = "uid://b2vmix77s6tr7"
 
+[node name="RoomNumberHint" parent="." index="17"]
+visible = false
+offset_left = -3104.0
+offset_top = -560.0
+offset_right = -2105.0
+offset_bottom = 689.0
+text = "5"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]

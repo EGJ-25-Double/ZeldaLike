@@ -424,6 +424,9 @@ position = Vector2(-2136, 696)
 scale = Vector2(10.6346, 10.6346)
 texture = ExtResource("9_hlayq")
 
+[node name="RoomNumberHint" parent="." index="11"]
+visible = false
+
 [editable path="TileLayers/TrapHandler"]
 [editable path="DoorWest"]
 [editable path="DoorEast"]

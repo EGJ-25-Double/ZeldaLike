@@ -57,6 +57,13 @@ position = Vector2(-581, 1437)
 rotation = 0.435056
 scale = Vector2(0.832541, 0.832541)
 
+[node name="RoomNumberHint" parent="." index="9"]
+offset_left = 2475.0
+offset_top = -520.0
+offset_right = 3474.0
+offset_bottom = 729.0
+text = "4"
+
 [editable path="DoorWest"]
 [editable path="DoorEast"]
 [editable path="DoorNorth"]
