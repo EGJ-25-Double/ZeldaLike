@@ -7,6 +7,6 @@
 script = ExtResource("1_2ungn")
 name = "Lever"
 sprite = ExtResource("2_2ungn")
-unlocked_at_start = false
+unlocked_at_start = true
 letter = "L"
 metadata/_custom_type_script = "uid://bhbmc3hqm0ekf"

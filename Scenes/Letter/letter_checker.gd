@@ -3,6 +3,7 @@ extends Control
 
 
 @export var letters: Array[LetterSetter]
+@export var interactions: Array[Interaction]
 
 
 @onready var win_area: Area2D = $"Win Area"
@@ -32,13 +33,15 @@ func _on_win_area_entered(body) -> void:
 
 
 func _on_win_area_exited(body) -> void:
-	is_interacting = true
+	is_interacting = false
 
 
 func _on_correct_set(value: bool) -> void:
 	if done: return
 	if !value: return
 	if !_check_letters(): return
+	for interaction in interactions:
+		interaction._internal_interact()
 	done = true
 	visible = true
 	var tween = get_tree().create_tween()

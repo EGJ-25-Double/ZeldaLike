@@ -8,12 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://el380m5r0qqj" path="res://Assets/Sprites/End/T_LastHint.png" id="6_tsn8p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fq0f7"]
-radius = 600.0
-height = 1600.0
+radius = 381.0
+height = 796.0
 
 [node name="end" type="Node2D"]
 process_mode = 4
-modulate = Color(1, 1, 1, 0)
 
 [node name="LetterSetter" parent="." instance=ExtResource("1_qlv0u")]
 position = Vector2(-648, -16)

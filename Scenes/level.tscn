@@ -107,7 +107,7 @@ once = true
 [node name="EndSpotlightTrigger" parent="." node_paths=PackedStringArray("interactions") instance=ExtResource("12_pnhnk")]
 position = Vector2(-169, 6)
 direction = 15
-interactions = [NodePath("../SpotlightManager"), NodePath("../InteractionEnabler")]
+interactions = [NodePath("../SpotlightManager")]
 
 [node name="CollisionShape2D" parent="EndSpotlightTrigger" index="0"]
 shape = SubResource("CircleShape2D_24uko")
@@ -169,12 +169,15 @@ position = Vector2(-134, 567)
 [node name="Sprite Trigger" parent="end/LetterSetter2" index="2"]
 position = Vector2(-134, 567)
 
+[node name="LetterChecker" parent="end" index="3" node_paths=PackedStringArray("interactions")]
+interactions = [NodePath("../../InteractionEnabler")]
+
 [node name="Win Area" parent="end/LetterChecker" index="1"]
 collision_layer = 1
 monitorable = true
 
 [node name="CollisionShape2D" parent="end/LetterChecker/Win Area" index="0"]
-position = Vector2(-200, -787)
+position = Vector2(-196, -754)
 
 [editable path="Room_A"]
 [editable path="Room_A/DoorWest"]
