@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://dnvoypnv7xmo"]
 
 [ext_resource type="PackedScene" uid="uid://biai3yc235x6m" path="res://Scenes/Rooms/room.tscn" id="1_3nwbe"]
-[ext_resource type="PackedScene" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_cpw60"]
+[ext_resource type="PackedScene" uid="uid://c8ms2ha0yf75n" path="res://Scenes/Interaction/item_unlocker.tscn" id="2_cpw60"]
 [ext_resource type="Resource" uid="uid://vcih31l4p7a6" path="res://Data/mm_item_bubble.tres" id="3_cpep6"]
 [ext_resource type="PackedScene" uid="uid://dxevjdximuvx8" path="res://Scenes/Decoration/Platform_Hint.tscn" id="4_ogpek"]
 [ext_resource type="Texture2D" uid="uid://m86dygyq7op6" path="res://Assets/Sprites/Decoration/spotlights.png" id="5_o37o0"]
@@ -17,7 +17,7 @@ tile_map_data = PackedByteArray("AAD+//3/AAAAAAoAAAD+//7/AAAAAAoAAAD+////AAAAAAo
 position = Vector2(-2900, 2090)
 
 [node name="ItemUnlocker" parent="." index="6" instance=ExtResource("2_cpw60")]
-position = Vector2(-2728, 1132)
+position = Vector2(-2383, 797)
 unlocked_item = ExtResource("3_cpep6")
 
 [node name="PlatformHint" parent="." index="7" instance=ExtResource("4_ogpek")]
