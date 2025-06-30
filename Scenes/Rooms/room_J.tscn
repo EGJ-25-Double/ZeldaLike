@@ -204,6 +204,12 @@ tile_set = ExtResource("2_n2obv")
 position = Vector2(976, 720)
 scale = Vector2(0.390146, 0.390146)
 
+[node name="Trigger" parent="Pnj" index="1"]
+direction = 6
+
+[node name="CollisionShape2D" parent="Pnj/Trigger" index="0"]
+position = Vector2(-49.7838, 0)
+
 [node name="State" parent="Pnj" index="2" node_paths=PackedStringArray("mapLinked")]
 category = "Puzzle1"
 mapLinked = NodePath("../../TileLayers/ObstaclesTileLayer2")
@@ -222,3 +228,4 @@ scale = Vector2(0.832541, 0.832541)
 [editable path="DoorNorth"]
 [editable path="DoorSouth"]
 [editable path="Pnj"]
+[editable path="Pnj/Trigger"]
